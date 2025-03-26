@@ -1,12 +1,30 @@
 ``` bash
-// Ordnerinhalt auflisten
-ls
-	-a // versteckte anzeigen
-	
-
-// Ordner wechseln
+# Wechselt das Verzeichnis
 cd <path>
 
-// Ordner erstellen
+# Erstellt ein neues Verzeichnis
 mkdir <name>
+
+# Erstellt eine leere Datei
+touch <name>
+
+# Listet alle Einträge in einem Verzeichnis
+ls [<path>]
+	-a // versteckte anzeigen
+
+# Zeigt den aktuellen Pfad
+pwd
+
+# Verschieben und umbenennen einer Datei / eines Ordners
+mv <old path> <new path>
+
+# Datei löschen
+rm <file>
+	-rf # löscht Verzeichnis
+
+# leeres Verzeichnis löschen
+rmdir <directory>
+
+# bearbeiten einer Datei
+nano <file>
 ```
