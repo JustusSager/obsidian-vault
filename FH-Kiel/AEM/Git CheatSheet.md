@@ -1,4 +1,6 @@
-# Git konfigurieren
+# Lokal
+
+## Konfigurieren
 ``` bash
 git config --global user.name "<name>"
 git config --global user.email "<email>"
@@ -6,7 +8,7 @@ git config --global user.email "<email>"
 git config --global core.editor "notepad" # für Windows
 ```
 
-# Lokal
+## Befehle
 
 aktuellen Status anzeigen
 ``` bash
@@ -61,17 +63,39 @@ Neuen Branch erstellen
 git branch <name>
 ```
 
-```
-
-# Remote
-
-Ein bestehendes Projekt lokal erstellen
-``` bash
-git clone <URL> // Im Ordner wo das Projekt angelegt werden soll
-```
-
 # Remotes
 
+## Konfigurieren
+``` bash
+git remote add <name> <url> # neue remote Verknüpfung hinzufügen
+git remote show
+git remote rename
+git remote remove
+```
+Standardmäßig sollte als Name der remote Verknüpfung 'origin' verwendet werden, da andere Befehle dann ohne weitere Argumente darauf zugreifen. origin ist "primus inter pares" (erster unter gleichen)
+
+## Befehle
+
+Ein Online Repository lokal erstellen
+``` bash
+git clone <url>
+```
+
+Local Repository zum Remote Repository "hochladen"
+``` bash
+git push
+	-u # 
+```
+
+Remote Repository in das Local Repository "herunterladen"
+``` bash
+git fetch
+```
+
+Remote Repository in das Local Repository und den Work Tree "herunterladen"
+``` bash
+git pull
+```
 
 # gitignore
 Git Anweisen bestimmte Dateien, Dateimuster und Ordner zu ignorieren
