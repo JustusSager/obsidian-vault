@@ -3,4 +3,5 @@
 	- 2er Gruppen
 	- Taschenrechner im Web entwickeln (Kotlin, JavaScript, HTML, CSS)
 	- Dokumentation über GitLab Issues
-- 
+
+# Vorlesungskram lass ich in Goodnotes
