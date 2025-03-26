@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "b013a07d3233bb8b",
+        "id": "3758b1a67a8fd2b7",
         "type": "tabs",
         "children": [
           {
-            "id": "03ee31a3f365a3ff",
+            "id": "9b5bfaf38d713f56",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "FH-Kiel/Einführung in die IT-Sicherheit/1. Bedrohungen und Risiken.md",
+                "file": "FH-Kiel/Einführung in die IT-Sicherheit/0 Organisation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1. Bedrohungen und Risiken"
+              "title": "0 Organisation"
             }
           }
         ]
@@ -168,17 +168,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "03ee31a3f365a3ff",
+  "active": "9b5bfaf38d713f56",
   "lastOpenFiles": [
+    "FH-Kiel/Einführung in die IT-Sicherheit/2 Grundlagen Kryptographie.md",
+    "FH-Kiel/Einführung in die IT-Sicherheit/0 Organisation.md",
+    "FH-Kiel/Einführung in die IT-Sicherheit/1 Bedrohungen und Risiken.md",
+    "Images/beispiel_bedrohungsbaum.png",
+    "Images/dread_scale.png",
     "Images/schutzziele_modelle.png",
-    "FH-Kiel/Einführung in die IT-Sicherheit/1. Bedrohungen und Risiken.md",
-    "FH-Kiel/Einführung in die IT-Sicherheit/0. Organisation.md",
     "Images/Pasted image 20250326211928.png",
+    "FH-Kiel/Einführung in die IT-Sicherheit/1.1 Bedrohungs- und Risikoanalyse.md",
+    "Images/beispiel_bedrohungsbaum.png.~tmp",
     "Images",
     "Pasted image 20250326211928.png",
     "FH-Kiel/Einführung in die IT-Sicherheit/Untitled.canvas",
     "Funktionssicherheit.md",
-    "FH-Kiel/Einführung in die IT-Sicherheit/2. Grundlagen Kryptographie.md",
     "FH-Kiel/AEM/Git CheatSheet.md",
     "create a link.md",
     "Textdokument (neu).txt",
