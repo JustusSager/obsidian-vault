@@ -85,7 +85,7 @@ Um zu bewerten, ob von einer Bedrohung eine konkrete Gefährdung ausgeht, müsse
 Hier sind 2 verschiedene Modelle die die wichtigsten Schutzziele dargestellt. Links die CIA-Triade, Rechts das VIVA-Modell. Im vergleich fällt auf, dass in der CIA-Triade die Authentizität fehlt.
 ![[schutzziele_modelle.png]]
 
-### Vertraulichkeit^58c934
+### Vertraulichkeit ^58c934
 (engl. confidentiality)
 Eine unautorisierte Informationsgewinnung ist nicht möglich.
  -> Informationen sind sicher vor unbefugtem lesenden Zugriff.
@@ -95,7 +95,7 @@ Eine unautorisierte Informationsgewinnung ist nicht möglich.
 Eine unautorisierte und unbemerkte Manipulation der zu schützenden Daten ist nicht möglich.
  -> Manipulationsschutz, Informationen sind sicher vorm unbefugten schreibenden Zugriff.
 
-### Verfügbarkeit^ae9f9a
+### Verfügbarkeit ^ae9f9a
 (engl. availability)
 Authentifizierte und autorisierte Parteien können ihre Berechtigungen wahrnehmen, ohne dabei unautorisiert beeinträchtigt zu werden.
  -> erlaubte Zugriffe sind jederzeit möglich.
@@ -106,7 +106,7 @@ Die Echtheit und Glaubwürdigkeit ist gegeben und kann anhand einer eindeutigen 
 Das Schutzziel Authentizität kann sowohl für Subjekte als auch für Objekte gelten. Den Nachweis von Subjekten nennt man Authentifizierung. Beim Nachweis von Objekten geht es darum, zu prüfen, dass das Objekt tatsächlich dem zugehörigen Subjekt zugeordnet werden kann.
  -> Überprüfen, ob etwas dass ist, was es behauptet zu sein.
 
-### Verbindlichkeit/Nichtabstreitbarkeit^6c70b9
+### Verbindlichkeit/Nichtabstreitbarkeit ^6c70b9
 (engl. non-repudiation)
 Es ist nicht möglich, dass eine Partei nachträglich ihre Beteiligung an einer (Trans-) Aktion abstreiten kann.
  -> eindeutiger Nachweis, dass eine "Person" an einem Prozess beteiligt war.
