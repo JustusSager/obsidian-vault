@@ -1,6 +1,7 @@
 Ist eine Ansammlung der wichtigsten Unterprogramme und Datentypen, standardisiert durch die ISO.
 gebündelt im Namensraum "std".
 # iostream
+https://cplusplus.com/reference/istream/iostream/
 
 ## Verwendung
 #TODO std::cerr
@@ -54,6 +55,7 @@ C-Strings sind einfach nur char-Arrays, auf die über Pointer zugegriffen wird. 
 Die C++-Strings sind eine eigene Klasse mit eigenen Methoden die das manipulieren der strings erleichtern. Es gibt eine dynamische Speicherverwaltung, die es erlaubt, dass die Länge des Strings nicht zur Compile-Zeit bereits bekannt sein muss.
 
 # array
+https://cplusplus.com/reference/array/array/
 Lineares Array Aggregat mit statischer Speicherverwaltung. D.h. die Größe eines Arrays kann während der Laufzeit nicht mehr geändert werden.
 In "<>" wird der Datentyp der enthaltenen Elemente und die Länge angegeben. Siehe dazu #TODO Templates
 
@@ -89,8 +91,11 @@ int main(){
 ```
 
 # vector
+https://cplusplus.com/reference/vector/vector/
 Lineare Datenstruktur mit dynamischer Speicherverwaltung.  Hierbei wird der Speicher automatisch verwaltet, es ist keine manuelle Allokation nötig. 
 In "<>" wird der Datentyp der enthaltenen Elemente angegeben. Siehe dazu #TODO Templates
+
+## Verwendung
 ``` C++
 #include<vector>
 int main() {
@@ -114,7 +119,9 @@ int main() {
 }
 ```
 
-# complex
+# complex 
+https://cplusplus.com/reference/complex/complex/
+#TODO std::complex für irgendwann
 Komplexe Zahlen
 ``` C++
 #include<complex>
