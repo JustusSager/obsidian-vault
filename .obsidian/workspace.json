@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DEV/C++/Bibliotheken/Einlesen von Dateien.md",
+                "file": "DEV/Python/Bibliotheken/numpy.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Einlesen von Dateien"
+              "title": "numpy"
             }
           }
         ]
@@ -178,10 +178,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9b5bfaf38d713f56",
+  "active": "2dd2c858119cc690",
   "lastOpenFiles": [
-    "FH-Kiel/Programmieren in C++/Standardbibliotheken std.md",
     "DEV/C++/Bibliotheken/Einlesen von Dateien.md",
+    "DEV/Python/Bibliotheken",
+    "FH-Kiel/Programmieren in C++/Standardbibliotheken std.md",
     "DEV/C++/Bibliotheken/Arrays und Vektoren.md",
     "DEV/C++/Bibliotheken/Exceptions.md",
     "DEV/C++/Bibliotheken/Konsolen Ein- und Ausgabe.md",
@@ -190,7 +191,7 @@
     "DEV/C++/Bibliotheken",
     "FH-Kiel/Programmieren in C++/Video 2.md",
     "FH-Kiel/Programmieren in C++/Vorlesung 2025 03 27 OOP.md",
-    "DEV/Python/Bibliothek numpy.md",
+    "DEV/Python/Bibliotheken/numpy.md",
     "FH-Kiel/Programmieren in C++/Video 1 Modularisierung.md",
     "FH-Kiel/AEM/BASH CheatSheet.md",
     "DEV/Python",
@@ -219,8 +220,6 @@
     "Funktionssicherheit.md",
     "create a link.md",
     "Textdokument (neu).txt",
-    "Welcome.md",
-    "FH-Kiel/Einführung in die IT-Sicherheit",
-    "FH-Kiel/AEM/Git"
+    "FH-Kiel/Einführung in die IT-Sicherheit"
   ]
 }
