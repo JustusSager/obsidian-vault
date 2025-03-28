@@ -1,7 +1,9 @@
 Quellbezug: 
  - Übung 1 (26.03.2025)
+
+#TODO Mathematischen Teil erstellen.
 # Verschlüsslung mit symmetrischem Schlüssel
-Bei der symmetrischen Verschlüsselung ist der selbe Schlüssel zum Ver- und Entschlüsseln verwendet. 
+Bei der symmetrischen Verschlüsselung ist der selbe Schlüssel zum Ver- und Entschlüsseln verwendet.
 
 ## Caesar
 ``` python

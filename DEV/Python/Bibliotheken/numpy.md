@@ -1,3 +1,4 @@
+numpy wird hauptsächlich zur Berechnung von/mit Vektoren und Matrizen verwendet. Siehe hierzu den Mathematischen Ansatz unter [[Vektoren]] und [[Matrizen]].
 # Basics
 ``` python
 import numpy as np
