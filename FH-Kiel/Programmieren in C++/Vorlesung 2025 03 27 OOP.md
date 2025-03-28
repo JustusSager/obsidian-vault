@@ -77,7 +77,7 @@ struct MyClass3 {
 }
 ```
 
-## Konstruktor
+## Konstruktor ^6cee62
 Kurz ctor
 Konstruktorname = Klassenname
 Wenn ctor nicht explizit definiert wird, wird automatisch einer generiert, welcher keine Übergabeparameter hat (Default ctor). Sobald ein Konstruktor definiert wird, wird kein default ctor mehr erstellt.
