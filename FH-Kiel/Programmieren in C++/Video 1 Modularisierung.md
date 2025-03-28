@@ -33,19 +33,6 @@ hello();
 einbindet. Daraufhin lässt sich die Funktion aufrufen.
 
 
-# CMake
-CMakeLists.txt beschreibt Projektkompilierung
-``` txt
-cmake_minimum_required(VERSION 3.21) # benötigte Version von CMake
-projekt(pic_videos) # Projektname
-
-set(CMAKE_CXX_STANDARD 11) # verwendeter C++ Standard
-
-add_executable(pic_videos main.cpp) # Einstiegspunt für die kompilireung und alle damit verbundenen Dateien
-```
-Bei erstellen oder löschen von Dateien muss CMake die Kompilierregeln einmal neu generieren.
-Dabei wird der "cmake-build-debug" Ordner generiert/aktualisiert. Dort landet nach dem kompilieren auch die excecutable.
-
 # Konstanten
 konstanten können auf verschiedene Weise definiert werden
 ``` C++

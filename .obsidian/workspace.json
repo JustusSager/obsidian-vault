@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DEV/Python/Bibliotheken/numpy.md",
+                "file": "FH-Kiel/Programmieren in C++/Video 1 Modularisierung.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "numpy"
+              "title": "Video 1 Modularisierung"
             }
           }
         ]
@@ -178,8 +178,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2dd2c858119cc690",
+  "active": "9b5bfaf38d713f56",
   "lastOpenFiles": [
+    "FH-Kiel/Programmieren in C++/Vorlesung 2025 03 27 OOP.md",
+    "DEV/C++/Speicherverwaltung.md",
+    "FH-Kiel/Programmieren in C++/Video 1 Modularisierung.md",
+    "FH-Kiel/Programmieren in C++/Compiler, Compilersystem und co..md",
+    "DEV/C++/Bibliotheken/Datum und Uhrzeit.md",
+    "DEV/Python/Bibliotheken/numpy.md",
     "DEV/C++/Bibliotheken/Einlesen von Dateien.md",
     "DEV/Python/Bibliotheken",
     "FH-Kiel/Programmieren in C++/Standardbibliotheken std.md",
@@ -189,10 +195,6 @@
     "DEV/C++/Bibliotheken/Strings.md",
     "DEV/C++/Bibliotheken/Weitere Module.md",
     "DEV/C++/Bibliotheken",
-    "FH-Kiel/Programmieren in C++/Video 2.md",
-    "FH-Kiel/Programmieren in C++/Vorlesung 2025 03 27 OOP.md",
-    "DEV/Python/Bibliotheken/numpy.md",
-    "FH-Kiel/Programmieren in C++/Video 1 Modularisierung.md",
     "FH-Kiel/AEM/BASH CheatSheet.md",
     "DEV/Python",
     "DEV/Untitled.md",
@@ -204,7 +206,6 @@
     "DEV",
     "FH-Kiel/Programmieren in C++/5 C++ OOP.md",
     "FH-Kiel/Testen von Software/Organisatorisches.md",
-    "FH-Kiel/Programmieren in C++/Compiler, Compilersystem und co..md",
     "FH-Kiel/Programmieren in C++/0 Orga.md",
     "FH-Kiel/Programmieren in C++",
     "FH-Kiel/Einführung in die IT-Sicherheit/0 Organisation.md",

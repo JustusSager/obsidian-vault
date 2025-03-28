@@ -1,5 +1,4 @@
-# Speicherverwaltung
-## Stack- oder auch Stapelspeicher
+# Stack- oder auch Stapelspeicher
 Wird automatisch vom Compiler verwaltet. D.h. Objekte werden im Scope automatisch erzeugt und bereinigt. 
 Die Stackgröße ist i.d.R. begrenzt.
 First-In Last-out Stapelstruktur, interne Adressierung über Stapelzeiger (engl. stack pointer)
@@ -13,14 +12,14 @@ void f(int p) {
 }
 ```
 
-## Heapspeicher
+# Heapspeicher
 Frei allokierbarer Speicherpool
 Manuelle Verwaltung (new / delete)
 	in der Regel benutzerspezifische ctor/dtor nötig. Siehe dazu [[Vorlesung 2025 03 27 OOP#^6cee62|Konstruktor]].
 Rohe Zeiger -> sollte man im modernen C++ soweit möglich vermeiden.
 Objektlebenszeit über den Scope hinweg.
 
-### Dynamische Heapspeicherverwaltung im C-Stil
+## Dynamische Heapspeicherverwaltung im C-Stil
 ``` C++
 #include <cstdlib>
 #include <cassert>
@@ -44,7 +43,7 @@ int main() {
 }
 ```
 
-Dynamische Heapspeicherverwaltung im C++ Stil
+## Dynamische Heapspeicherverwaltung im C++ Stil
 ``` C++
 #include <iostream>
 // #include <new> // meist sowieso da
