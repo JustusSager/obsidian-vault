@@ -28,3 +28,9 @@ rmdir <directory>
 # bearbeiten einer Datei
 nano <file>
 ```
+
+Ein und Ausgaben in Befehl leiten
+``` bash
+# Erstellt eine Datei mit dem Inhalt "Hallo Welt!"
+echo "Hallo Welt!" > test.txt 
+```

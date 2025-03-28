@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "FH-Kiel/Programmieren in C++/Standardbibliotheken std.md",
+                "file": "FH-Kiel/Programmieren in C++/Vorlesung 2025 03 27 OOP.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Standardbibliotheken std"
+              "title": "Vorlesung 2025 03 27 OOP"
             }
           }
         ]
@@ -88,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "2eb47d29e5300c43",
@@ -180,18 +180,22 @@
   },
   "active": "9b5bfaf38d713f56",
   "lastOpenFiles": [
+    "FH-Kiel/Programmieren in C++/Video 2.md",
     "FH-Kiel/Programmieren in C++/Video 1 Modularisierung.md",
-    "FH-Kiel/AEM/BASH CheatSheet.md",
-    "FH-Kiel/AEM/Git CheatSheet.md",
+    "FH-Kiel/Programmieren in C++/Vorlesung 2025 03 27 OOP.md",
     "FH-Kiel/Programmieren in C++/Standardbibliotheken std.md",
+    "FH-Kiel/AEM/BASH CheatSheet.md",
+    "DEV/Python/Bibliothek numpy.md",
+    "DEV/Python",
+    "DEV/Untitled.md",
+    "FH-Kiel/AEM/Git CheatSheet.md",
+    "FH-Kiel/Testen von Software/Übung 1 (26.03.2025).md",
     "FH-Kiel/Einführung in die IT-Sicherheit/1 Bedrohungen und Risiken.md",
     "FH-Kiel/Einführung in die IT-Sicherheit/2 Grundlagen Kryptographie.md",
-    "FH-Kiel/Programmieren in C++/Vorlesung 2025 03 27 OOP.md",
     "DEV/C++",
     "DEV",
     "FH-Kiel/Programmieren in C++/5 C++ OOP.md",
     "FH-Kiel/Testen von Software/Organisatorisches.md",
-    "FH-Kiel/Testen von Software/Übung 1 (26.03.2025).md",
     "FH-Kiel/Programmieren in C++/Compiler, Compilersystem und co..md",
     "FH-Kiel/Programmieren in C++/0 Orga.md",
     "FH-Kiel/Programmieren in C++",
@@ -213,7 +217,6 @@
     "FH-Kiel/AEM/Git/Untitled.md",
     "FH-Kiel/AEM/Git",
     "FH-Kiel/AEM",
-    "FH-Kiel/Untitled.md",
-    "FH-Kiel/Testen von Software"
+    "FH-Kiel/Untitled.md"
   ]
 }
