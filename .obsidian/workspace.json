@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DEV/Postgresql/Extensions_Plugins/pg_cron.md",
+                "file": "FH-Kiel/Testen von Software/Vorlesungsfolien Nr3 Testen im Software-Lebenszyklus.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "pg_cron"
+              "title": "Vorlesungsfolien Nr3 Testen im Software-Lebenszyklus"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "#TODO",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -170,15 +170,26 @@
   },
   "active": "9b5bfaf38d713f56",
   "lastOpenFiles": [
+    "Software und Projektplanung/Anforderungsdefinition.md",
+    "FH-Kiel/Testen von Software/Vorlesungsfolien Nr3 Testen im Software-Lebenszyklus.md",
+    "Software und Projektplanung",
+    "Images/koordination_integration_und_test.png",
+    "FH-Kiel/Einführung in die IT-Sicherheit/1 Bedrohungen und Risiken.md",
+    "Images/Integrationsstrategien.png",
+    "2025-03-31.md",
+    "Images/v-modell.png",
+    "Images/Komponententest_zusammenspiel.png",
+    "FH-Kiel/Testen von Software/Organisatorisches.md",
+    "FH-Kiel/Testen von Software/Übung 1 (26.03.2025).md",
+    "Tools/Obsidian.md",
+    "DEV/Postgresql/Extensions_Plugins/pg_cron.md",
     "KEEA/KWP Ablaufplan GIS & PostGis.md",
     "DEV/BASH CheatSheet.md",
-    "DEV/Postgresql/Extensions_Plugins/pg_cron.md",
     "DEV/Postgresql/Extensions_Plugins",
     "DEV/Postgresql",
     "DEV/Python/Bibliotheken/PyQGIS.md",
     "KEEA",
     "DEV/Git CheatSheet.md",
-    "Tools/Obsidian.md",
     "Mathematik/Vektoren.md",
     "Tools/Obsidian",
     "Tools",
@@ -196,16 +207,9 @@
     "FH-Kiel/Einführung in die IT-Sicherheit/2 Grundlagen Kryptographie.md",
     "DEV/Untitled.md",
     "Mathematik",
-    "FH-Kiel/Einführung in die IT-Sicherheit/1 Bedrohungen und Risiken.md",
-    "FH-Kiel/Einführung in die IT-Sicherheit/0 Organisation.md",
-    "FH-Kiel/Programmieren in C++/Video 1 Modularisierung.md",
-    "FH-Kiel/Programmieren in C++/Compiler, Compilersystem und co..md",
     "DEV/Python/Bibliotheken",
-    "FH-Kiel/Programmieren in C++/Standardbibliotheken std.md",
     "DEV/C++/Bibliotheken",
     "DEV/Python",
-    "FH-Kiel/Testen von Software/Übung 1 (26.03.2025).md",
-    "DEV/C++",
     "Images/beispiel_bedrohungsbaum.png",
     "Images/dread_scale.png",
     "Images/schutzziele_modelle.png",
