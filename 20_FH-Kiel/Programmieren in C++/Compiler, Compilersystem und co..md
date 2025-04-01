@@ -27,3 +27,24 @@ add_executable(pic_videos main.cpp) # Einstiegspunt für die kompilireung und al
 ```
 Bei erstellen oder löschen von Dateien muss CMake die Kompilierregeln einmal neu generieren.
 Dabei wird der "cmake-build-debug" Ordner generiert/aktualisiert. Dort landet nach dem kompilieren auch die excecutable.
+
+
+# Compileroptimierung
+Der Compiler ist fleißig dabei den geschriebenen Code zu optimieren. Häufig sind dabei die Optimierungen das Compilers besser, als die Optimierung, die dem Entwickler einfallen würden.
+## Copy Elision
+- Elision engl. = Auslassung
+- Compiler vermeidet ...
+Siehe Folie 151 ff.
+
+Beispiel:
+``` C++
+#include <vector>
+std::vector<int> createData(unsigned int size) {
+	std::vector<int> result{}; // 
+	for (int idx=0; idx < size; ++idx) {
+		result.push_back(idx);
+	}
+	return result;
+}
+```
+Nach dem scope dieser Funktion existiert "result" zwar, ist aber niemandem zugeordnet. Hier ist Spielraum für den Compiler zu optimieren. 

@@ -66,45 +66,7 @@ int global_a {42}; // Definition und Initialisierung
 
 Das Keyword "extern" sorgt dafür, dass in der Header Datei die Variable "global_a" nur deklariert wird, jedoch nicht definiert. Das wird benötigt da ansonsten der include zu einer Mehrfachdefinition von global_a führt.
 
-# Keyword "static" ^940195
-Das Keyword static sorgt dafür, dass ein Name (also ein Bezeichner für Variablen und Funktionen) nur innerhalb des Moduls zur Verfügung steht. Dadurch lassen sich Namen über die Module hinweg mehrfach verwenden.
-
-Beispiel:
-modul1.hpp
-``` C++
-void CallMe();
-static void f(); // eig. werden nicht-öffentliche Funktionen hier gar nicht angegeben. Vorwärtsdeklaration würde man eher in modul1.cpp machen.
-```
-modul1.cpp
-``` C++
-// static void f(); // Vorwärtsdeklaration
-static int a {5};
-void CallMe() {
-	f();
-}
-static void f() {
-	std::cerr << "Static" << std:: endl;
-}
-```
-main.cpp
-``` C++
-#include "modul1.hpp"
-int main() {
-	CallMe(); // ok
-	f(); // Linkfehler, da static 
-}
-```
-modul2.cpp
-``` C++
-static int a {5}; // ok da static
-void CallMe() { // Linkfehler, da dublicate Symbol. CallMe() gibts schon in modul1
-	int x {5};
-}
-```
-
-## static in Klassen
-#TODO Static in Klassen kann vewendet werden, um "Dinge" einer Klasse ohne Objektinstanziierung zu nutzen.  
-# Namensräume
+# Namensräume ^e9da44
 Namensräume sollten nur innerhalb von .cpp Dateien bwz. nur innerhalb von fest definierten Blöcken verwendet werden, um den Namensraum auf einen abgesteckten Bereich zu begrenzen.
 main.cpp
 ``` C++
@@ -132,7 +94,7 @@ int main() {
 
 ## Anonymer Namensraum
 ist ein Namensraum, der keinen identifier hat. Dadurch steht der Inhalt nur innerhalb von dem Modul zur Verfügung. Stichwort Kapselung -> internal linkage.
-Eine alternative Form der Kapselung zu [[#^940195|static]].
+Eine alternative Form der Kapselung zu [[Schlüsselwörter in C++#^0a1f78|static]].
 Funktioniert auch für lokale [[#^5925c2|Typdefinition]].
 
 modul1.hpp

@@ -1,0 +1,1 @@
+Siehe [[Arrays und Vektoren]], [[Einlesen von Dateien]], [[Exceptions]], [[Konsolen Ein- und Ausgabe]], [[Strings]], [[Speicherverwaltung]].
