@@ -79,8 +79,7 @@ Um zu bewerten, ob von einer Bedrohung eine konkrete Gefährdung ausgeht, müsse
 #TODO
 ![[Pasted image 20250326211928.png]]
 
-# Schutzziele
-
+# Schutzziele ^b9a4e3
 ### Modelle
 Hier sind 2 verschiedene Modelle die die wichtigsten Schutzziele dargestellt. Links die CIA-Triade, Rechts das VIVA-Modell. Im vergleich fällt auf, dass in der CIA-Triade die Authentizität fehlt.
 ![[schutzziele_modelle.png]]

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_DEV/Testen von Software.md",
+                "file": "20_FH-Kiel/Programmieren in C++/Vorlesung 2025 04 03.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Testen von Software"
+              "title": "Vorlesung 2025 04 03"
             }
           }
         ]
@@ -170,6 +170,15 @@
   },
   "active": "9b5bfaf38d713f56",
   "lastOpenFiles": [
+    "21_KEEA/Solarpotenzialberechnung.md",
+    "20_FH-Kiel/Programmieren in C++/Vorlesung 2025 04 03.md",
+    "20_FH-Kiel/Grundlagen Projektmanagement/GPM_Fallstudie_SoSe_2025.pdf",
+    "3_Software und Projektplanung/Scrum.md",
+    "20_FH-Kiel/Grundlagen Projektmanagement",
+    "20_FH-Kiel/Einführung in die IT-Sicherheit/2 Grundlagen Kryptographie.md",
+    "20_FH-Kiel/Einführung in die IT-Sicherheit/1 Bedrohungen und Risiken.md",
+    "2_Mathematik/Mathematik der Kryptographie.md",
+    "2_Mathematik/Matrizen.md",
     "1_DEV/Kotlin/Bibliotheken/Testen mit JUnit5.md",
     "1_DEV/Testen von Software.md",
     "1_DEV/Kotlin/Bibliotheken",
@@ -195,23 +204,14 @@
     "FH-Kiel/Orga.md",
     "3_Software und Projektplanung",
     "99_Images/koordination_integration_und_test.png",
-    "20_FH-Kiel/Einführung in die IT-Sicherheit/1 Bedrohungen und Risiken.md",
     "99_Images/Integrationsstrategien.png",
-    "2025-03-31.md",
     "99_Images/v-modell.png",
     "99_Images/Komponententest_zusammenspiel.png",
-    "20_FH-Kiel/Testen von Software/Organisatorisches.md",
-    "20_FH-Kiel/Testen von Software/Übung 1 (26.03.2025).md",
-    "9_Tools/Obsidian.md",
-    "1_DEV/Postgresql/Extensions_Plugins/pg_cron.md",
-    "21_KEEA/KWP Ablaufplan GIS & PostGis.md",
     "1_DEV/Postgresql/Extensions_Plugins",
     "1_DEV/Postgresql",
     "21_KEEA",
     "Tools/Obsidian",
     "9_Tools",
-    "2_Mathematik",
-    "1_DEV/Python/Bibliotheken",
     "99_Images/beispiel_bedrohungsbaum.png",
     "99_Images/dread_scale.png",
     "99_Images/schutzziele_modelle.png",

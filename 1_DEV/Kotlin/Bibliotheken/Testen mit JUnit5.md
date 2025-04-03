@@ -11,4 +11,12 @@ class ExampleTest {
 ```
 Es lassen sich Überprüfungen definieren die zum fehlschlagen des Tests führen, außerdem werden Exceptions, welche nicht vom Code abgefangen werden als Fehlschlag gewertet. 
 
+# Fallüberprüfung
+``` kotlin
+assertEquals(1+1, 2)
 
+val result = 1
+val expectedValue = 2
+result shouldBe expectedValue
+
+```
