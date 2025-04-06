@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20_FH-Kiel/Programmieren in C++/Vorlesung 2025 04 03.md",
+                "file": "1_DEV/PostgreSQL/Code Snippets.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Vorlesung 2025 04 03"
+              "title": "Code Snippets"
             }
           }
         ]
@@ -168,10 +168,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9b5bfaf38d713f56",
+  "active": "2dd2c858119cc690",
   "lastOpenFiles": [
-    "21_KEEA/Solarpotenzialberechnung.md",
+    "1_DEV/PostgreSQL/Extensions_Plugins/pg_cron.md",
+    "1_DEV/PostgreSQL/Code Snippets.md",
+    "1_DEV/C++/Bibliotheken/Exceptions.md",
+    "1_DEV/C++/Schlüsselwörter in C++.md",
+    "1_DEV/C++/OOP.md",
     "20_FH-Kiel/Programmieren in C++/Vorlesung 2025 04 03.md",
+    "21_KEEA/Solarpotenzialberechnung.md",
     "20_FH-Kiel/Grundlagen Projektmanagement/GPM_Fallstudie_SoSe_2025.pdf",
     "3_Software und Projektplanung/Scrum.md",
     "20_FH-Kiel/Grundlagen Projektmanagement",
@@ -182,7 +187,6 @@
     "1_DEV/Kotlin/Bibliotheken/Testen mit JUnit5.md",
     "1_DEV/Testen von Software.md",
     "1_DEV/Kotlin/Bibliotheken",
-    "1_DEV/C++/OOP.md",
     "1_DEV/Kotlin",
     "99_Images/OOP_Aggregation.png",
     "99_Images/OOP_Komposition.png",
@@ -190,25 +194,21 @@
     "1_DEV/C++/Lambda Ausdrücke.md",
     "20_FH-Kiel/Programmieren in C++/Video 3.md",
     "1_DEV/C++/Speicherverwaltung.md",
-    "1_DEV/C++/Schlüsselwörter in C++.md",
     "20_FH-Kiel/Programmieren in C++/Vorlesung 2025 03 27 OOP.md",
     "20_FH-Kiel/Programmieren in C++/Vorlesung 2025 04 01 OOP.md",
     "20_FH-Kiel/Programmieren in C++/Video 2.md",
-    "1_DEV/C++/Bibliotheken/Exceptions.md",
     "1_DEV/C++/Bibliotheken/Arrays und Vektoren.md",
     "1_DEV/C++/Bibliotheken/Untitled.md",
     "20_FH-Kiel/Programmieren in C++/Video 1 Modularisierung.md",
     "20_FH-Kiel/Programmieren in C++/Compiler, Compilersystem und co..md",
     "20_FH-Kiel/Testen von Software/Vorlesungsfolien Nr3 Testen im Software-Lebenszyklus.md",
-    "3_Software und Projektplanung/Anforderungsdefinition.md",
-    "FH-Kiel/Orga.md",
     "3_Software und Projektplanung",
     "99_Images/koordination_integration_und_test.png",
     "99_Images/Integrationsstrategien.png",
     "99_Images/v-modell.png",
     "99_Images/Komponententest_zusammenspiel.png",
-    "1_DEV/Postgresql/Extensions_Plugins",
-    "1_DEV/Postgresql",
+    "1_DEV/PostgreSQL/Extensions_Plugins",
+    "1_DEV/PostgreSQL",
     "21_KEEA",
     "Tools/Obsidian",
     "9_Tools",

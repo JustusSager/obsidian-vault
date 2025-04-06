@@ -235,6 +235,7 @@ int main() {
 ```
 
 # final
+## final bei Klassen
 Blockiert  die Vererbung einer Klasse.
 ``` C++
 class Example final {
@@ -243,3 +244,51 @@ class Example final {
 class Example2 : Example { // Diese Vererbung wäre unzulässig
 }
 ```
+
+## final bei Methoden einer Klasse
+Methoden, die mit final ausgezeichnet sind dürfen nicht mehr überschrieben werden.
+``` C++
+struct Base{
+	virtual int Op(int const a, int const b) const {
+		return a+b;
+	}
+};
+struct Derived : public Base{
+	int Op(int const a, int const b) const override final{
+		return Base::Op(a, b) + Base::Op(a, b);
+	}
+};
+struct Derived2 : public Derived{
+	// durch final erneutes Ueberschreiben nicht erlaubt!
+	int Op(int const a, int const b) const override{
+		return a-b;
+	}
+};
+```
+
+# virtual
+## virtual vor einer Methode einer Klasse
+#TODO Folie 188
+Eine Methode kann so überschrieben werden, dass zur Laufzeit ein Objekt einer Vererbungshierarchie dynamisch zugeordnet werden kann. 
+``` C++
+#include <iostream>
+#include <string>
+struct Basis {
+	std::string s = "Basis";
+	virtual std::string wert() const { return s; }
+	void print() const { std::cout << wert() << std::endl; }
+}
+struct Wert {
+	std::string s = "Wert";
+	virtual std::string wert() const { return s; }
+}
+int main() {
+	Wert w;
+	w.print();
+}
+```
+Bei "w.print()" wird auf das "print()" von "Basis" zugegriffen. "Basis" kennt jedoch nur seine eigene "wert()" Methode, welche auf das "s" von "Basis" zugreift und damit "Basis" zurückgibt.
+Durch das virtual bekommt der compiler die Information, dass der Zugriff auf "wert()" zur Laufzeit ausgewertet werden soll. Dadurch wird bei dem "print()" von "Basis" nicht mehr auf das "wert()" von "Basis" zugegriffen, sondern auf das "wert()" von "Wert".
+
+# override
+#TODO Folie 189ff.

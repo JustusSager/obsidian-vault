@@ -33,7 +33,7 @@ int main() {
 
 ### public, protected und private
 Man kann bei der Vererbung, die Zugriffsrechte der Methoden und Variablen, die man erbt, manipulieren.  Siehe dazu [[#^c813ad|Kapselung]]
-Bei "class" ist der default die "private" Vererbung. Bei "struct" ist es die "public" Vererbung
+Wenn der Erbende eine "class" ist, ist der default die "private" Vererbung. Bei "struct" ist es die "public" Vererbung.
 public
 - public Methoden und Variablen bleiben in der erbenden Klasse public.
 - protected Methoden und Variablen bleiben in der erbenden Klasse protected.
@@ -65,6 +65,24 @@ class MyClass1 {
 		int a;
 }
 ```
+
+### public
+Ein Zugriff auf die Variablen und Methoden ist ...
+- von außerhalb der Klasse (ausgenommen erbende Klassen) möglich
+- von erbenden Klassen möglich
+- innerhalb der eigenen Klasse möglich
+
+### protected
+Ein Zugriff auf die Variablen und Methoden ist ...
+- nicht mehr von außerhalb der Klasse (ausgenommen erbende Klassen) möglich
+- von erbenden Klassen möglich
+- innerhalb der eigenen Klasse möglich
+
+### private
+Ein Zugriff auf die Variablen und Methoden ist ...
+- nicht mehr von außerhalb der Klasse (ausgenommen erbende Klassen) möglich.
+- nicht mehr von den erbenden Klassen möglich.
+- innerhalb der eigenen Klasse möglich.
 
 ## 4. Polymorphismus (Vielgestaltigkeit)
 Sport PKW kann sich wie abstraktes KWZ verhalten.
@@ -123,6 +141,7 @@ struct MyClass3 {
 - Konstruktorname = Klassenname
 - Wenn ctor nicht explizit definiert wird, wird automatisch einer generiert, welcher keine Übergabeparameter hat (Default ctor). Sobald ein Konstruktor definiert wird, wird kein default ctor mehr erstellt.
 - Ein Konstruktor darf keine Exceptions auslösen
+- Konstruktoren werden nicht weitervererbt
 ``` C++
 struct Example {
 	int a;
@@ -218,6 +237,48 @@ int main() {
 }
 ```
 
+### Vererbung von Konstruktoren
+Konstruktoren werden in C++11 standardmäßig nicht weiter vererbt!
+``` C++
+#include <iostream>
+class Parent {
+protected:
+	int x_;
+public:
+	Parent() = default;
+	Parent(int const &x) : x_{x} {}
+	void SayX() {
+		std::cout << x_ << std::endl;
+	}
+};
+class Child : Parent {
+	
+}
+int main() {
+	Child c = Child(42) // funktioniert nicht 
+}
+```
+In Version C++17 (aufwärts) läufts irgendwie anders. Da würde es durchlaufen, solange in Child keine Konstruktoren definiert sind.
+
+Es lässt sich jedoch festlegen, dass die Konstruktoren mit übernommen werden.
+``` C++
+class Parent {
+protected:
+	int x_;
+public:
+	Parent() = default;
+	Parent(int const &x) : x_{x} {}
+	void SayX() {
+		std::cout << x_ << std::endl;
+	}
+};
+class Child : Parent {
+	using Parent::Parent // eindeutig die Konstruktoren mit übernehmen
+}
+int main() {
+	Child c = Child(42)
+}
+```
 
 ## Destruktor
 
@@ -298,6 +359,39 @@ class Auto {
 Garage und Person werden von Auto nur referenziert.
 
 ![[OOP_Aggregation.png]]
+
+## Überladen von Methoden
+Beim Überladen von Methoden bleibt der Rückgabewert gleich.
+### Überladen von Operatoren
+``` C++
+class Vektor{
+	double x_, y_;
+public:
+	Vektor(double x, double y) :
+	x_{x}, y_{y} {}
+	// Skalarprodukt
+	double operator*(Vektor const &rhs){
+		return this->x_*rhs.x_ + this->y_*rhs.y_;
+	}
+	// Multiplikation mit Skalar
+	Vektor operator*(double const &rhs){
+		return Vektor {this->x_*rhs, this->y_*rhs};
+	}
+};
+int main(){
+	Vektor v1 {1., 2.};
+	double s = v1*v1; // Skalarprodukt
+	Vektor v2 {v1 * 2.5};
+	Vektor v3 {2.5 * v1} // würde nicht gehen da der Operator * nur andersherum überladen wurde
+	return 0;
+}
+```
+
+
+
+## Überschreiben von Methoden
+
+
 # Begriffe
 Funktionen in einer Klasse heißen Methoden.
 	Eine Botschaft besteht aus dem Namen der Funktion und evtl. Argumenten.
