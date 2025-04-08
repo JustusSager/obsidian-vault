@@ -527,3 +527,117 @@ tag = hmac.hexdigest()
 
 print(tag)
 ```
+
+Erzeugen Sie einen anderen Schlüssel und verwenden Sie diesen zur Verifizierung:
+``` python 
+from Crypto.Hash import HMAC, SHA256
+from Crypto.Random import get_random_bytes
+
+k_ = get_random_bytes(16)
+
+hmac = HMAC.new(k_, digestmod=SHA256)
+hmac.update(m)
+
+try:
+    hmac.hexverify(tag)
+    print("Die Nachricht '%s' ist authentisch." % m)
+except ValueError:
+    print("Nachricht oder MAC wurden manipuliert oder es wurde ein falscher Schlüssel verwendet.")
+```
+Ergebnis:
+``` 
+Nachricht oder MAC wurden manipuliert oder es wurde ein falscher Schlüssel verwendet.
+```
+
+Ändern Sie vor dem Verifizieren die Nachricht $m$:
+``` python
+from Crypto.Hash import HMAC, SHA256
+from Crypto.Random import get_random_bytes
+
+hmac = HMAC.new(k, digestmod=SHA256)
+hmac.update(m)
+
+m = b'Lieber Bob, das ist meine Nachricht. Viele Gruesse, Alice und noch jemand anderes'
+
+try:
+    hmac.hexverify(tag)
+    print("Die Nachricht '%s' ist authentisch." % m)
+except ValueError:
+    print("Nachricht oder MAC wurden manipuliert oder es wurde ein falscher Schlüssel verwendet.")
+```
+Ergebnis:
+```
+Nachricht oder MAC wurden manipuliert oder es wurde ein falscher Schlüssel verwendet.
+```
+
+Ändern Sie vor dem Verifizieren den Message Authentication Code $tag$:
+``` python
+from Crypto.Hash import HMAC, SHA256
+from Crypto.Random import get_random_bytes
+
+hmac = HMAC.new(k, digestmod=SHA256)
+hmac.update(m)
+
+tag = hmac.hexdigest()
+
+try:
+    hmac.hexverify(tag)
+    print("Die Nachricht '%s' ist authentisch." % m)
+except ValueError:
+    print("Nachricht oder MAC wurden manipuliert oder es wurde ein falscher Schlüssel verwendet.")
+```
+Ergebnis:
+```
+Die Nachricht 'b'Lieber Bob, das ist meine Nachricht. Viele Gruesse, Alice und noch jemand anderes'' ist authentisch.
+```
+
+## Digitale Signaturen
+Bei der Digitalen Signatur wird zu einer Nachricht, mithilfe des Private-Key, eine Signatur erzeugt. Diese Signatur kann daraufhin, mithilfe des Public-Key und der empfangenen Nachricht, geprüft werden.
+
+Überlegen Sie sich, welche Funktionen handschriftliche Unterschriften im täglichen Leben haben.
+	Digitale Signaturen sind eine Bestätigung, dass eine Person an einer "Transaktion" beteiligt war. Wenn man z.B. in einem Geschäft mit Karte bezahlt, ist die Unterschrift dafür da, dass das Unternehmen nachweisen kann das die Transaktion mit der Person stattgefunden hat und das Geld abbuchen darf. Ein anderes Beispiel ist, dass Mieter und Vermieter beide den Mietvertrag zur Kenntnis genommen haben und einverstanden mit den Bedingungen sind. 
+
+Welche Konstellationen können beim Verifizieren einer Signatur zum Ergebnis "ungültig" führen?
+- Der Public-Key und der Private-Key bilden kein zusammenpassendes Schlüsselpaar.
+- Die Nachricht hat sich verändert.
+
+#TODO Irgendwas stimmt hier nicht (Crypto Signatur)
+``` python
+from Crypto.Signature import pkcs1_15
+from Crypto.Hash import SHA256
+from Crypto.PublicKey import RSA
+
+def Gen(bits=3072):
+    keypair = RSA.generate(bits, e=65537)
+    public_key = keypair.publickey().exportKey("PEM")
+    private_key = keypair.exportKey("PEM")
+    return public_key, private_key
+
+def Sign(private_key, m):
+    sk = RSA.importKey(private_key)
+    h = SHA256.new(m)
+    signature = pkcs1_15.new(sk).sign(h)
+    return signature
+
+def Vrfy(public_key, m, signature):
+    pk = RSA.import_key(public_key)
+    h = SHA256.new(m)
+    try:
+        pkcs1_15.new(public_key).verify(h, signature)
+        return 1
+    except (ValueError, TypeError):
+        return 0
+```
+
+``` python
+# Schlüsselpaar generieren
+public_key, private_key = Gen()
+
+# Nachricht signieren
+message = b'Dies ist eine aeusserst wichtige Nachricht von mir!'
+signature = Sign(private_key, message)
+
+# Signatur überprüfen
+result = Vrfy(public_key, message, signature)
+print(result)
+```

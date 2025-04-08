@@ -1,3 +1,4 @@
+[[Klassen und Strukturen|Klassen/Strukturen]] mit fest vordefinierten Werten.
 - Ähnlich zum Aufzählungstyp enum aus C
 - C enum ist ohne scope, bei C++ ist enum Klasse mit scope, d.h. enum ist Teil einer Klasse (bzw. eines structs)
 - C++ enum class == C++ enum struct

@@ -62,3 +62,64 @@ int main() {
 	return 0;
 }
 ```
+
+# std::deque
+Double Ended Queue
+``` C++
+#include <iostream>
+#include <deque>
+int main(){
+	std::deque<int> di {1, 2, 3, 4, 5};
+	di.pop_back();
+	for(auto const &v: di){
+		std::cout << v << std::endl;
+	}
+	di.pop_front();
+	for(auto const &v: di){
+		std::cout << v << std::endl;
+	}
+}
+```
+
+# std::queue
+Queue. 
+Achtung nicht threadsicher!
+``` C++
+#include <iostream>
+#include <queue>
+struct QElement{
+	QElement(std::string const &s) : word{s}{}
+	std::string word;
+};
+int main(){
+	std::queue<QElement> q;
+	// produce
+	q.emplace("Hallo");
+	q.emplace("schoene");
+	q.emplace("Welt!");
+	// consume
+	do{
+		std::cout << q.front().word << std::endl;
+		q.pop();
+	} while(!q.empty());
+}
+```
+
+# std::map
+Assoziativer Container
+``` C++
+#include <iostream>
+#include <map>
+int main(){
+	std::map<std::string, std::string> mymap;
+	mymap.emplace("one", "eins");
+	mymap.emplace("two", "zwei");
+	mymap["three"] = "drei";
+	std::cout << mymap["one"] << std::endl;
+	std::cout << mymap["two"] << std::endl;
+	std::cout << mymap["three"] << std::endl;
+	for(auto const &v: mymap){
+		std::cout << v.first << " " << v.second << std::endl;
+	}
+}
+```

@@ -327,7 +327,7 @@ Bei der Variante 2 wird das Objekt "händisch" allokiert (ctor) und zerstört (d
 - Richtig angewendetes RAII extrem wichtig für die Vermeidung von Speicherleaks!
 - Eigener dtor nicht nötig wenn Klasse nur ...
 	- 'Werte' d.h. keinen dynamisch mit new/delete verwalteten Speicher nutzt
-	- Container wie bspw. [[Arrays und Vektoren#^3232b4|std::vector]] aus der Standardbibliothek nutzt, da diese bereits selbst Acquise und Freigabe des dynamischen Speichers verwalten
+	- Container wie bspw. [[Standardcontainer#^3232b4|std::vector]] aus der Standardbibliothek nutzt, da diese bereits selbst Acquise und Freigabe des dynamischen Speichers verwalten
 
 ## Alternative zur [[#^ec603c|Vererbung]] ^bfc8e0
 Nicht immer ist eine Vererbung sinnvoll zur Modellierung des Systems. Alternativ gibt es dazu:

@@ -1,3 +1,26 @@
+# extern
+Kann für globale Variablen verwendet werden, sollten nicht zu sehr genutzt werden.
+Eine Möglichkeit der Strukturierung ist alle in einem Modul zu sammeln. Damit ist eindeutig wo sie sind und welche existieren.
+Globale Variablen erlauben Zugriff auf anderswo definierte Bezeichner.
+
+globals.hpp
+``` C++
+#ifndef FH_PROJEKT_GLOBALS_HPP 
+#define FH_PROJEKT_GLOBALS_HPP
+
+extern int global_a; // Deklaration
+
+#endif
+```
+globals.cpp
+``` C++
+#include "globals.hpp"
+
+int global_a {42}; // Definition und Initialisierung
+```
+
+Das Keyword "extern" sorgt dafür, dass in der Header Datei die Variable "global_a" nur deklariert wird, jedoch nicht definiert. Das wird benötigt da ansonsten der include zu einer Mehrfachdefinition von global_a führt.
+
 # const
 ## const Methoden einer Klasse
 Methoden mit dem Schlüsselwort "const" dürfen keine Memberwerte verändern, sie können ausschließlich lesend auf Memberwerte zugreifen.

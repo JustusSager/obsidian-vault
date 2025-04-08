@@ -46,7 +46,7 @@ int main() {
 ```
 
 ## Dynamische Heapspeicherverwaltung im C++ Stil
-Siehe hierzu auch [[Arrays und Vektoren]], das ist eine abstrakte Implementierung der Dynamischen Heapspeicherverwaltung.
+Siehe hierzu auch [[Standardcontainer]], das ist eine abstrakte Implementierung der Dynamischen Heapspeicherverwaltung.
 ``` C++
 #include <iostream>
 // #include <new> // meist sowieso da
