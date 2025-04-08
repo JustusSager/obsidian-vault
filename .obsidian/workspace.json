@@ -13,22 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_DEV/C++/Bibliotheken/Einlesen von Dateien.md",
+                "file": "1_DEV/C++/OOP.md",
                 "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Einlesen von Dateien"
+              "title": "OOP"
             }
           }
         ]
@@ -63,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "TODO",
+                "query": "bfc8e0",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -180,6 +170,19 @@
   },
   "active": "09ac7f6d0263ad55",
   "lastOpenFiles": [
+    "1_DEV/C++/Schlüsselwörter in C++.md",
+    "1_DEV/C++/OOP.md",
+    "Pasted image 20250408152112.png",
+    "1_DEV/C++/Klassen und Strukturen.md",
+    "1_DEV/C++/Bibliotheken/Standardcontainer.md",
+    "1_DEV/C++/Bibliotheken/Strings.md",
+    "1_DEV/C++/Bibliotheken/Weitere Module.md",
+    "20_FH-Kiel/Programmieren in C++/Video 1 Modularisierung.md",
+    "1_DEV/C++/Bibliotheken/Standardalgorithmen.md",
+    "1_DEV/C++/Funktoren.md",
+    "1_DEV/C++/Speicherverwaltung.md",
+    "Klassen und Strukturen^6cee62.md",
+    "1_DEV/C++/Bibliotheken/Einlesen von Dateien.md",
     "1_DEV/C++/Bibliotheken/Exceptions.md",
     "20_FH-Kiel/Einführung in die IT-Sicherheit/2 Grundlagen Kryptographie.md",
     "20_FH-Kiel/Einführung in die IT-Sicherheit/1 Bedrohungen und Risiken.md",
@@ -188,26 +191,13 @@
     "1_DEV/Untitled",
     "1_DEV/IT Sicherheit",
     "1_DEV/Testen von Software.md",
-    "20_FH-Kiel/Programmieren in C++/Video 1 Modularisierung.md",
     "20_FH-Kiel/Programmieren in C++/Vorlesung 2025 04 01 OOP.md",
-    "1_DEV/C++/Klassen und Strukturen.md",
     "20_FH-Kiel/Programmieren in C++/Vorlesung 2025 04 03.md",
     "20_FH-Kiel/Programmieren in C++/Vorlesung 2025 03 27 OOP.md",
     "20_FH-Kiel/Programmieren in C++/0 Orga.md",
-    "1_DEV/C++/Schlüsselwörter in C++.md",
     "1_DEV/C++/Compiler, Compilersystem und co..md",
     "1_DEV/C++/Namensräume.md",
     "20_FH-Kiel/Programmieren in C++/Video 2.md",
-    "20_FH-Kiel/Programmieren in C++/Video 3.md",
-    "1_DEV/C++/OOP.md",
-    "1_DEV/C++/Enumerationen.md",
-    "1_DEV/C++/Funktoren.md",
-    "1_DEV/C++/Speicherverwaltung.md",
-    "1_DEV/C++/Bibliotheken/Standardalgorithmen.md",
-    "Funk.md",
-    "1_DEV/C++/Bibliotheken/Standardcontainer.md",
-    "1_DEV/C++/Bibliotheken/Iteratoren.md",
-    "1_DEV/C++/Bibliotheken/Einlesen von Dateien.md",
     "1_DEV/Tools",
     "20_FH-Kiel/Grundlagen Projektmanagement/GPM_Fallstudie_SoSe_2025.pdf",
     "20_FH-Kiel/Grundlagen Projektmanagement",
@@ -225,7 +215,6 @@
     "99_Images/beispiel_bedrohungsbaum.png",
     "99_Images/dread_scale.png",
     "99_Images/schutzziele_modelle.png",
-    "99_Images/Pasted image 20250326211928.png",
     "FH-Kiel/Einführung in die IT-Sicherheit/Untitled.canvas"
   ]
 }

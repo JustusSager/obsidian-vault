@@ -94,7 +94,7 @@ public:
 	int GetA() {
 		return Example::a_;
 	}
-}
+};
 int Example::a_ {42}; // Initialisierung muss out-of-line sein!
 int main() {
 	Example e1, e2;
@@ -119,7 +119,7 @@ public:
 	void Print() {
 		std::cout << a_ << std::endl;
 	}
-}
+};
 int main() {
 	Example e1 = Example::Create(42);
 	Example e2 = Example::Create(22);
@@ -138,7 +138,7 @@ struct Example {
 		static int val {0};
 		return val++;
 	}
-}
+};
 int main() {
 	Example e1, e2;
 	std::cout << e1.GetVal() << " " << e2.GetVal() << std::endl;
@@ -161,7 +161,7 @@ public:
 }
 void SayLevel(Container const &c) {
 	std::cout << "level: " << c.level << std::endl;
-}
+};
 int main() {
 	Container c;
 	SayLevel(c);
@@ -185,7 +185,7 @@ public:
 void std::ostream &operator<<(std::ostream &os, Container const &c) {
 	os << "level: " << c.level << std::endl;
 	return os;
-}
+};
 int main() {
 	Container c;
 	SayLevel(c);
@@ -208,7 +208,7 @@ public:
 		os << "level: " << c.level << std::endl;
 		return os;
 	}
-}
+};
 int main() {
 	Container c;
 	SayLevel(c);
@@ -249,7 +249,7 @@ struct Test {
 		std::cout << "rechts" << std::endl;
 		return *this;
 	}
-}
+};
 int main() {
 	Test t;
 	t.links().links().rechts().links();
@@ -263,9 +263,9 @@ Blockiert  die Vererbung einer Klasse.
 ``` C++
 class Example final {
 	int a;
-}
+};
 class Example2 : Example { // Diese Vererbung wäre unzulässig
-}
+};
 ```
 
 ## final bei Methoden einer Klasse
@@ -289,7 +289,8 @@ struct Derived2 : public Derived{
 };
 ```
 
-# virtual
+# virtual ^3bfa14
+
 ## virtual vor einer Methode einer Klasse
 #TODO Folie 188
 Eine Methode kann so überschrieben werden, dass zur Laufzeit ein Objekt einer Vererbungshierarchie dynamisch zugeordnet werden kann. 
@@ -300,11 +301,11 @@ struct Basis {
 	std::string s = "Basis";
 	virtual std::string wert() const { return s; }
 	void print() const { std::cout << wert() << std::endl; }
-}
+};
 struct Wert {
 	std::string s = "Wert";
 	virtual std::string wert() const { return s; }
-}
+};
 int main() {
 	Wert w;
 	w.print();
@@ -313,5 +314,53 @@ int main() {
 Bei "w.print()" wird auf das "print()" von "Basis" zugegriffen. "Basis" kennt jedoch nur seine eigene "wert()" Methode, welche auf das "s" von "Basis" zugreift und damit "Basis" zurückgibt.
 Durch das virtual bekommt der compiler die Information, dass der Zugriff auf "wert()" zur Laufzeit ausgewertet werden soll. Dadurch wird bei dem "print()" von "Basis" nicht mehr auf das "wert()" von "Basis" zugegriffen, sondern auf das "wert()" von "Wert".
 
-# override
+## virtual bei der Vererbung von Klassen ^5cddfb
+Lösung für das [[OOP#^4efd9e|Rautenproblem]]. 
+``` C++
+#include <iostream>
+struct P{
+	int data {42};
+};
+struct C1 : public virtual P{};
+struct C2 : public virtual P{};
+struct D : public C1, public C2{
+	int GetData(){
+		// geht nur wenn vorher
+		// mit virtual geerbt!
+		// sonst mehrdeutig
+		return data;
+	}
+};
+int main() {
+	D d;
+	std::cout << d.GetData();
+}
+```
+
+# override ^f4ccf4
+- Mit override verlangt der Compiler, dass das Überschreiben der Methode auch wirklich eine andere überschreibt
+- Hilft zur Vermeidung und zum Entdecken von Programmierfehlern
+- I.d.R. immer override beim überschreiben von Methoden verwenden!
+
+``` C++
+struct Basis {
+	virtual int Calc(int a, int b){
+		return a+b;
+	}
+};
+struct Child : public Basis {
+	// Programmierfehler?!
+	// Override erzeugt Compilierfehler
+	int Calc(int a) override {
+		return a+a;
+	}
+	// Wuerde sonst Basis::Calc "verstecken"
+	// int Calc(int a) {return a+a;}
+};
+int main() {
+	Child c;
+	std::cout << c.Calc(22) << std::endl;
+}
+```
+
 #TODO Folie 189ff.

@@ -31,6 +31,20 @@ int main() {
 }
 ```
 
+## Typkonvertierung
+``` C++
+#include <string>  
+int main() {  
+    std::string s1 {"1234"};  
+    int i = std::stoi(s1);  
+    std::string s2 {"1234.567"};  
+    double d = std::stod(s2);  
+    std::string s3 {"1234.567"};  
+    float f = std::stof(s3);  
+    std::cout << i << " " << d << " " << f << std::endl;  
+}
+```
+
 ## Vergleich mit C-Strings
 C-Strings sind einfach nur char-Arrays, auf die über Pointer zugegriffen wird. Es gibt hierbei keine dynamische Länge und die Verarbeitung ist unhandlich.
 Die C++-Strings sind eine eigene Klasse mit eigenen Methoden die das manipulieren der strings erleichtern. Es gibt eine dynamische Speicherverwaltung, die es erlaubt, dass die Länge des Strings nicht zur Compile-Zeit bereits bekannt sein muss.
