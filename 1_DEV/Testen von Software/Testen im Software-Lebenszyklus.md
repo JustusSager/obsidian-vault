@@ -1,9 +1,5 @@
-# Vor Folie 21
-#TODO 
-
-# Testen im Software-Lebenszyklus
 ![[v-modell.png]]
-## Komponententest
+# Komponententest
 Definition: Testen der einzelnen Softwarebausteine (Komponenten) im Anschluss an deren Programmierung.
 Die einzelnen Komponenten (z.B. eine bestimmte Klasse) wird isoliert getestet, um nach internen Fehlern zu suchen. Eine Wechselwirkung mit anderen Komponenten wird nicht überprüft.
 
@@ -12,7 +8,7 @@ Kann verschiedene Bezeichnungen haben:
 - Klassentest (z.B. in Java, C++)
 - Unit-Test (z.B. in Pascal)
 
-### Umsetzung
+## Umsetzung
 Das Testobjekt ist i.d.R kein eigenständig ausführbarer Programmteil. Daher wird mithilfe eines Testtreibers auf die öffentlichen Schnittstellen der Komponente zugegriffen. Der Testtreiber kann eigenständig ausgeführt werden und ermöglicht den Komponententest mithilfe von simulierten Ein-/Ausgaben aus der Komponente.
 Wenn der Quellcode vorliegt (bzw. Tester = Entwickler) kann sehr entwicklungsnah getestet werden und z.B. mithilfe von einem Debugger die exakte Fehlerquelle festgestellt werden.
 Platzhalter (oder Stubs) werden benötigt, wenn die Komponente komplexere Eingaben benötigt oder Ausgaben zu verarbeiten sind. Stubs stellen dabei ggf. Testdaten (Dummies) zur Verfügung.
@@ -24,7 +20,7 @@ Dabei sollten folgende Test durchgeführt werden:
 - Test auf Funktionalität (Test mit erfolgreicher Eingabe)
 - Negativtest (Testfall welcher falsche/unzulässige Eingabewerte enthält)
 - Je nach [[Anforderungsdefinition]] weitere (z.B. auf Effizienz, Änderbarkeit, ... )
-### Ziel
+## Ziel
 Funktionalität der Komponente sicherstellen
 - Werden alle Spezifikationen erfüllt?
 - Werden alle Funktionen korrekt ausgeführt?
@@ -34,61 +30,61 @@ Test der Robustheit
 	- Ohne Ausnahmebehandlung fließen die Falscheingaben sonst in die Verarbeitung.
 	- Mögliche Folgen wären Fehlfunktionen und Programmabstürze.
 
-### Häufig gefundene Fehler
+## Häufig gefundene Fehler
 - Fehler in der Verarbeitung 
 - Fehlende Funktionen
 
-## Integrationstest
+# Integrationstest
 Definition: Test des Zusammenspiels einzelner Softwarebausteine (Komponenten) im Anschluss an deren Integration.
 Hierbei wird die Wechselwirkung zwischen verschiedenen zusammenhängenden Komponenten getestet. Dazu werden verschiedene zusammenhängende Bausteine (Komponenten) zu größeren Baugruppen zusammengefasst und auf ihr Zusammenspiel getestet. Jeder Baustein sollte dafür vorher für sich schonmal getestet worden sein. 
 
-### Umsetzung
+## Umsetzung
 Dieses (Teil-) System ist i.d.R immer noch kein selbstständig ausführbares System. Daher wird wieder ein Testtreiber benötigt, der die zusammengesetzten Komponenten auf ihre Wechselwirkung untereinander überprüft. Diese Testtreiber übernehmen hierbei wieder die Simulation einer Umgebung für das (Teil-) System. Platzhalter ersetzen hierbei wieder die fehlenden Komponenten. 
 
-### Ziel
+## Ziel
 - Schnittstellenfehler ermitteln, um korrektes Zusammenspiel der Komponenten sicher zu stellen.
 	- Platzhalter aus dem Komponententest werden hier (zum Teil) zu "realen" Komponenten, die potenziell anders reagieren.
 - u.a. auch Blick auf Performance und Sicherheit
 - 
-### Integrationsstrategien
+## Integrationsstrategien
 Es existieren verschiedene Integrationsstrategien. Die Wahl der Strategie muss dabei die Testeffizienz und Aufwand berücksichtigen. 
 ![[Integrationsstrategien.png]]
 
-#### Bottom-Up
+### Bottom-Up
 Systematische Integration von unten nach oben. Begonnen wird dabei mit den Komponenten, die keine weiteren Programmteile aufrufen. Schrittweise werden die Komponenten hinzugefügt, welche auf bereits integrierte aufbauen.
 Dadurch entstehen keine Lücken, die durch Platzhalter gefüllt werden müssen. Jedoch müssen Vorgelagerte Komponenten über Testtreiber simuliert werden. Diese Strategie lässt sich jedoch nur bei streng hierarchisch aufgebauter Software umsetzen. Daher ist diese Strategie in Rheinform kaum von praktischer Relevanz.
 Empfohlen bei Neuentwicklung und bei großen, verteilten Entwicklerteams.
 
-#### Top-Down
+### Top-Down
 Die Integration verläuft systematisch von oben nach unten. D.h. es wird mit der Komponente begonnen welche von keinem anderen Baustein aufgerufen wird. Schrittweise werden die Komponenten integriert, die von dem bereits zusammengefügten Teil aufgerufen werden. Es werden dadurch keine Testtreiber benötigt, jedoch müssen alle noch nicht integrierten Komponenten durch Platzhalter ersetzt werden. Ähnlich zur Bottom-Up Strategie funktioniert dies nur in streng hierarchisch aufgebauter Software und ist dadurch in ihrer Rheinform kaum von praktischer Relevanz.
 Empfohlen vor allem bei der Nutzung von Fremdsoftware oder Frameworks.
 
-#### geschäftsprozessorientierte Integration
+### geschäftsprozessorientierte Integration
 - Integration wird nach Geschäftsprozessen durchgeführt
 - Integriert werden jeweils die Komponenten, die von einem Geschäftsprozess benötigt werden
 - Wird auch End-to-End Test genannt
 - Testtreiber ersetzen hierbei übergeordnete Bausteine
 - untergeordnete Komponenten werden mit Platzhaltern ersetzt
 
-#### Ad-Hoc-Integration
+### Ad-Hoc-Integration
 - Bereits getestete Komponenten werden (soweit möglich) unmittelbar nach der Programmierung und erfolgtem Komponententest integriert
 - Keine Verzögerungen der Tests, führt ggf. zur Verkürzung des gesamten Softwareentwicklungsprozesses
 - Je nach Art der Komponente werden Testtreiber und Platzhalter benötigt
 - Diese Strategie kann quasi immer genutzt werden, in der Praxis oft in verbindung mit anderen Strategien
 
-#### Big Bang
+### Big Bang
 - Integration erfolgt erst wenn alle Komponenten vorliegen
 - Testbereich hat viel "Leerlauf", es kann lange nichts getestet werden.
 - Der Test wird deutlich komplizierter und umfangreicher. Fehlerwirkungen treten gehäuft auf und lassen sich nur schwer nachvollziehen.
 - Diese Strategie wird z.B. bei Wartungs- oder Erweiterungsprojekten sowie bei IT-Migrationen eingesetzt
 
-### Integration und Tests koordinieren
+## Integration und Tests koordinieren
 ![[koordination_integration_und_test.png]]
 
-## Systemtest
+# Systemtest
 Das Gesamtsystem wird geprüft auf die Einhaltung der spezifischen [[Anforderungsdefinition|Anforderungen]]. Zu diesem Zeitpunkt wurden bereits alle Komponenten und deren Zusammenspiel getestet, es soll hier jedoch das Gesamtsystem unter Einsatzbedingungen und aus der Perspektive des Anwenders getestet werden. 
 
-### Umsetzung
+## Umsetzung
 - Das System sollte unter realer Systemumgebung getestet werden mit praxisnahen Daten
 - Es werden keine Testtreiber und Platzhalter mehr eingesetzt
 - Alle externen Schnittstellen werden unter Produktivbedingungen getestet
@@ -96,31 +92,31 @@ Das Gesamtsystem wird geprüft auf die Einhaltung der spezifischen [[Anforderung
 	- Fehler könnten zu Schäden an der Produktivumgebung führen
 	- Tests in der realen Produktivumgebung sind schwer reproduzierbar
 
-### Ziel
+## Ziel
 - Test des integrierten Systems aus Anwendersicht
 - Vollständige und korrekte Umsetzung aller [[Anforderungsdefinition|Anforderungen]] 
 	- Zum Testen von Anforderungen siehe [[Anforderungsdefinition#^692e46|Testen von funktionalen Anforderungen]] und [[Anforderungsdefinition#^a713b5|Testen von nicht-funktionalen Anforderungen]] 
 - Einsatz in realer Systemumgebung sicherstellen
 
-## Abnahmetest
+# Abnahmetest
 Definition: Der Abnahmetest prüft das Produkt aus Kunden- bzw. Anwendersicht bevor es produktiv eingesetzt wird – Werden die Anforderungen und Erwartungen des Kunden/Anwenders erfüllt?
 Dabei wird der Kunde aktiv an dem Test beteiligt. Bei einer Individualsoftware der Auftraggeber oder Kunde. Bei einem Massenprodukt eine repräsentative Auswahl von Anwendern. 
 
-### Mögliche Formen des Abnahmetests
+## Mögliche Formen des Abnahmetests
 
-#### Test auf vertragliche Akzeptanz
+### Test auf vertragliche Akzeptanz
 Es wird durch den Kunden geprüft, ob das Produkt den vertraglichen Anforderungen gerecht wird. Hierbei wird sich an die vertraglich vereinbarten Abnahmekriterien gehalten, was prinzipiell bereits intern durch den Systemtest abgedeckt ist, der Kunde bestimmt jedoch hierbei die Testfälle. Der Test findet außerdem in der Umgebung des Kunden statt.
 
-#### Test auf Benutzerakzeptanz
+### Test auf Benutzerakzeptanz
 Hierbei wird getestet, ob das Produkt die Erwartungen verschiedener Anwender erfüllt und einen positiven Eindruck hinterlässt oder ob das Produkt potenziell gravierende Fehler aufweist, die die Benutzerakzeptanz reduziert.
 Akzeptanztests sind in Abhängigkeit der Individualisierung einer Software durchzuführen. Für kundenspezifische Individualsoftware müssen zwangsläufig alle Anforderungen der speziellen Anwendergruppe erfüllt werden. Für Standardsoftware ist es aufgrund der Vielzahl verschiedener Anwendergruppen generell schwierig, allgemeine Akzeptanz zu erreichen.
 
-#### Feldtest
+### Feldtest
 Es findet eine Auslieferung von stabilen Vorabversionen der Software (Beta-Version) an einen repräsentativ ausgewählten Kundenkreis statt. Dadurch kann der Kunde bereits vorher das Produkt in seiner jeweiligen produktiven Systemumgebung testen und Fehlerwirkungen protokolieren.
 Alternativ vorab ein Alpha-Test einer Vorabversion (Alpha-Version). Repräsentative Anwender in der Umgebung des Herstellers nehmen diesen Test vor.
 Der Feldtest soll über den Systemtest hinaus sicherstellen, dass dass die Software in einer Vielzahl verschiedener Umgebungen ausführbar ist. Die Nutzung von Feldtests senkt den Aufwand des Systemtests und ermöglicht weitaus umfassendere Tests (Ermöglichung von Tests in unterschiedlichen Umgebungen).
 
-#### Testen nach der Produktabnahme
+### Testen nach der Produktabnahme
 Der Kunde hat das Produkt abgenommen und es in Produktion gebracht. Die eigentliche Entwicklungsphase und die damit verbundenen Tests sind bereits abgeschlossen, aber die Software selbst steht noch am Anfang ihrer Lebenszeit. Sie wird oft über viele Jahre eingesetzt und auch weiterentwickelt.
 - Sie ist sicher nicht fehlerfrei und wird deshalb weiter bearbeitet.
 - Sie muss an neue Bedingungen angepasst oder in neue Umgebungen integriert werden.

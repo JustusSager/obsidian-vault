@@ -11,10 +11,12 @@
             "id": "09ac7f6d0263ad55",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "pdf",
+              "state": {
+                "file": "20_FH-Kiel/Grundlagen Projektmanagement/GPM_Fallstudie_SoSe_2025.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "GPM_Fallstudie_SoSe_2025"
             }
           }
         ]
@@ -166,17 +168,22 @@
   },
   "active": "09ac7f6d0263ad55",
   "lastOpenFiles": [
+    "20_FH-Kiel/Programmieren in C++/Video 1 Modularisierung.md",
+    "1_DEV/Testen von Software/Testen von Software.md",
+    "20_FH-Kiel/Testen von Software/Organisatorisches.md",
+    "1_DEV/Testen von Software/Testbeschreibung.md",
+    "1_DEV/Testen von Software/Testen im Software-Lebenszyklus.md",
+    "1_DEV/Testen von Software",
+    "20_FH-Kiel/Testen von Software/Übung 1 (26.03.2025).md",
+    "99_Images/mehrfachvererbung-rautenproblem.png",
     "21_KEEA/Solarpotenzialberechnung.md",
     "21_KEEA/KWP Ablaufplan GIS & PostGis.md",
-    "1_DEV/Testen von Software.md",
     "1_DEV/C++/Bibliotheken/Standardcontainer.md",
     "1_DEV/C++/OOP.md",
     "1_DEV/C++/Schlüsselwörter in C++.md",
-    "Pasted image 20250408152112.png",
     "1_DEV/C++/Klassen und Strukturen.md",
     "1_DEV/C++/Bibliotheken/Strings.md",
     "1_DEV/C++/Bibliotheken/Weitere Module.md",
-    "20_FH-Kiel/Programmieren in C++/Video 1 Modularisierung.md",
     "1_DEV/C++/Bibliotheken/Standardalgorithmen.md",
     "1_DEV/C++/Funktoren.md",
     "1_DEV/C++/Speicherverwaltung.md",
@@ -187,14 +194,9 @@
     "20_FH-Kiel/Einführung in die IT-Sicherheit/1 Bedrohungen und Risiken.md",
     "1_DEV/IT Sicherheit/Grundbegriffe der IT-Sicherheit.md",
     "20_FH-Kiel/Einführung in die IT-Sicherheit/0 Organisation.md",
-    "1_DEV/Untitled",
     "1_DEV/IT Sicherheit",
     "20_FH-Kiel/Programmieren in C++/Vorlesung 2025 04 01 OOP.md",
     "20_FH-Kiel/Programmieren in C++/Vorlesung 2025 04 03.md",
-    "20_FH-Kiel/Programmieren in C++/Vorlesung 2025 03 27 OOP.md",
-    "20_FH-Kiel/Programmieren in C++/0 Orga.md",
-    "1_DEV/C++/Compiler, Compilersystem und co..md",
-    "1_DEV/C++/Namensräume.md",
     "1_DEV/Tools",
     "20_FH-Kiel/Grundlagen Projektmanagement/GPM_Fallstudie_SoSe_2025.pdf",
     "20_FH-Kiel/Grundlagen Projektmanagement",

@@ -110,7 +110,7 @@ int main() {
 
 #### Rautenproblem ^4efd9e
 Bei der Mehrfachvererbung kann es zum Rautenproblem kommen.
-![[Pasted image 20250408152112.png]]
+![[mehrfachvererbung-rautenproblem.png]]
 Lösung:
 Verwendung von virtueller Vererbung. Siehe dazu [[Schlüsselwörter in C++#^5cddfb|virtual bei der Vererbung von Klassen]]. 
 

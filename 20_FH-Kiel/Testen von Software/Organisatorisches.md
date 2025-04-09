@@ -1,7 +1,0 @@
-- Übungen sind freiwillig aber man kann Bonuspunkte erarbeiten für die Klausur
-	- Abgabe der Bonusaufgaben über GitLab (https://gitlab.iue.fh-kiel.de/tsw-2025/gruppen)
-	- 2er Gruppen
-	- Taschenrechner im Web entwickeln (Kotlin, JavaScript, HTML, CSS)
-	- Dokumentation über GitLab Issues
-
-# Vorlesungskram lass ich in Goodnotes
