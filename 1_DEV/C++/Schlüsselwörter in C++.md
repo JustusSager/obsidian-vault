@@ -364,3 +364,8 @@ int main() {
 ```
 
 #TODO Folie 189ff.
+
+# noexcept
+#TODO
+
+# 

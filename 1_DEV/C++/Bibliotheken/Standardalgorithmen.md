@@ -140,3 +140,28 @@ int main() {
 	for(auto const &v: vs) std::cout << v << std::endl;
 }
 ```
+
+
+# utility
+
+## std::swap
+``` C++
+#include <utility>
+int main() {
+	unique_ptr<int> ptr1 {5};
+	unique_ptr<int> ptr2 {7};
+	// Die beiden Pointer vertauschen
+	std::swap(ptr1, ptr2);
+}
+```
+
+## std::move
+``` C++
+#include <utility>
+int main() {
+	unique_ptr<int> ptr1 {5};
+	unique_ptr<int> ptr2;
+	// Pointer ptr1 verschieben zu ptr2. Danach zeigt ptr1 auf nullptr
+	ptr2 = std::move(ptr1);
+}
+```

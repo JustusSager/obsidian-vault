@@ -193,6 +193,30 @@ int main() {
 }
 ```
 
+
+### Copy Konstruktor
+#TODO Copy Konstruktor
+``` C++
+A(A const &a) {  
+    _nptr = std::make_unique<int>(*a._nptr);  
+    _aptr = std::make_unique<std::array<int, 5>>();  
+    for (int i{0}; i < _aptr->size(); i++) {  
+        (*_aptr)[i] = (*a._aptr)[i];  
+    }  
+    std::cout << "class A copy constructor: " << *_nptr << std::endl;  
+}
+```
+
+### Move Konstruktor
+#TODO Move Konstruktor
+``` C++
+A(A &&a) noexcept {  
+    std::swap(_nptr, a._nptr);  
+    std::swap(_aptr, a._aptr);  
+    std::cout << "class A move constructor: " << *_nptr << std::endl;  
+}
+```
+
 ## Destruktor ^cf0bc4
 - Kurz dtor
 - Wenn der dtor nicht explizit angegeben wird, wird automatisch einer erzeugt.
