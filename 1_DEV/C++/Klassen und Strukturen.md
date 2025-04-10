@@ -195,7 +195,8 @@ int main() {
 
 
 ### Copy Konstruktor
-#TODO Copy Konstruktor
+Der Copy Konstruktor erhält ein Objekt der selben Klasse als Übergabeparameter und erstellt ein ein neues Objekt in welchen er eine tiefe Kopie der Attribute des übergebenen Objekts erstellt. 
+#TODO Copy Konstruktor: Wann wird der Copy und wann der Move Konstruktor aufgerufen?
 ``` C++
 A(A const &a) {  
     _nptr = std::make_unique<int>(*a._nptr);  
@@ -208,6 +209,7 @@ A(A const &a) {
 ```
 
 ### Move Konstruktor
+Der Move Konstruktor erhält 
 #TODO Move Konstruktor
 ``` C++
 A(A &&a) noexcept {  

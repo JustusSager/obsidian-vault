@@ -1,21 +1,42 @@
-Siehe: https://scrumguides.org/scrum-guide.html
+Siehe Quelle: https://scrumguides.org/scrum-guide.html
+#TODO Scrum vervollständigen
 
 # Rollen
 ## Product Owner ^5b2639
 
+
 ## Scrum Master ^499486
+
 
 ## Developer ^f7908e
 
+
 # Artefakte
 ## Product Backlog ^2f9374
+Das Produkt Backlog ist die Zielsetzung des gesamten Projekts, welche mit den Stakeholdern abgestimmt wird. Es ist die Planungsgrundlage für die Sprints.
+
+Das Produkt Backlog besteht aus folgendem:
+1. Product Goal
+	- Das Ziel des Projekts
+2. Aufgaben
+	- Eine geordnete Liste an Aufgaben welche benötigt werden um das Produkt zu verbessern / um das Product Goal zu erreichen.
 
 ## Sprint Backlog ^48d745
+Das Sprint Backlog ist eine vollständig transparente Dokumentation der Tätigkeiten innerhalb des Sprints. Es wird von den Developern für die Developer erstellt.
+
+Das Sprint Backlog besteht aus 3 Aspekten:
+1. Sprint Goal
+	- Das Sprint Goal wird während des [[#^7bb76e|Sprint Planning]] festgelegt.
+	- Das Sprint Goal beinhaltet was am Ende des Sprints erreicht sein soll. 
+	- Es dient dazu, bei der Bearbeitung der Aufgaben, nicht den Fokus zu verlieren. Eine Art Leitlinie für den Sprint.
+2. Aufgaben
+	- Es werden Aufgaben aus dem [[#^2f9374|Produkt Backlog]] ausgewählt welche innerhalb des Sprints abgearbeitet werden sollen.
+	- Diese Aufgaben können jedoch im laufe des Sprints noch angepasst und in ihrer Umsetzung verändert werden.
+3. Die Ergebnisse der [[#^2ab3fb|Sprint Retrospective]], festgehalten für künftige Sprints.
 
 ## Increment ^8c2259
-
-## Definition of Done
-
+Das Increment besteht aus folgendem:
+1. Definition of Done
 
 # Events
 ## Sprint
@@ -30,7 +51,7 @@ Ein Sprint ist das Basisevent, von dem die anderen Events teil sind. Ein Sprint 
    Gegen Ende des Sprints.
 4. Sprint Retrospective
    Als letztes Event des Sprints.
-## Sprint Planning
+## Sprint Planning ^7bb76e
 - Wird immer zu beginn eines neuen Sprints durchgeführt.
 - Das gesamte Scrum Team arbeitet gemeinsam an dem Plan für den kommenden Sprint.
 - Product Owner stellt sicher, dass die Anwesenden bereit sind, die wichtigsten Punkte des Product Backlogs zu besprechen.
@@ -63,7 +84,7 @@ Das Sprint Goal, die aus dem [[#^2f9374|Product Backlog]] gewählten Punkte und 
 - Es sollte nicht nur auf eine Präsentation des Scrum Teams reduziert werden.
 - Zeit begrenzt auf maximal 4 Stunden. 
 
-## Sprint Retrospective
+## Sprint Retrospective ^2ab3fb
 - Scrum Team untersucht wie der letzte Sprint lief und was verbessert werden könnte. 
 - Scrum Team stellt heraus, welche Änderungen die Effektivität des kommenden Sprints erhöhen könnte.
 - Änderungen können auch im [[#^48d745|Sprint Backlog]] festgehalten werden.
