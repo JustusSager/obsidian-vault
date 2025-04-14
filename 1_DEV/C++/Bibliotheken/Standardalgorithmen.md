@@ -156,12 +156,19 @@ int main() {
 ```
 
 ## std::move
+- macht aus einer [[Wertkategorien#^ee367c|lvalue]] eine [[Wertkategorien#^87baab|rvalue Referenz]].
+- Ein Objekt wird verschoben statt kopiert.
 ``` C++
 #include <utility>
+#include <string>
+#include <vector>
 int main() {
-	unique_ptr<int> ptr1 {5};
-	unique_ptr<int> ptr2;
-	// Pointer ptr1 verschieben zu ptr2. Danach zeigt ptr1 auf nullptr
-	ptr2 = std::move(ptr1);
+	std::string str {"Salut"};
+	std::vector<std::string> v;
+	// by copy, str wird als rvalue kopiert und dann eingefügt
+	v.push_back(str);
+	// move, weniger teuer, str wird verschoben statt kopiert
+	// der Inhalt von str ist jetzt in v. str gültig aber Inhalt weg 
+	v.push_back(std::move(str));
 }
 ```

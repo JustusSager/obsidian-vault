@@ -298,3 +298,26 @@ int main(){
 
 # Überschreiben von Methoden
 #TODO 
+
+
+# Rule of three/five/zero
+Best Practice bezüglich der Implementierung bestimmter Methoden in Klassen.
+## Rule of three
+- Eher aus der Zeit vor C++ 11
+- Wenn eine der folgenden Methoden implementiert werden muss, sollten alle implementiert werden bzw. explizit unnutzbar gemacht werden (=delete)
+	- [[Klassen und Strukturen#^cf0bc4|Destruktor]] 
+	- [[Klassen und Strukturen#^264f73|Kopier-Konstruktor]] 
+	- [[Klassen und Strukturen#^7570ab|Kopier-Zuweisungsoperator]] 
+
+## Rule of Five
+- Erweiterung der Rule of three ab C++ 11
+- manchmal auch "Big five" genannt.
+- Wenn eine der folgenden Methoden implementiert werden muss, sollten alle implementiert werden bzw. explizit unnutzbar gemacht werden (=delete)
+	- [[Klassen und Strukturen#^cf0bc4|Destruktor]] 
+	- [[Klassen und Strukturen#^264f73|Kopier-Konstruktor]] 
+	- [[Klassen und Strukturen#^7570ab|Kopier-Zuweisungsoperator]] 
+	- [[Klassen und Strukturen#^7043d0|Verschiebe-Konstruktor]] 
+	- [[Klassen und Strukturen#^711d64|Verschiebe-Zuweisungsoperator]] 
+
+## Rule of zero
+Wenn möglich sollten keine speziellen Destruktoren, Kopier-, Verschiebe-Konstruktoren, Kopier- und Verschiebe-Zuweisungsoperatoren verwendet werden. Aber sobald eins nötig ist, z.B. der Destruktor zur Speicherfreigabe, sollten alle Implementiert werden.

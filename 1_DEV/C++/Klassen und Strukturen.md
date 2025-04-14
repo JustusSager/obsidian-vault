@@ -186,7 +186,7 @@ public:
 	}
 };
 class Child : Parent {
-	using Parent::Parent // eindeutig die Konstruktoren mit übernehmen
+	using Parent::Parent; // eindeutig die Konstruktoren mit übernehmen
 }
 int main() {
 	Child c = Child(42)
@@ -194,9 +194,9 @@ int main() {
 ```
 
 
-### Copy Konstruktor
-Der Copy Konstruktor erhält ein Objekt der selben Klasse als Übergabeparameter und erstellt ein ein neues Objekt in welchen er eine tiefe Kopie der Attribute des übergebenen Objekts erstellt. 
-#TODO Copy Konstruktor: Wann wird der Copy und wann der Move Konstruktor aufgerufen?
+## Kopier-Konstruktor ^264f73
+- Es wird eine tiefe Kopie der Attribute einer [[Wertkategorien#^58c9e0|lvalue Referenz]] in ein neues Objekt geschrieben. 
+- Die alten Werte bleiben dabei unverändert.
 ``` C++
 A(A const &a) {  
     _nptr = std::make_unique<int>(*a._nptr);  
@@ -208,14 +208,41 @@ A(A const &a) {
 }
 ```
 
-### Move Konstruktor
-Der Move Konstruktor erhält 
-#TODO Move Konstruktor
+## Kopier-Zuweisungsoperator ^7570ab
+- ähnlich dem [[#^264f73|Kopier-Konstruktor]], nur für die Zuweisung eines Objekts statt der Instanziierung.
+- es kann auch ein default gesetzt werden
 ``` C++
-A(A &&a) noexcept {  
-    std::swap(_nptr, a._nptr);  
-    std::swap(_aptr, a._aptr);  
-    std::cout << "class A move constructor: " << *_nptr << std::endl;  
+A&(A const &a) {  
+    _nptr = std::make_unique<int>(*a._nptr);  
+    _aptr = std::make_unique<std::array<int, 5>>();  
+    for (int i{0}; i < _aptr->size(); i++) {  
+        (*_aptr)[i] = (*a._aptr)[i];  
+    }  
+    std::cout << "class A copy constructor: " << *_nptr << std::endl;  
+}
+// default 
+A& operator= (A& a) = default;
+```
+
+
+## Verschiebe-Konstruktor ^7043d0
+- Teil der Verschiebesemantik
+- Die Attribute einer [[Wertkategorien#^87baab|rvalue Referenz]] werden in das neue Objekt verschoben. 
+- Die alten Werte werden dadurch ungültig.
+	- Je nachdem müssen/sollten die Werte händisch ungültig gemacht werden.
+``` C++
+A(A &&rhs) : _nptr{std::move(rhs._nptr)} {}
+```
+
+## Verschiebe-Zuweisungsoperator ^711d64
+- Teil der Verschiebesemantik
+-  ähnlich dem [[#^7043d0|Verschiebe-Konstruktor]], nur für die Zuweisung eines Objekts statt der Instanziierung.
+- Siehe dazu [[Wertkategorien]].
+``` C++
+A &operator=(A &&rhs)  noexcept {  
+    if (this == &rhs) return *this;
+    this->_nptr = std::move(rhs._nptr);
+    return *this;
 }
 ```
 
