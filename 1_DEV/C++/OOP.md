@@ -248,7 +248,7 @@ int main() {
 }
 ```
 
-Aufruf über [[Standardcontainer#^711fef|smarte Pointer]]:
+Aufruf über [[Memory Management Lib#^711fef|smarte Pointer]]:
 ``` C++
 #include <memory>
 int main() {  
