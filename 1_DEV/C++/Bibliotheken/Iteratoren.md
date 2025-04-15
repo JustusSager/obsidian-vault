@@ -29,3 +29,35 @@ int main(){
 	// cit->instanceID = 42; // Fehler, nur Lesezugriff erlaubt da const
 }
 ```
+
+# Input Iterator
+- Unterstützt Vergleichsoperationen
+- Dereferenzierung als [[Wertkategorien#^4dff75|rvalue]].
+- Kann inkrementiert werden.
+
+# Output Iterator
+- Dereferenzierung als [[Wertkategorien#^ee367c|lvalue]].
+- Kann inkrementiert werden.
+
+# Forward Iterator
+
+^bba8d7
+
+- Aufbauend auf Input und Output Iterator
+
+# Bidirectional Iterator
+
+^0bd03d
+
+- Aufbauend auf Forward Iterator
+- Kann dekrementiert werden
+
+# Random Access Iterator
+
+^258c73
+
+- Aufbauend auf Bidirectional Iterator
+- unterstützt Rechenoperationen
+- unterstützt Ungleichungen
+- unterstützt "compound assignment operations (+= and -=)"
+- unterstützt "offset dereference operator ([])"

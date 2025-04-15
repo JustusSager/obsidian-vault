@@ -6,7 +6,7 @@
 a = 55; // a ist lvalue
 ```
 
-# rvalue
+# rvalue ^4dff75
 - Temporäre Objekte
 - kein identifizierbarer Speicherbereich
 - auch right-hand-side-value genannt
