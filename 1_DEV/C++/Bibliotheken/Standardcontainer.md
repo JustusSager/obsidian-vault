@@ -136,7 +136,7 @@ int main(){
 # Container adaptors
 - Liefern ein anderes Interface für einen darunterliegenden sequentiellen Container.
 
-## ## std::queue
+## ## std::queue ^cbeee3
 - https://cplusplus.com/reference/queue/queue/
 - Queue. 
 - Achtung, nicht threadsicher!

@@ -3,6 +3,8 @@ Ein Compilersystem ist ein Gesamtpaket aus:
 - Präprozessor -> ersetzt unter anderem "#include <>"
 - Compiler -> einzelne Dateien werden in Maschinencode übersetzt
 - Linker -> verbindet alle übersetzten Dateien zu einer ausführbaren Datei
+	- Beim statischen einbinden von externen Bibliotheken wird eine "Kopie" der Bibliothek mit in die executable reingelinkt.
+	- Beim dynamischen einbinden von externen Bibliotheken wird nur auf diese verwiesen.
 
 Es gibt verschiedene Compilersysteme, aber das GNU Compilersystem wird empfohlen.
 	https://msys2.org

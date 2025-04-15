@@ -263,6 +263,7 @@ Verwendet für:
 - kurz setter
 - Verändern den Wert eines Attributes
 
+## #TODO wo gehört das hin?
 
 ``` C++
 class Example{
@@ -290,7 +291,7 @@ Bei der Variante 1 ist das Objekt "e" auf dem Stack. Dabei wird "e" automatisch 
 Bei der Variante 2 wird das Objekt "händisch" allokiert (ctor) und zerstört (dtor). Das Objekt auf das der Zeiger "pt" zeigt liegt hierbei auf dem Heap.
 
 # Vererbung
-
+#TODO Vererbung
 
 # Verschachtelte Klassen / Strukturen
 ``` C++
@@ -369,8 +370,3 @@ struct Example{
 - Standardmäßig ist die Zugriffsart bei einer Klasse "private". Bei einem "struct" ist sie standardmäßig "public".
 - Siehe dazu [[OOP#^c813ad|Kapselung]].
 
-# Begriffe
-Funktionen in einer Klasse heißen Methoden.
-	Eine Botschaft besteht aus dem Namen der Funktion und evtl. Argumenten.
-		Objekte verständigen sich über Botschaften.
-Variablen einer Klasse heißen Attribute (Properties)
