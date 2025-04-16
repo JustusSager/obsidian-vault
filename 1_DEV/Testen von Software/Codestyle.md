@@ -1,0 +1,2 @@
+- Im Projekt sollte ein einheitlicher Codestyle verwendet werden. 
+- Es existieren Plugins, die dabei unterstützen.
