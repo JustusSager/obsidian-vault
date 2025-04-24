@@ -109,4 +109,3 @@ Vorgabe: Server soll maximal 200 Clientanfragen gleichzeitig bearbeiten können.
 - Lasttest: Server bearbeitet 200 Clientanfragen gleichzeitig
 - Stresstest: Server bearbeitet 210 Clientanfragen gleichzeitig
 - Test auf Robustheit: Clients werden bei laufender Transaktion abgeschaltet
-

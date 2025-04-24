@@ -1,4 +1,3 @@
-Siehe Quelle: https://scrumguides.org/scrum-guide.html
 #TODO Scrum vervollständigen
 
 # Rollen
@@ -51,10 +50,7 @@ Das Sprint Backlog besteht aus 3 Aspekten:
 Das Increment besteht aus folgendem:
 1. Definition of Done ^66e2c1
 
-# Events
-
-^f0f8b4
-
+# Events ^f0f8b4
 ## Sprint
 Ein Sprint ist das Basisevent, von dem die anderen Events teil sind. Ein Sprint hat immer eine feste Länge von einem Monat oder weniger. Durch diesen festen Intervalle kann eine Voraussehbarkeit des Projekts durch regelmäßige Inspektion und Überarbeitung der Ziele sichergestellt werden.
 
@@ -105,3 +101,6 @@ Das Sprint Goal, die aus dem [[#^2f9374|Product Backlog]] gewählten Punkte und 
 - Scrum Team stellt heraus, welche Änderungen die Effektivität des kommenden Sprints erhöhen könnte.
 - Änderungen können auch im [[#^48d745|Sprint Backlog]] festgehalten werden.
 - Sprint Retrospective wird als letzter Schritt des Sprints durchgeführt, um den Sprint zu beenden.
+
+# Quelle
+- https://scrumguides.org/scrum-guide.html
