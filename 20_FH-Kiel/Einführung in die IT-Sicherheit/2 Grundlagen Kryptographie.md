@@ -1,11 +1,12 @@
-Quellbezug: 
- - Übung 1 (26.03.2025)
-
+Bei der Kryptographie soll eine Nachricht mithilfe eines Schlüssels so unkendlich gemacht we
 Für den mathematischen Ansatz der Kryptographie siehe auch [[Mathematik der Kryptographie]].
 # Verschlüsslung mit symmetrischem Schlüssel
-Bei der symmetrischen Verschlüsselung ist der selbe Schlüssel zum Ver- und Entschlüsseln verwendet.
+- Bei der symmetrischen Verschlüsselung wird der selbe Schlüssel zum Ver- und Entschlüsseln verwendet.
 
-## Caesar
+## Caesar-Verschlüsselung
+- Es wird jeder Buchstabe innerhalb der Nachricht einzeln betrachtet.
+- Jeder Buchstabe wird um eine bestimmte Anzahl $k$ relativ zum Alphabet verschoben.
+- z.B. Bei dem Schlüssel $k=3$ wird der Buchstabe $A$ der Nachricht zu einem $D$ in der Nachricht.
 ``` python
 import random
 
@@ -114,7 +115,7 @@ Result: 19 DASISTSUPERGEHEIM
 <b>Überlegen Sie sich, welche Gründe gegen den Einsatz der Caesar-Chiffre heutzutage sprechen!</b>
 Die Caesar-Chiffre ist heute sehr einfach zu knacken, da es nur 26 mögliche Kombinationen gibt. Mithilfe einer einfachen Schleife kann man sich alle möglichen Kombinationen erstellen lassen, und dann die Möglichkeiten durchgehen, welche einen sinnvollen Satz ergibt.
 
-## AES 
+## AES-Verschlüsselung
 ### mit ECB Mode
 ECB Mode = Electronic Code Blocks Mode
 
