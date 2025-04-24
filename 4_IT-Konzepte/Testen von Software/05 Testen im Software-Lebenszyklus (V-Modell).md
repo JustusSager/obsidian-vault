@@ -1,4 +1,20 @@
+# Vorgehensmodelle
+Es existieren verschiedene Vorgehensmodelle für den Softwarelebenszyklus. 
+Beispiele dafür sind:
+- [[03 Fundamentaler Testprozess#^18f604|Wasserfallmodell]]
+- Allgemeines V-Modell
+- [[Scrum]]
+- ...
+
+# V-Modell
+- Das V-Modell ist ein Vorgehensmodell speziell für die Softwareentwicklung
+- Die Entwicklung und die Tests existieren hierbei als zwei gleichberechtigte Zweige
+- Die Vorbereitung der Tests findet parallel zur Softwareentwicklung statt.
+- Es wird über den gesamten Softwarelebenszyklus getestet.
+- Jede Stufe wird anhand der jeweiligen Vorstufe verifiziert.
 ![[v-modell.png]]
+
+Als Erweiterung des V-Modells existiert noch das W-Modell.
 # Komponententest
 Definition: Testen der einzelnen Softwarebausteine (Komponenten) im Anschluss an deren Programmierung.
 Die einzelnen Komponenten (z.B. eine bestimmte Klasse) wird isoliert getestet, um nach internen Fehlern zu suchen. Eine Wechselwirkung mit anderen Komponenten wird nicht überprüft.
