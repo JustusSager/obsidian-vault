@@ -2,14 +2,27 @@ Siehe Quelle: https://scrumguides.org/scrum-guide.html
 #TODO Scrum vervollständigen
 
 # Rollen
-## Product Owner ^5b2639
-
-
-## Scrum Master ^499486
-
-
 ## Developer ^f7908e
-
+Die Developer sind die, die an dem Projekt arbeiten.
+Sie sind verantwortlich für:
+- Erstellung eines Plans für den kommenden Sprint ([[#^48d745|Sprint Backlog]])
+- Qualitätssicherung entsprechend der [[#^66e2c1|Definition of Done]].
+- flexibel den Tagesplan entsprechend des Sprint Goals anpassen.
+- Sich gegenseitig professionell in die Verantwortung ziehen.
+## Product Owner ^5b2639
+Der Product Owner ist eine Person und ist verantwortlich für:
+- die Maximierung der Projektergebnisse des Scrum Teams.
+- Entwicklung und eindeutige Kommunikation des Produkt Goals.
+- Erstellung und klare Kommunikation des Product Backlogs.
+- Sortierung/Priorisierung der Inhalte des Product Backlogs.
+- Sicherstellen, dass das Produkt Backlog transparent und verständlich für alle ist.
+Diese Arbeit kann der Product Owner selbst durchführen, oder an bestimmte Teammitglieder weitergeben. Dennoch bleibt der Product Owner in der Verantwortung.
+## Scrum Master ^499486
+Der Scrum Master ist verantwortlich für die Einhaltung der Scrum Richtlinien. Dabei geht es um folgende Punkte:
+- Die Teammitglieder über die Verfahrensweisen aufklären und in deren Umsetzung unterstützen.
+- Teamgeist-Entwicklung unterstützen und ggf. Anpassung der Teamzusammensetzung
+- Sicherstellen, dass die [[#^f0f8b4|Scrum Events]] ordnungsgemäß durchgeführt werden.
+- Die Effektivität des Teams sicherstellen.
 
 # Artefakte
 ## Product Backlog ^2f9374
@@ -36,9 +49,12 @@ Das Sprint Backlog besteht aus 3 Aspekten:
 
 ## Increment ^8c2259
 Das Increment besteht aus folgendem:
-1. Definition of Done
+1. Definition of Done ^66e2c1
 
 # Events
+
+^f0f8b4
+
 ## Sprint
 Ein Sprint ist das Basisevent, von dem die anderen Events teil sind. Ein Sprint hat immer eine feste Länge von einem Monat oder weniger. Durch diesen festen Intervalle kann eine Voraussehbarkeit des Projekts durch regelmäßige Inspektion und Überarbeitung der Ziele sichergestellt werden.
 
