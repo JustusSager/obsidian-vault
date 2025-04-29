@@ -17,6 +17,32 @@ nixos-rebuild boot --use-remote-sudo
 ```
 
 # Desktop Umgebung
+Zu einer Desktop-Umgebung gehören viele Komponenten die man bei anderen Betriebssystemen gar nicht beachtet und als selbstverständlich wahrnimmt. Hier einmal aufgelistet welche Komponenten noch händisch mitinstalliert werden müssen und welche Alternativen es so gibt.
+
+## Terminal
+Als erstes Terminal (und standardmäßig auch vorkonfiguriert) habe ich `kitty` ausprobiert. Jedoch fanden meine ersten Versuche in einer VM statt (was ich mit NixOS und Hyprland nicht empfehlen kann) und dort gab es mit `kitty` Probleme mit den 3D-Graphiken die dabei verlangt werden. Daher habe ich mich als Grundlage erstmal für `foot` entschieden, da es bereits in der VM funktionierte und bisher alles erfüllt was ich von einer Konsole gerne hätte.
+## Terminal Text Editor
+Hier habe ich folgende installiert:
+- nano (ist bei NixOS standardmäßig vorkonfiguriert)
+- vim
+## File Manager
+Hier habe ich folgende ausprobiert:
+- `dolphin` (ist bei NixOS standardmäßig vorkonfiguriert)
+#TODO hier vervollständigen
+## App-Launcher
+
+## Task Bar
+Als Task/Status-Bar verwende ich `waybar`.
+## Copy-Paste
+
+## Web Browser
+
+## Logout / Shutdown GUI
+#TODO noch konfigurieren
+- `wlogout`
+- 
+
+## 
 
 
 # Hyprland nach der Anmeldung mit tty1 ausführen
