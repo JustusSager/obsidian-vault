@@ -42,7 +42,10 @@ Als Task/Status-Bar verwende ich `waybar`.
 - `wlogout`
 - 
 
-## 
+## Notification Daemon
+Manche Apps wie Discord stürzen ab, wenn kein (mit dieser App) kompatibler Notification Daemon installiert und aktiviert ist.
+
+Hierfür verwende ich `mako`, jedoch muss sich noch zeigen, ob es den Zweck erfüllt.
 
 
 # Hyprland nach der Anmeldung mit tty1 ausführen
