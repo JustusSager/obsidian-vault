@@ -48,6 +48,28 @@ Manche Apps wie Discord stürzen ab, wenn kein (mit dieser App) kompatibler Noti
 Hierfür verwende ich `mako`, jedoch muss sich noch zeigen, ob es den Zweck erfüllt.
 
 
+# Softwareentwicklung mit NixOS und Hyprland ^9bf76f
+Es gibt viele Dinge, die unter Hyprland gut funktionieren. Die Entwicklung von Software, welche auf den X11 Server angewiesen ist leider nicht. 
+Bei diesem Projekt durfte ich inzwischen lernen, dass die Entwicklung einer Graphischen Benutzeroberfläche stark davon abhängig ist, welche Art von Window Manager man hat. Leider bin ich ausgerechnet auf Software und Libraries angewiesen, die unter dem Window Manager von Hyprland gar nicht oder nur Eingeschränkt funktionieren. 
+Um dennoch weiterhin (zumindest als Basisbetriebssystem und Window Manager) NixOS und Hyprland verwenden zu können, wird der Teil meiner Softwareentwicklung, welcher unter Hyprland nicht funktioniert (C++ Programmierung mit der SFML Library und QGIS Python-Plugin Entwicklung) in eine [[#^69831e|Virtuelle Maschine]] unter Ubuntu ausgelagert.
+Immer das positive sehen, dafür habe ich jetzt (gezwungenermaßen) eine Spielwiese in der ich alles ausprobieren kann, ohne dass es man Hauptsystem beeinflusst. 
+Das könnte langfristig jedoch doch dazu führen, dass ich doch auf einen anderen Window Manager wechsle, falls nur dass das Problem ist. Mit NixOS kann ich mich dennoch gut anfreunden.
+
+# Software
+
+## VirtualBox ^69831e
+VirtualBox lässt sich über die `/etc/nixos/configuration.nix` einfach installieren. Man muss einfach innerhalb der äußersten Klammern folgendes eingeben:
+```
+virtualisation.virtualbox.host.enable = true;
+virtualisation.virtualbox.host.enableExtensionPack = true;
+users.extraGroups.vboxusers.members = [ "<nutzername>" ]
+```
+Nach einem reload war VirtualBox installiert. 
+Bei dem Versuch Ubuntu als VM zu installieren sind jedoch direkt die ersten Probleme aufgetaucht. Scheinbar darf man `virtualbox` nicht unter `environment.systemPackages` auflisten. Das hat NixOS scheinbar verwirrt in Bezug auf die Berechtigungen, die VirtualBox hat, wodurch sich keine VM starten ließ. Eine Google Recherche später war das Problem behoben und die VM schien zu funktionieren.
+
+Zumindest solange man nicht den Vollbildmodus nutzen wollte. Sobald man in den Vollbildmodus gewechselt ist wurde nur noch Schwarzbild angezeigt. Nach einer kurzen Recherche ließ sich jedoch herausfinden, dass sich dieser Bug beheben lässt, indem man die Menüleiste, die im Vollbildmodus um unteren Rand als PopUp-Menü eingeblendet wird, deaktiviert. Das lässt sich in den Einstellungen der VM schnell machen und hat auf anhieb funktioniert. Nur die Shortcuts muss man jetzt auswendig können um aus diesem Vollbildmodus auch wieder rauszukommen.
+
+Jetzt scheint es, als könnte ich loslegen die Ubuntu VM aktiv zur [[#^9bf76f|Softwareentwicklung]] zu nutzen.
 # Hyprland nach der Anmeldung mit tty1 ausführen
 https://www.youtube.com/watch?v=fmFjV3_iIn0&t=465s (9:00 Min)
 ``` bash
