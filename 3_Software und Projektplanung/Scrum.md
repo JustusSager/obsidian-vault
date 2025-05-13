@@ -26,6 +26,7 @@ Der Scrum Master ist verantwortlich für die Einhaltung der Scrum Richtlinien. D
 # Artefakte
 ## Product Backlog ^2f9374
 Das Produkt Backlog ist die Zielsetzung des gesamten Projekts, welche mit den Stakeholdern abgestimmt wird. Es ist die Planungsgrundlage für die Sprints.
+Der `Product Owner` steht in der Verantwortung für die Korrektheit und Vollständigkeit des `Product Backlogs`.
 
 Das Produkt Backlog besteht aus folgendem:
 1. Product Goal
@@ -34,7 +35,8 @@ Das Produkt Backlog besteht aus folgendem:
 	- Eine geordnete Liste an Aufgaben welche benötigt werden um das Produkt zu verbessern / um das Product Goal zu erreichen.
 
 ## Sprint Backlog ^48d745
-Das Sprint Backlog ist eine vollständig transparente Dokumentation der Tätigkeiten innerhalb des Sprints. Es wird von den Developern für die Developer erstellt.
+Das Sprint Backlog ist eine vollständig transparente Dokumentation der Tätigkeiten innerhalb des Sprints. 
+Es wird von den Developern für die Developer erstellt. Daher sind auch die `Developer` in der Verantwortung die Qualität des `Sprint Backlogs` sicherzustellen.
 
 Das Sprint Backlog besteht aus 3 Aspekten:
 1. Sprint Goal
@@ -47,8 +49,18 @@ Das Sprint Backlog besteht aus 3 Aspekten:
 3. Die Ergebnisse der [[#^2ab3fb|Sprint Retrospective]], festgehalten für künftige Sprints.
 
 ## Increment ^8c2259
+Das `Increment` ist Teil eines jeden Sprints. Die `Developer` arbeiten an der Weiterentwicklung des Projekts und sollen dabei am Ende die Erfüllung der `Definition of Done` und damit die des `Increments` sicherstellen.
 Das Increment besteht aus folgendem:
-1. Definition of Done ^66e2c1
+1. `Definition of Done` ^66e2c1
+	- Die `Definition of Done` besteht aus den qualitativen Bedingungen die jeder Increment erfüllen muss, damit das Increment mit übernommen wird.
+	- Jedes `Increment` muss die Definition of Done erfüllen.
+	- Beispiele dafür sind  
+		- das Erfüllen der gestellten Anforderungen
+		- Test und Review durch eine zweite Person
+		- Dokumentation
+		- Einhaltung der Styling Guidelines
+		- . . .
+	- 
 
 # Events ^f0f8b4
 ## Sprint
@@ -99,8 +111,18 @@ Das Sprint Goal, die aus dem [[#^2f9374|Product Backlog]] gewählten Punkte und 
 ## Sprint Retrospective ^2ab3fb
 - Scrum Team untersucht wie der letzte Sprint lief und was verbessert werden könnte. 
 - Scrum Team stellt heraus, welche Änderungen die Effektivität des kommenden Sprints erhöhen könnte.
-- Änderungen können auch im [[#^48d745|Sprint Backlog]] festgehalten werden.
+- Es werden ggf. Maßnahmen überlegt die die Qualität der Ergebnisse sicherstellt oder verbessert.
+- Änderungen sollten auch im [[#^48d745|Sprint Backlog]] festgehalten werden.
 - Sprint Retrospective wird als letzter Schritt des Sprints durchgeführt, um den Sprint zu beenden.
 
+# Weiteres
+## Aufwand einer Aufgabe einschätzen
+Für jede Aufgabe soll eingeschätzt werden wie viel "Zeit" für die Aufgabe benötigt wird. Diese Einschätzung wird jedoch nicht in einer Zeiteinheit gemacht, sondern mithilfe von `Story Points`
+Eine Aufgabe sollte sich innerhalb eines bestimmten Rahmens an `Story Points` befinden. Falls eine Aufgabe zu groß wird sollte sie unterteilt werden, da sie sonst zu schwer einzuschätzen wird . Bei zu kleinteiligen Aufgaben wird der Administrations- und Einschätzungsaufwand zu groß als das es sich lohnt.
+Am Ende müssen sich alle `Developer` auf eine Anzahl an `Story Points` einigen.
+
+## Story Point
+Ein `Story Point` ist eine Art Aufwandseinheit für Aufgaben. Hierbei einigt man sich im Team auf eine Tätigkeit, die als Referenzwert für die Aufwandseinschätzung verwendet wird. Dadurch soll die Aufwandsschätzung zwischen den Developern vergleichbarer werden. Ein Entwickler der etwas langsamer arbeitet als ein Anderer kommt bei der Aufwandsschätzung dadurch dennoch auf den selben Aufwand.
+z.B. Als `Story Point` wird die Implementierung der [[OOP#^42ba48|Rule of Five]] in einer Klasse angesetzt. Beim Einschätzen einer Aufgabe wird jetzt überlegt wie vielen Implementierungen der `Rule of Five` diese Aufgabe entspricht.
 # Quelle
 - https://scrumguides.org/scrum-guide.html

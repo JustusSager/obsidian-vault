@@ -309,7 +309,7 @@ Best Practice bezüglich der Implementierung bestimmter Methoden in Klassen.
 	- [[Klassen und Strukturen#^264f73|Kopier-Konstruktor]] 
 	- [[Klassen und Strukturen#^7570ab|Kopier-Zuweisungsoperator]] 
 
-## Rule of Five
+## Rule of Five ^42ba48
 - Erweiterung der Rule of three ab C++ 11
 - manchmal auch "Big five" genannt.
 - Wenn eine der folgenden Methoden implementiert werden muss, sollten alle implementiert werden bzw. explizit unnutzbar gemacht werden (=delete)
