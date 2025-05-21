@@ -3,7 +3,7 @@ Ein Buffer Overflow (oder Pufferüberlauf) ist, wenn eine Variable ihren eigentl
 Puffer = Speicherbereich
 Pufferüberlauf: Die Menge der in den Puffer zu schreibenden Daten ist größer als der Speicherbereich -> Überlauf
 
-### Normale Abarbeitung eines Programms
+## Normale Abarbeitung eines Programms
 1. Schrittweise Abarbeitung der Maschinenbefehle, nächster Befehl bei nächsthöherer Speicheradresse
 2. Hauptprogramm: Sprunganweisung in ein Unterprogramm (inkl. Parameterübergabe)
 	- Herkunftsadresse (Ort von wo das Unterprogramm im Hauptprogramm gestartet wird) muss sich gemerkt werden um an dieser Stelle später das Hauptprogramm fortzuführen
@@ -17,7 +17,7 @@ Pufferüberlauf: Die Menge der in den Puffer zu schreibenden Daten ist größer 
 	3. Rücksprung in das Hauptprogramm
 8. Fortsetzung des Hauptprogramms
 
-### Buffer Overflow herbeiführen
+## Buffer Overflow herbeiführen
 Im oben aufgeführten Programmablauf lässt sich ein Buffer Overflow missbrauchen, indem man bei der Ausführung des Unterprogramms einen Buffer Overflow nutzt um (z.B. durch Nutzereingabe eines Strings) den Speicher bis zum `Stack Basepointer` mit dem eigenen Code zu überschreiben. Der `Stack Basepointer` soll dabei auf die Speicheradresse des eingeschleusten Code zeigen. 
 Sobald zu der in der Rücksprungadresse gespeicherten Adresse gesprungen wird, wird der eingeschleuste Code ausgeführt.
 
@@ -29,14 +29,53 @@ Herausforderung aus Angreifer-Sicht:
 3. Zeichenkette darf keine `Null`-Bytes enthalten.
    -> Verwendung einer geeigneten Codierung
 
-#### Code Beispiel
+### Code Beispiele
+Damit folgende Beispiele funktionieren wurden einige Sicherheitsmaßnahmen im Betriebssystem deaktiviert.
+Siehe auch [[gdb (GNU Debugger)]]. Dieses CLI-Tool wurde verwendet um während des Programmablaufs den Speicher betrachten zu können.
+
+#### Konsolenausgabe
+``` C
+void versteckt() {
+	// Ausgabe eines Strings auf der Standardausgabe
+	fprintf(stdout, "You have been pwnd!\n");
+}
+int funk2(char *arg, char *out) {
+	// Kopiert von arg nach out bis arg Nullterminiert (0x00)
+	strcpy(out, arg);
+	return 0;
+}
+int funk1(char *argv[]) {
+	// allociert 128 Bytes an Speicher
+	char buffer[128];
+	// ruft funk2 mit dem ersten CMD-Argument auf
+	funk2(argv[1], buffer);
+}
+int main() {
+	// Überprüfe, dass genau ein Kommanozeilenparameter übergeben
+	// wurde, andernfalls gib eine Fehlermeldung aus
+	if (argc != 2) {
+		fprintf(stderr, "target0: argc != 2\n");
+		exit(EXIT_FAILURE);
+	}
+	// Rufe funk1 auf
+	funk1(argv);
+	return 0;
+}
+```
+Die Funktion `versteckt` wird innerhalb von dem Skript nie aufgerufen. Dennoch lässt sich das Programm über ein Kommandozeilenparameter so manipulieren, dass die Funktion `versteckt` aufgerufen wird. 
+Für die Variable `buffer` wurden 128 Bytes an Speicher allokiert. Im Anschluss an den für die Variable `buffer` reservierten Speicher liegt der `Stack Basepointer`. Da in `funk2` mit dem Methodenaufruf `strcpy` keine Kontrolle stattfindet, ob das Ziel des Kopiervorgangs auch groß genug ist für das übergebene char-Array, lässt sich ein `buffer overflow` herbeiführen und der `Stack Basepointer` manipulieren.
+In diesem Fall wird ein char-Array mit einer Länge von 136 Bytes benötigt um den `Stack Basepointer` zu überschreiben. Dabei stellen die letzten 4 Byte den `Stack Basepointer` dar. Wenn also die letzten 4 Byte des char-Arrays der physischen Adresse der `versteckt`-Funktion entsprechen, wird Diese ausgeführt.
+
+#### Öffnen einer Shell
 ``` C
 int main() {
 
 }
 ```
 
-### Schutzmaßnahmen gegen Pufferüberläufe: 
+Die dabei geöffnete Shell besitzt die gleichen Rechte, wie das ausgeführte Programm. Der nächste Schritt wäre nun eine `privilege escalation` zu erreichen um an `root`-Rechte zu kommen.
+
+## Schutzmaßnahmen gegen Pufferüberläufe: 
 <b>Never trust user input</b>
 - sorgfältige Programmierung und Nutzung entsprechender Compiler-Funktionen
 - Überprüfung des Programmcodes mit speziellen Werkzeugen
