@@ -17,3 +17,6 @@ Der Inhalt dieses Wikis ist stark geprägt von meinem eigenen (aktuell noch lauf
 	- von Prof. Dr.-Ing. Klaus Lebert und Prof. Dr. Kay Schmidt-Rethmeier
 - Applied Deep Learning (SoSe 2025)
 	- von Dr. Marina Ignatov
+- Kommunikationssysteme (WiSe 2024/25)
+	- von Hendrik Oenings
+- 
