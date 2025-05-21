@@ -1,0 +1,9 @@
+# Port scan durchführen
+``` bash
+sudo nmap -sS -p <Ports> <IP-Ziel>
+	-p <Ports> # Ports die überprüft werden sollen. (Kommagetrennte Liste)
+	-sV # finde die Software (+ Version) an dem Port heraus
+	-v # verbose
+	-vv # very verbose
+	
+```
