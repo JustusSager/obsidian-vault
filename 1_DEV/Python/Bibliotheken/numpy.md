@@ -90,3 +90,22 @@ import numpy as np
 arr1 = np.array([1, 2, 3, 4, 5])
 i = arr1.sum()  # Summe der Elemente
 ```
+
+# Elementweise Funktionen ausführen
+``` python
+import numpy as np  
+  
+# Define a simple function  
+def square(x):  
+    return x ** 2  
+  
+# Create a NumPy array  
+arr = np.array([1, 2, 3, 4, 5])  
+  
+# Apply the function using numpy.vectorize  
+vectorized_square = np.vectorize(square)  
+result = vectorized_square(arr)  
+  
+print("Original Array:", arr)  
+print("Squared Array:", result)
+```
