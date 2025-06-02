@@ -454,7 +454,7 @@ Warum ist es notwendig, für jede Verschlüsselung einen neuen Sitzungsschlüsse
 Stellen Sie sich vor, Sie haben die hybride Verschlüsselung über einen längeren Zeitraum genutzt. Welche Konsequenzen hat es, wenn Eve zu einem späteren Zeitpunkt an den privaten Schlüssel gelangt?
 #TODO
 
-# Hashfunktionen
+# Hash-Funktionen ^0232e6
 (im Deutschen auch "Streuwertfunktionen").
 Eine Funktion welche bei einer Eingabe von beliebiger Länge zu einer Ausgabe mit fest vorgegebener Länge führt. Dabei sollen zusätzlich die Bedingungen gelten: 
 - Die selbe Eingabe führt immer zu der selben Ausgabe.
