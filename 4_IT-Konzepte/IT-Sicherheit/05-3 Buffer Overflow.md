@@ -18,8 +18,9 @@ Pufferüberlauf: Die Menge der in den Puffer zu schreibenden Daten ist größer 
 8. Fortsetzung des Hauptprogramms
 
 ## Buffer Overflow herbeiführen
-Im oben aufgeführten Programmablauf lässt sich ein Buffer Overflow missbrauchen, indem man bei der Ausführung des Unterprogramms einen Buffer Overflow nutzt um (z.B. durch Nutzereingabe eines Strings) den Speicher bis zum `Stack Basepointer` mit dem eigenen Code zu überschreiben. Der `Stack Basepointer` soll dabei auf die Speicheradresse des eingeschleusten Code zeigen. 
-Sobald zu der in der Rücksprungadresse gespeicherten Adresse gesprungen wird, wird der eingeschleuste Code ausgeführt.
+Im oben aufgeführten Programmablauf lässt sich ein Buffer Overflow missbrauchen, indem man bei der Ausführung des Unterprogramms einen Buffer Overflow nutzt um (z.B. durch Nutzereingabe eines Strings) den Speicher bis zum `Stack Basepointer` mit dem eigenen Code zu überschreiben. Die `Rücksprungadresse` wird dabei so überschrieben, dass sie auf die Speicheradresse des eingeschleusten Code zeigt. 
+Sobald zu der in der `Rücksprungadresse` gespeicherten Adresse gesprungen wird, wird der eingeschleuste Code ausgeführt.
+![[stack_aufbau.png]]
 
 Herausforderung aus Angreifer-Sicht:
 1. Er weiß nicht an welcher Stelle im Speicher sich die absolute Rücksprungadresse befindet.
