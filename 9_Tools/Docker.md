@@ -26,7 +26,7 @@ sudo docker rm $(sudo docker ps -a -q -f status=exited)
 
 #### Shell in einem detatched container öffnen
 ``` bash
-sudo docker exec -ti CONTAINER-ID bash
+sudo docker exec -ti <CONTAINER-ID> bash
 ```
 
 #### Mit Prozess im detatched Container verbinden
