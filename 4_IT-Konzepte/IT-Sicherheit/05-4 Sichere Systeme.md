@@ -25,5 +25,6 @@ Das Design der Sicherheitsfunktionen sollte nicht geheim gehalten, sondern offen
 - Rechteprüfung
 - Beweissicherung
 - Wiederaufbereitung
+	- Keine Daten im Cache hinterlassen.
 - Gewährleistung der Funktionalität
 

@@ -113,3 +113,4 @@ Die dabei geöffnete Shell besitzt die gleichen Rechte, wie das ausgeführte Pro
 - ESP ( `Excecutable Space Protection` ) 
 	- Unter Windows heißt es `Data Excecution Prevention`
 	- Es kann nur noch Code ausgeführt werden, welcher innerhalb des für Programmcode reservierten Speicherbereichs liegt.
+
