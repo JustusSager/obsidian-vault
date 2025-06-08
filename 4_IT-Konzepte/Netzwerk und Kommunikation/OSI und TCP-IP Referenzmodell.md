@@ -2,14 +2,14 @@
 
 # TCP/IP-Referenzmodell ^68e9fc
 
-## Schicht 1 – Netzzugangsschicht
-
-^875e7a
+## Schicht 1 – Netzzugangsschicht ^875e7a
 
 Protokolle, die sich Übertragung von Nachrichten beschäftigen.
 **Beispiel:**
 - [[Ethernet]]
 - WiFi
+Die Netzzugangsschicht besteht aus Hardware und Software-Komponenten. 
+![[netzzugangsschicht_hard_und_software.png|300]]
 
 ## Schicht 2 – Internetschicht
 Protokolle, die sich mit der Weitervermittlung und Wegfindung von Paketen befassen.
