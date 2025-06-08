@@ -1,4 +1,4 @@
-- Teil der [[TCP_IP-Referenzmodell#^3189dd|Transportschicht]] des TCP_IP-Referenzmodells
+- Teil der [[OSI und TCP-IP Referenzmodell#^3189dd|Transportschicht]] des [[OSI und TCP-IP Referenzmodell#^68e9fc|TCP/IP-Referenzmodells]].
 
 # Struktur
 |                              | Bits    |
