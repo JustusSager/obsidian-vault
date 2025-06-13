@@ -1,7 +1,7 @@
 ## Modalwert (Modus)
 Der Wert, der in der Diskreten Verteilung am Häufigsten vorkommt.
 
-## Arithmetischer Mittelwert
+## Arithmetischer Mittelwert ^310b8e
 Bei einer Stichprobe $x_1, x_2, x_3, ... , x_n$ von $n$ Werten:
 $$\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i =\frac{x_1+x_2+...+x_n}{n}$$
 
@@ -21,7 +21,7 @@ Der in der Mitte stehende Wert in einer der Größe nach geordneten Liste.
 - Wird bei Problemstellungen mit einzelnen stark abweichenden Datenwerten verwendet.
 - Bei einer geraden Anzahl an Daten wird das arithmetische Mittel der beiden Mittleren Datenwerte als Median angenommen.
 
-## Varianz
+## Varianz ^651312
 $$s²=\frac{1}{n-1} \sum_{i=1}^n (x_i-\bar{x})²$$
 - wird auch als Streuung bezeichnet
 ### Varianz der beschreibenden Statistik

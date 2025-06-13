@@ -1,6 +1,19 @@
 In einem Neuronalen Netzwerk wird ein Netzwerk von Neuronen simuliert, angelehnt an dem biologischen Netzwerk von Neuronen, z.B. in einem Gehirn. 
-Diese simulierten Neuronen haben eine vordefinierte Anzahl von Eingangswert und einen Ausgangswert. Innerhalb des Neurons werden die Eingangswerte verarbeitet und daraus ein Ausgangswert berechnet. Die Eingangswerte können von einer äußeren Quelle kommen (wie die in das Netzwerk gefütterten Werte) oder von anderen Neuronen. Dadurch entsteht ein Netzwerk von miteinander verknüpften Neuronen.
 
+**Artifical Neural Network:**
+Diese simulierten Neuronen haben eine vordefinierte Anzahl von Eingangswert und einen Ausgangswert. Innerhalb des Neurons werden die Eingangswerte verarbeitet und daraus ein Ausgangswert berechnet. Die Eingangswerte können von einer äußeren Quelle kommen (wie die in das Netzwerk gefütterten Werte) oder von anderen Neuronen. Dadurch entsteht ein Netzwerk von miteinander verknüpften Neuronen.
+**Interdisziplinär:**
+Je nach Anwendungsfall gibt es verschiedenste Interdisziplinäre Bereiche die mit Neuronalen Netzwerken in Zusammenhang stehen:
+- Biologie, Physiologie, Anatomie, Neurochemie
+	- Eigenschaften einzelner Neuronen
+	- Verbindung zwischen Neuronen
+	- Physiologische und anatomische Anordnung von Netzwerken
+- Physik
+	- (Folie 14)
+- Informatik und Mathematik
+	- Mustererkennung, und Klassifikation
+	- Künstliche Intelligenz
+	- ...
 # Verwendungszweck
 - Verständnis von biologischen Netzwerken
 - Problemlösung mithilfe von selbstlernenden Algorithmen
@@ -20,14 +33,9 @@ Die Größe der orangen Flecken und die Länge der Stacheln.
 Diese Daten lassen sich nun auf einem Graphen darstellen.
 #TODO Beispiel vervollständigen oder alternativ das Beispiel aus der Vorlesung.
 
-
-
 # `Deep learning` vs Standard `machine learning`
 Beim `machine learning` werden die zu Features eines Objekts anhand von denen Klassifiziert werden soll händisch definiert.
 Beim `deep learning` entscheidet ein selbstlernender Algorithmus, welche Features welchen Einfluss auf das Endergebnis haben.
-
-# Beispiel Fischklassifizierung
-#TODO Beispiel Fischklassifizierung
 
 # Neuronales Netzwerk aufgebaut in Schichten
 In diesem Beispiel werden die Neuronen in Schichten aufgebaut. Das heißt das Neuronalen Netzwerk besteht aus einer festen Anzahl an Schichten, welche wiederum aus einer festen Anzahl an Neuronen bestehen. Die Neuronen der ersten Schicht sind jeweils alle Verbunden mit jedem einzelnen Neuron der nächsten Schicht.
