@@ -1,0 +1,2 @@
+# Neuronen
+Ein Neuronales Netzwerk besteht aus einer Menge an Neuronen. Diese Neuronen sind miteinander Verbunden, modelliert durch logische Kanäle, denen jeweils eine Gewichtung zugeordnet ist, welche als die "Stärke" der Verbindung verstanden werden kann (`synaptic efficacy`).
