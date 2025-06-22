@@ -31,8 +31,8 @@ $h_n(A)=\frac{H_n(A)}{n}$
 [[31-1 Numerische Maßzahlen#^310b8e|Siehe Arithmetischer Mittelwert]]
 $E[x]=\mu=\sum_{x \in X} x \cdot P(x) = \sum_{i=1}^m v_i \cdot p_i$
 #### Bei zwei Variablen
-$\mu_x=E[x]=sum_{x \in X} sum_{y \in Y} x \cdot P(x,y)$
-$\mu_y=E[y]=sum_{x \in X} sum_{y \in Y} y \cdot P(x,y)$
+$\mu_x=E[x]=\sum_{x \in X} \sum_{y \in Y} x \cdot P(x,y)$
+$\mu_y=E[y]=\sum_{x \in X} \sum_{y \in Y} y \cdot P(x,y)$
 
 ### Varianz
 [[31-1 Numerische Maßzahlen#^651312|Siehe Varianz]]
