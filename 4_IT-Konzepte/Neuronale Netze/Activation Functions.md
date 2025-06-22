@@ -49,3 +49,10 @@ $$
   \right.
 \end{align}
 $$
+
+# sigmoid function
+$$\sigma(x)=\frac{1}{1+e^{-x}}$$
+![[sigmoid_function_graph.png]]
+
+# softmax function
+$$softmax(x_i)=\frac{e^{x_i}}{\sum_{k=1}^m e^{x_k}}$$
