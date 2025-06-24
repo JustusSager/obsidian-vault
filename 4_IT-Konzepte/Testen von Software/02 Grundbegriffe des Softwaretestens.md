@@ -28,8 +28,7 @@
 - Zusammenführung von Test und festgelegten Rahmenbedingungen
 - z. B. Ausführungsvoraussetzungen, feste Eingabewerte in Verbindung mit erwarteten Ein-/Ausgabewerten oder dem erwarteten Verhalten des Testobjektes
 ### Testfallexplosion
-- meint, dass durch die vielfältigen Kombinationsmöglichkeiten 
-- bspw. von Eingabewerten die Anzahl möglicher Testfälle sehr schnell ansteigt und leicht einen Umfang von hunderten oder tausenden Testfällen erreichen kann
+- meint, dass durch die vielfältigen Kombinationsmöglichkeiten bspw. von Eingabewerten die Anzahl möglicher Testfälle sehr schnell ansteigt und leicht einen Umfang von hunderten oder tausenden Testfällen erreichen kann
 
 # Softwarequalität
 Definition nach ISO / IEC 9126
