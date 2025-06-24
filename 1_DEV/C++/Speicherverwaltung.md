@@ -15,7 +15,7 @@ void f(int p) {
 # Heapspeicher
 Frei allokierbarer Speicherpool
 Manuelle Verwaltung (new / delete)
-	in der Regel benutzerspezifische ctor/dtor nötig. Siehe dazu[[Klassen und Strukturen#^6cee62|Konstruktor]].
+	in der Regel benutzerspezifische ctor/dtor nötig. Siehe dazu[[Klassen#^6cee62|Konstruktor]].
 Rohe Zeiger -> sollte man im modernen C++ soweit möglich vermeiden.
 Objektlebenszeit über den Scope hinweg.
 
