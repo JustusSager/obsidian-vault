@@ -30,9 +30,35 @@ $h_n(A)=\frac{H_n(A)}{n}$
 ### Erwartungswert (Mittelwert)
 [[31-1 Numerische Maßzahlen#^310b8e|Siehe Arithmetischer Mittelwert]]
 $E[x]=\mu=\sum_{x \in X} x \cdot P(x) = \sum_{i=1}^m v_i \cdot p_i$
+#### Bei zwei Variablen
+$\mu_x=E[x]=\sum_{x \in X} \sum_{y \in Y} x \cdot P(x,y)$
+$\mu_y=E[y]=\sum_{x \in X} \sum_{y \in Y} y \cdot P(x,y)$
 
 ### Varianz
 [[31-1 Numerische Maßzahlen#^651312|Siehe Varianz]]
 $Var[x]= \sigma^2 = E[(x-\mu)^2]=\sum_{x \in X} (x-\mu)^2 \cdot P(x)$
 - $Var[x]$: Varianz
 - $\sigma^2$: Standardabweichung $\sigma$
+#### Bei zwei Variablen
+$\sigma_x²=E[(x-\mu_x)²]=\sum_{x \in X} \sum_{y \in Y} (x- \mu_x)² \cdot P(x,y)$
+$\sigma_y²=E[(y-\mu_y)²]=\sum_{x \in X} \sum_{y \in Y} (y- \mu_y)² \cdot P(x,y)$
+
+## Statistische Unabhängigkeit
+$P(x,y)=P(x) \cdot P(y)$
+Der Wert von $x$ gibt keine Rückschlüsse auf den Wert von $y$.
+
+## Shanon information content
+- Deterministische Ergebnisse enthalten keine Informationen
+	- $P(x)=1 \rightarrow h(x)=\log_2 \frac{1}{P(x)}=\log_2 1=0$
+- Informationsgehalt steigt mit sinkender Wahrscheinlichkeit
+- Informationsgehalt ist additiv für statistisch unabhängige zufällige Variablen
+	- $h(x,y)=h(x)+h(y)$
+- 
+### diskrete zufällige Variablen
+$h(x)=\log_2 (\frac{1}{P(x)})=-\log_2 (P(x))=-ld (P(x))$
+### stetige zufällige Variablen
+$h(x)=\log_e (\frac{1}{P(x)})=-\log_e (P(x))=-\ln (P(x))$
+
+### Shanon Entropy
+Misst wie verteilt die möglichen Resultate sind für eine zufällige Variable
+$H(x)=- \sum_{x \in X} P(x) \cdot \log_2 P(x)$
