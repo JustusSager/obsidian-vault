@@ -18,39 +18,6 @@ Die Grundideen von OOP lassen sich aufteilen in folgende vier Punke:
 	- 'Werte' d.h. keinen dynamisch mit new/delete verwalteten Speicher nutzt
 	- Container wie bspw. [[Standardcontainer#^3232b4|std::vector]] aus der Standardbibliothek nutzt, da diese bereits selbst Acquise und Freigabe des dynamischen Speichers verwalten
 
-# Überladen von Methoden
-Beim Überladen von Methoden bleibt der Rückgabewert gleich.
-## Überladen von Operatoren
-``` C++
-class Vektor{
-	double x_, y_;
-public:
-	Vektor(double x, double y) :
-	x_{x}, y_{y} {}
-	// Skalarprodukt
-	double operator*(Vektor const &rhs){
-		return this->x_*rhs.x_ + this->y_*rhs.y_;
-	}
-	// Multiplikation mit Skalar
-	Vektor operator*(double const &rhs){
-		return Vektor {this->x_*rhs, this->y_*rhs};
-	}
-};
-int main(){
-	Vektor v1 {1., 2.};
-	double s = v1*v1; // Skalarprodukt
-	Vektor v2 {v1 * 2.5};
-	Vektor v3 {2.5 * v1} // würde nicht gehen da der Operator * nur andersherum überladen wurde
-	return 0;
-}
-```
-
-
-
-# Überschreiben von Methoden
-#TODO 
-
-
 # Rule of three/five/zero
 Best Practice bezüglich der Implementierung bestimmter Methoden in Klassen.
 ## Rule of three

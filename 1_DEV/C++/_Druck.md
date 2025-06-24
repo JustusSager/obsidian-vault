@@ -1,7 +1,5 @@
 ![[Compiler, Compilersystem und co.]]
-![[Deployment]]
 ![[Entwurfsmuster]]
-![[Funktoren]]
 ![[Klassen]]
 ![[Klassen - Operatoren überschreiben]]
 ![[Klassen - copy und move Semantik]]
@@ -17,3 +15,12 @@
 ![[Speicherverwaltung]]
 ![[Wertkategorien]]
 
+# Bibliotheken
+![[Iteratoren]]
+![[Einlesen von Dateien]]
+![[Exceptions]]
+![[Konsolen Ein- und Ausgabe]]
+![[Memory Management Lib]]
+![[Standardcontainer]]
+![[Standardalgorithmen]]
+![[Strings]]
