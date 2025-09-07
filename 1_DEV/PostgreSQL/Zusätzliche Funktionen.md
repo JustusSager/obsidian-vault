@@ -206,4 +206,26 @@ BEGIN
 END
 $FUNCTION$ LANGUAGE PLPGSQL;
 ```
-#
+# Nutzer ist Teil einer Gruppe
+Überprüft ob ein Nutzer teil einer bestimmten Nutzergruppe ist.
+### Funktion
+``` sql
+CREATE OR REPLACE FUNCTION is_member_of(
+	groupname character varying)
+    RETURNS boolean
+    LANGUAGE 'sql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+AS $BODY$
+  select exists (
+    select 1 
+    from pg_auth_members a, 
+         pg_roles b, 
+         pg_roles c  
+    where a.roleid=b.oid 
+      and a.member = c.oid 
+      and b.rolname = groupname
+      and c.rolname = (SELECT CURRENT_USER)::TEXT
+  );
+$BODY$;
+```
