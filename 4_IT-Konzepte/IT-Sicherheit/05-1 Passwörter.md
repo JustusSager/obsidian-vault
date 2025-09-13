@@ -1,7 +1,7 @@
 ![[passwort_hash.png]]
 Beim erstellen eines Passworts wird der Hash des Passworts (zuzüglich eines `Salts`) in der Datenbank gespeichert. 
 Zur Überprüfung eines Passworts wird der Hash des Passworts mit dem in der Datenbank gespeicherten Hash verglichen.
-Siehe hierzu [[03 Kryptographie#^0232e6|Hash-Funktionen]].
+Siehe hierzu [[03-4 Hash Funktionen]].
 
 # Online-Angriff gegen Passwörter
 **Situation:**

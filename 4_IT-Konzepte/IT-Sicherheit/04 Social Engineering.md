@@ -3,8 +3,11 @@
 
 # Psychologische Grundlagen der Manipulation
 ## Reziprozität
+_Die Regel der Reziprozität besagt, dass wir uns für erhaltene Gefälligkeiten, Geschenke usw. revanchieren müssen._
 ## Commitment und Kosistenz
+_Menschen agieren stets in Konsistenz mit ihren früheren Handlungen. Wurde einmal eine Entscheidung getroffen (Commitment), treten intra- und interpsychologische Vorgänge in Kraft, die Menschen dazu drängen, konsistent zu bleiben._
 ## Soziale Bewährtheit
+_Das Verhalten anderer wird als richtig angenommen und ggf. kopiert bzw. adaptiert._
 ## Sympathie
 _Menschen, die uns sympathisch erscheinen, können uns eher verleiten._
 - <b>Halo-Effekt</b> - Attraktiven Personen wird von Haus aus eine höhere Sympathie entgegen gebracht. Im Extremfall überstrahlt dies auch negative Eigenschaften.

@@ -1,5 +1,7 @@
-## ARRAY_CAT als Aggregationsfunktion
-Standardmäßig gibt es keine Aggregationsfunktion von ARRAY_CAT() in PostgreSQL. Mit folgendem Skript kann eine erstellt werden:
+# ARRAY_CAT als Aggregationsfunktion
+Standardmäßig gibt es keine Aggregationsfunktion von ARRAY_CAT() in PostgreSQL. Mit folgendem Skript kann eine erstellt werden.
+Wird in public angelegt.
+### Funktion
 ``` SQL
 CREATE AGGREGATE array_accum (anycompatiblearray) (
     sfunc = array_cat,
@@ -7,12 +9,11 @@ CREATE AGGREGATE array_accum (anycompatiblearray) (
     initcond = '{}'
 );
 ```
-Wird in public angelegt.
-
-## Mittelwert über mehrere Spalten
+# Mittelwert über mehrere Spalten
 Standardmäßig lässt sich der Mittelwert nur als Aggregation einer Spalte erzeugen. Mithilfe dieser Funktionen lässt sich der Mittelwert von mehreren ( 2 - 8 ) Spalten bilden.
 Nullwerte werden bei der Berechnung ausgelassen.
 Quelle: https://stackoverflow.com/questions/7367750/average-of-multiple-columns
+### Funktion
 ``` sql
 CREATE OR REPLACE FUNCTION AVERAGE (
 V1 NUMERIC,
@@ -181,4 +182,50 @@ BEGIN
     EXCEPTION WHEN DIVISION_BY_ZERO THEN RETURN NULL;
 END
 $FUNCTION$ LANGUAGE PLPGSQL;
+```
+# Text zu Integer konvertieren
+Von https://hawki.fh-kiel.de generiert und von mir angepasst.
+Konvertiert einen String zu einer Zahl falls möglich. Falls nicht wird NULL zurückgegeben.
+### Funktion
+``` sql
+CREATE OR REPLACE FUNCTION string_to_number(input_string TEXT)
+RETURNS NUMERIC AS $FUNCTION$
+DECLARE
+    converted_number NUMERIC;
+BEGIN
+    BEGIN
+        -- Versuch, den String in eine Zahl zu konvertieren
+        converted_number := input_string::NUMERIC;
+    EXCEPTION WHEN others THEN
+        -- Wenn ein Fehler auftritt (z.B. ungültiges Format), gebe NULL zurück
+        RETURN NULL;
+    END;
+
+    -- Wenn die Konvertierung erfolgreich war, gebe die Zahl zurück
+    RETURN converted_number;
+END
+$FUNCTION$ LANGUAGE PLPGSQL;
+```
+# Nutzer ist Teil einer Gruppe
+Überprüft ob ein Nutzer teil einer bestimmten Nutzergruppe ist.
+### Funktion
+``` sql
+CREATE OR REPLACE FUNCTION is_member_of(
+	groupname character varying)
+    RETURNS boolean
+    LANGUAGE 'sql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+AS $BODY$
+  select exists (
+    select 1 
+    from pg_auth_members a, 
+         pg_roles b, 
+         pg_roles c  
+    where a.roleid=b.oid 
+      and a.member = c.oid 
+      and b.rolname = groupname
+      and c.rolname = (SELECT CURRENT_USER)::TEXT
+  );
+$BODY$;
 ```
