@@ -1,4 +1,4 @@
-# IntelliJ
+# Jetbrains IntelliJ
 ## Plugins
 ### ktLint
 - damit lassen sich Codestyle Fehler finden und beheben.
@@ -8,4 +8,3 @@
 
 ### SonarQube vor IDE
 - damit lassen sich Codestyle Fehler finden und beheben.
-- 
