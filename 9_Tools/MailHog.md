@@ -1,4 +1,4 @@
-
+Ein mini Mailserver für Testzwecke
 # Konfiguration
 
 |                              |      |
