@@ -3,8 +3,8 @@ Dieses Obsidian Vault ist mein persönliches Wiki, an dem ich fortlaufend arbeit
 # Disclaimer
 Der Inhalt dieses Obsidian Vaults ist meine persönliche Wissensdatenbank. Meinerseits dürft ihr sie gerne benutzen, ich übernehme jedoch keine Garantie für Richtigkeit und Vollständigkeit der enthaltenen Informationen.
 
-# Quellverweis oder so ähnlich
-Der Inhalt dieses Wikis ist stark geprägt von meinem eigenen (aktuell noch laufenden) Informatikstudium. In diesem Studium bekomme ich viele Folien und verweise auf andere Quellen innerhalb der einzelnen Module. Diese Module und die Personen dahinter sind hier einmal aufgeführt, da sie und ihre (an uns Studis weitergebene) Ausarbeitung der entsprechenden Themenbereiche erheblichen Einfluss auf den Inhalt dieses Wikis haben oder hatten.
+# Quellverweis
+Der Inhalt dieses Wikis ist stark geprägt von meinem eigenen (aktuell noch laufenden) Informatikstudium. In diesem Studium bekomme ich viele Folien und verweise auf andere Quellen innerhalb der einzelnen Module. Diese Module und die Personen dahinter sind hier einmal aufgeführt, da sie und ihre (an uns Studis weiter gegebene) Ausarbeitung der entsprechenden Themenbereiche erheblichen Einfluss auf den Inhalt dieses Wikis haben oder hatten.
 - Testen von Software (SoSe 2025)
 	- von Prof. Dr. Jens Lüssem, Kai Hinkelmann und Eike Petersen
 - Einführung in die IT-Sicherheit (SoSe 2025)
