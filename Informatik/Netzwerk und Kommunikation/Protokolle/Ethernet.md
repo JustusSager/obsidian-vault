@@ -1,4 +1,4 @@
-Das Ethernet-Protokoll wird für kabelgebundene Verbindungen im Internet auf der [[OSI und TCP-IP Referenzmodell#^875e7a|Netzzugangsschicht]] genutzt.
+Das Ethernet-Protokoll wird für kabel-gebundene Verbindungen im Internet auf der [[OSI und TCP-IP Referenzmodell#^875e7a|Netzzugangsschicht]] genutzt.
 Das Ethernet-Protokoll lässt sich entsprechend des [[OSI und TCP-IP Referenzmodell#^42221f|OSI-Refernzmodells]] in den Teil der Bitübertragungsschicht und in den Teil der Sicherungsschicht aufteilen
 
 # Struktur auf der Bitübertragungsschicht
