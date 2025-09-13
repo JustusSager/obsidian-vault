@@ -62,15 +62,15 @@
 # Verbindungsaufbau
 
 ## Erfolgreicher Verbindungsaufbau
-![[Pasted image 20250521192323.png]]
+![[tcp_handshake.png]]
 Initial wird vom Client und vom Server jeweils eine zufällige Sequenznummer $x$ und $y$ gewählt. 
 
 ## Fehlgeschlagener Verbindungsaufbau
-![[Pasted image 20250521192417.png]]
+![[tcp_rst.png]]
 
 ## Datenübertragung
-![[Pasted image 20250521192630.png]]
+![[tcp_lost_data.png]]
 Bei der Sequenznummer `12921` wurden die Daten nicht ordnungsgemäß übertragen, weshalb in der Antwort des Servers die `ACK` noch bei `12921` statt bei `15841` liegt. Dadurch weiß der Client, dass die Daten `2921 - 4380` und `4381 - 5840` noch einmal erneut gesendet werden müssen.
 
 ## Verbindungsabbau
-![[Pasted image 20250521193058.png]]
+![[tcp_fin.png]]

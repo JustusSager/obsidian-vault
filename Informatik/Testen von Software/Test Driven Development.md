@@ -5,7 +5,7 @@
 
 # BDD
 Quelle: https://www.nimblework.com/agile/behavior-driven-development-bdd/
-![[Pasted image 20250514104256.png]]
+![[traditioneller_entwicklungsprozess_vs_bdd.png]]
 
-![[Pasted image 20250514104425.png|400]]
+![[bdd_zyklus.png|400]]
 
