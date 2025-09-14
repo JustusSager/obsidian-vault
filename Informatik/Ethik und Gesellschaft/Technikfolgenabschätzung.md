@@ -46,8 +46,9 @@ Beispiele:
 - Sozioinformatische Analysen
 ## Phänomeninduzierte sozioinformatische Analyse
 ### Beispielbeschreibung
-Mazedonische Jugendliche entdecken Fake News als Geschäftsmodell. Sie betrieben Websites auf denen sie sich 2016 in die den Präsidentschaftswahlkampf  (Trump /Clinton) einmischen. Dabei kopieren sie Artikel und versehen sie mit möglichst skandalösen Titeln um mehr Aufrufe zu generieren. Diese Artikel wurden dann über Facebook verbreitet.
-### 1. Phase: Beschreibung der technischen Grundlagen
+Mazedonische Jugendliche entdecken Fake News als Geschäftsmodell. 
+Sie betrieben Websites auf denen sie sich 2016 in die den Präsidentschaftswahlkampf  (Trump /Clinton) einmischen. Dabei kopieren sie Artikel und versehen sie mit möglichst skandalösen Titeln um mehr Aufrufe zu generieren. Diese Artikel wurden dann über Facebook verbreitet.
+### 1. Phase: Beschreibung der technischen Grundlagen der informatischen Komponenten
 Fragestellung:
 - Welche Algorithmen sind hieran beteiligt?
 - Wie kommen Website-Betreiber an Werbung?
@@ -77,6 +78,7 @@ Wirkungsgefüge:
 ![[wirkungsgefuege_fake_news_jugendliche.png|300]]
 ### 4. Phase: Analyse des Wirkungsgefüges
 Aufgaben / Fragestellung:
+- Passt das Wirkungsgefüge zum beobachteten Phänomen?
 - Analysieren der Dynamik des Systems.
 - Ist es plausibel, dass die Einmischung der Jugendlichen in den Wahlkampf durch die informatischen Komponenten ermöglicht wurde?
 ### 5. Phase: Identifikation möglicher Gegenmaßnahmen
@@ -86,6 +88,38 @@ Fragestellung:
 - Schwachpunkt: Post-Mortem-Analyse
 - Vorgehensweise stellt eine Technikfolgenanalyse dar
 - Vorgehensweise stellt eigentlich keine Technikfolgenabschätzung dar
+## Technikinduzierte sozioinformatische Analyse
+### Beispielbeschreibung
+Surge Pricing von Uber.
+Die ursprüngliche Formel zur Berechnung des Fahrpreises von Uber war vermutlich $a+b \cdot Kilometer + c \cdot Fahrzeit$. Also keine Berücksichtigung des Angebots und der Nachfrage. Jetzt soll ein Surge-Price-Factor eingeführt werden (Erhöhung des Fahrpreises bei hoher Nachfrage).
+### 1. Phase: Beschreibung der technischen Grundlagen
+Fragestellung:
+- Gibt es Situationen, in denen Surge Pricing zu unangemessenen Preisen führt?
+- Können sie sich Manipulationsversuche von Fahrer:innen bzw. Nutzer:innen vorstellen?
+angestrebte Wirkung des Surge-Pricing-Faktor:
+![[wirkungsgefuege_surge_pricing_angestrebt.png|500]]
+### 2. Phase: Identifikation der relevanten sozialen Akteure und ihrer Motivation
+Fragestellung:
+- Welche Akteure sind beteiligt?
+- Inwieweit sind die sozialen Akteure aktiv am Phänomen beteiligt?
+- Welche Motivation haben diese Akteure?
+Akteure:
+- Fahrer:innen
+- Nutzer:innen
+### 3. Phase: Erstellung des Wirkungsgefüges
+![[wirkungsgefuege_surge_pricing_1.png|500]]
+![[wirkungsgefuege_surge_pricing_2.png|500]]
+### 4. Phase: Analyse des Wirkungsgefüges auf möglicherweise ungewollte Nebenwirkungen und Manipulierbarkeit
+Aufgaben / Fragestellung:
+- Wie reagieren soziale Akteure basierend auf Motivation und Anreizstrukturen?
+- Analysieren sie die Dynamik im System.
+![[wirkungsgefuege_verstaerkender_und_gedaempfter_zyklus.png|400]]
+### 5. Phase: Zweite-Gedanken-Denken
+Aufgaben / Fragestellung:
+- Versetzen sich sich in die Lage der sozialen Akteure.
+- Welche Anreize (für die einzelnen sozialen Akteure) werden durch die Software verändert?
+- Wo liegen Gewinnmöglichkeiten? Wo drohen Verluste?
+- Gibt es Aktionen, die die Software dazu bringen, diese Gewinne zu ermöglichen bzw. diese Verluste zu verringern?
 # Grenzen der Technikfolgenabschätzung
 Herausforderungen der Technikfolgenabschätzung sind:
 - Technik intransparent (z.B. komplexe Verfahren der KI)
