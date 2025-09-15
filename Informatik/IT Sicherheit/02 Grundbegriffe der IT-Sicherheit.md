@@ -4,10 +4,10 @@ Das System funktioniert wie vorhergesehen.
 - Schutz vor unbeabsichtigten Schäden.
 ### Security (Informationssicherheit) ^ec9f9a
 Das System nimmt nur Zustände ein, die zu keinem unautorisiertem Zugriff (lesend und schreibend) führen.
-Erweitert [[#^228645|Funktionssicherheit]] um den Schutz der enthaltenen Informationen.
-	IT-Sicherheit: Eigentlich nennt man IT-Sicherheit Informationssicherheit
-	Cybersicherheit: teils analog zu Informationssicherheit
-	Protection: Backups, etc von Informationen (nicht Modulrelevant)
+Erweitert [[#^228645|Funktionssicherheit]] um den Schutz der enthaltenen Informationen.	
+- IT-Sicherheit: Eigentlich nennt man IT-Sicherheit Informationssicherheit
+- Cybersicherheit: teils analog zu Informationssicherheit
+- Protection: Backups, etc von Informationen (nicht Modulrelevant)
 ### Daten^67e685
 Daten sind kontextfreie Angaben, ohne diese zu interpretieren.
 ### Informationen
