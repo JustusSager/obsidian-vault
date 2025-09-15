@@ -9,13 +9,13 @@ Dem Allianz Risk Barometer zufolge stellen Cyber-Vorfälle das größte Risiko f
 Hier sind 2 verschiedene Modelle die die wichtigsten Schutzziele dargestellt. Links die CIA-Triade, Rechts das VIVA-Modell. Im vergleich fällt auf, dass in der CIA-Triade die Authentizität fehlt.
 ![[schutzziele_modelle.png]]
 Die Schutzziele lauten:
-- [[Glossar#^58c934|Vertraulichkeit]] (engl. confidentiality)
-- [[Glossar#^78c88f|Integrität]] (engl. integrity)
-- [[Glossar#^ae9f9a|Verfügbarkeit]] (engl. availability)
-- [[Glossar#^189d25|Authentizität]]
+- [[Glossar#Vertraulichkeit|Vertraulichkeit]] (engl. confidentiality)
+- [[Glossar#Integrität|Integrität]] (engl. integrity)
+- [[Glossar#Verfügbarkeit|Verfügbarkeit]] (engl. availability)
+- [[Glossar#Authentizität|Authentizität]]
 	- Das Schutzziel Authentizität kann sowohl für Subjekte als auch für Objekte gelten. Den Nachweis von Subjekten nennt man Authentifizierung. Beim Nachweis von Objekten geht es darum, zu prüfen, dass das Objekt tatsächlich dem zugehörigen Subjekt zugeordnet werden kann.
-- [[Glossar#^6c70b9|Verbindlichkeit / Nichtabstreitbarkeit]]
-- [[Glossar#^974273|Anonymisierung]]
+- [[Glossar#Verbindlichkeit/Nichtabstreitbarkeit|Verbindlichkeit / Nichtabstreitbarkeit]]
+- [[Glossar#Anonymisierung|Anonymisierung]]
 # Hacking
 ### Was ist ein Hacker?
 1. Black Hats
@@ -55,11 +55,11 @@ Ein Bedrohungsbaum ist eine graphische Darstellung der möglichen Bedrohungen in
 Die Wurzel ist das Ziel des Angriffs. Die Verzweigungen repräsentieren verschiedene Angriffspfade. Jeder Knoten beschreibt eine Teilbedingung, die erfüllt sein muss, ggf. können diese auch UND-Verknüpft werden.
 ![[beispiel_bedrohungsbaum.png]]
 ### Bedrohungsanalyse mit STRIDE
-<b>S</b>poofing - Verschleierung der Identität ([[#^189d25|Authentizität]])
-<b>T</b>ampering - Manipulation ([[#^78c88f|Integrität]])
-<b>R</b>epudiation - Abstreitbarkeit ([[#^6c70b9|Verbindlichkeit/Nichtabstreitbarkeit]])
-<b>I</b>nformation Disclosure - Verletzung der Privatsphäre ([[#^58c934|Vertraulichkeit]])
-<b>D</b>enial of Service - Dienstverweigerung ([[#^ae9f9a|Verfügbarkeit]])
+<b>S</b>poofing - Verschleierung der Identität ([[Glossar#Authentizität|Authentizität]])
+<b>T</b>ampering - Manipulation ([[Glossar#Integrität|Integrität]])
+<b>R</b>epudiation - Abstreitbarkeit ([[Glossar#Verbindlichkeit/Nichtabstreitbarkeit|Verbindlichkeit/Nichtabstreitbarkeit]])
+<b>I</b>nformation Disclosure - Verletzung der Privatsphäre ([[Glossar#Vertraulichkeit|Vertraulichkeit]])
+<b>D</b>enial of Service - Dienstverweigerung ([[Glossar#Verfügbarkeit|Verfügbarkeit]])
 <b>E</b>levation of Privilege - Rechteausweitung
 
 Vorgehen:

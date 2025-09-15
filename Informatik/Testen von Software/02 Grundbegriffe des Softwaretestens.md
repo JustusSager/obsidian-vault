@@ -94,7 +94,7 @@ z. B. durch Testen, da es durch das Finden von Fehlerwirkungen dazu dient, Defek
 - Sicher: „Zustand, in dem das Risiko eines Personen- oder Sachschadens auf einen annehmbaren Wert begrenzt ist“ (ISO 8402)
 - Ein System heißt sicherheitskritisch, wenn es beim Ausfall großen Schaden verursachen kann
 	- „großer Schaden“: Der Ausfallverlust übersteigt die regulären Betriebsgewinne um ein Vielfaches
-- Siehe auch [[02 Grundbegriffe der IT-Sicherheit#^228645|Safety]] und [[02 Grundbegriffe der IT-Sicherheit#^ec9f9a|Security]]
+- Siehe auch [[Glossar#Funktionssicherheit|Funktionssicherheit]] und [[Glossar#Informationssicherheit|Informationssicherheit]]
 
 ### Zuverlässigkeit
 - Zuverlässigkeit (Reliability) ist ein Maß für die Fähigkeit des Systems, funktionstüchtig zu bleiben; Wahrscheinlichkeit, dass das System während einer bestimmten Zeitdauer t nicht versagt
@@ -106,7 +106,7 @@ z. B. durch Testen, da es durch das Finden von Fehlerwirkungen dazu dient, Defek
 - Verlässlichkeit (Dependability) wird oft synonym oder als Erweiterung für Zuverlässigkeit verwendet
 - DIN 40041: Zuverlässigkeit ist die Beschaffenheit bezüglich der Eignung, während oder nach vorgegebenen Zeitspannen bei vorgegebenen Arbeitsbedingungen die Zuverlässigkeits-Anforderungen zu erfüllen.
 - Teile: Verfügbarkeit, Funktionsfähigkeit, Sicherheit
-- Vertraulichkeit ist Teil der [[02 Grundbegriffe der IT-Sicherheit#^ec9f9a|Informationssicherheit]] 
+- Vertraulichkeit ist Teil der [[Glossar#Informationssicherheit|Informationssicherheit]] 
 ### Verfügbarkeit
 - MTBF: mean time between failures; MTTR: mean time to repair
 - Verfügbarkeit (availability) misst die Wahrscheinlichkeit, mit der ein reparierbares System zu einem beliebigen Zeitpunkt funktioniert:
