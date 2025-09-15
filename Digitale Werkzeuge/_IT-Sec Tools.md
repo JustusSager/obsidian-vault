@@ -10,7 +10,7 @@ show options # Optionen anzeigen
 set <Parameter> <Wert> # Parameter setzen
 run # exploit starten
 ```
-# `nmap`
+# `nmap` ^313460
 Open Source Werkzeug für Netzwerk-Scans und Sicherheitsüberprüfung.
 ### Port scan durchführen:
 ``` bash
@@ -32,7 +32,7 @@ hydra <options> <IP-Adresse> <Dienst>
 	-P <Dateiname> # Eine Datei mit Passwörtern angeben
 	-t <>
 ```
-# `hping3`
+# `hping3` ^3cba1b
 ### SYN-Flooding
 ``` bash
 sudo hping3 <options> <Ziel-IP>
@@ -99,7 +99,7 @@ airodump-ng --bssid <BSSID> -c <Channel> --write <Dateiname> <WlanKarte>
 # Geräte im Netzwerk deathentifizieren
 airodump-ng --deauth <Anzahl> -a <BSSID> <WlanKarte>
 ```
-# `GoPhish`
+# `GoPhish` ^7dddde
 Software zum aussenden und überwachen von Phishing E-Mails.
 - Linux
 - Web-basiert
