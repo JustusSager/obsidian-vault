@@ -8,31 +8,14 @@ Dem Allianz Risk Barometer zufolge stellen Cyber-Vorfälle das größte Risiko f
 ### Modelle
 Hier sind 2 verschiedene Modelle die die wichtigsten Schutzziele dargestellt. Links die CIA-Triade, Rechts das VIVA-Modell. Im vergleich fällt auf, dass in der CIA-Triade die Authentizität fehlt.
 ![[schutzziele_modelle.png]]
-### Vertraulichkeit ^58c934
-(engl. confidentiality)
-Eine unautorisierte Informationsgewinnung ist nicht möglich.
- -> Informationen sind sicher vor unbefugtem lesenden Zugriff.
-### Integrität ^78c88f
-(engl. integrity)
-Eine unautorisierte und unbemerkte Manipulation der zu schützenden Daten ist nicht möglich.
- -> Manipulationsschutz, Informationen sind sicher vorm unbefugten schreibenden Zugriff.
-### Verfügbarkeit ^ae9f9a
-(engl. availability)
-Authentifizierte und autorisierte Parteien können ihre Berechtigungen wahrnehmen, ohne dabei unautorisiert beeinträchtigt zu werden.
- -> erlaubte Zugriffe sind jederzeit möglich.
-### Authentizität ^189d25
-(engl. authenticity)
-Die Echtheit und Glaubwürdigkeit ist gegeben und kann anhand einer eindeutigen Identität und charakteristischen Eigenschaften überprüft werden.
-Das Schutzziel Authentizität kann sowohl für Subjekte als auch für Objekte gelten. Den Nachweis von Subjekten nennt man Authentifizierung. Beim Nachweis von Objekten geht es darum, zu prüfen, dass das Objekt tatsächlich dem zugehörigen Subjekt zugeordnet werden kann.
- -> Überprüfen, ob etwas dass ist, was es behauptet zu sein.
-### Verbindlichkeit/Nichtabstreitbarkeit ^6c70b9
-(engl. non-repudiation)
-Es ist nicht möglich, dass eine Partei nachträglich ihre Beteiligung an einer (Trans-) Aktion abstreiten kann.
- -> eindeutiger Nachweis, dass eine "Person" an einem Prozess beteiligt war.
-### Anonymisierung
-(engl. anonymisation)
-Veränderung von personenbezogenen Daten, so dass Einzelangaben nicht mehr einer bestimmten oder bestimmbaren Person zugeordnet werden können.
- -> siehe auch Pseudonymisierung
+Die Schutzziele lauten:
+- [[Glossar#^58c934|Vertraulichkeit]] (engl. confidentiality)
+- [[Glossar#^78c88f|Integrität]] (engl. integrity)
+- [[Glossar#^ae9f9a|Verfügbarkeit]] (engl. availability)
+- [[Glossar#^189d25|Authentizität]]
+	- Das Schutzziel Authentizität kann sowohl für Subjekte als auch für Objekte gelten. Den Nachweis von Subjekten nennt man Authentifizierung. Beim Nachweis von Objekten geht es darum, zu prüfen, dass das Objekt tatsächlich dem zugehörigen Subjekt zugeordnet werden kann.
+- [[Glossar#^6c70b9|Verbindlichkeit / Nichtabstreitbarkeit]]
+- [[Glossar#^974273|Anonymisierung]]
 # Hacking
 ### Was ist ein Hacker?
 1. Black Hats
