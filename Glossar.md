@@ -55,6 +55,21 @@
 ### Angriff
 - Im Sinne der IT-Sicherheit:
   ist der unautorisierte Zugriff bzw. Zugriffsversuch auf ein System bzw. die Informationen eines Systems.
+### Angriffsvektor
+- Im Sinne der IT-Sicherheit:
+  (engl. attack vector)
+  Ein Angriffsvektor bezeichnet einen Angriffsweg oder eine Angriffstechnik um die Schutzziele eines Systems zu kompromittieren. Dazu nutzt der Angreifer eine oder mehrere Schwachstellen verteilt oder mehrstufig aus.
+  **Beispiel:**
+  Angriffsvektoren einer IT-Infrastruktur einer Firma oder organisation wären:
+	- Schadsoftware per Web, Mail, App, usw.
+	- Angriff auf Firmengerät unterwegs
+	- Zugriff auf Daten in der Cloud
+	- Home Automation, Schließsysteme, IoT-Geräte, usw.
+	- (Spear) Phishing
+	- Social Engineering
+	- verlorenes/gestohlenes Smartphone oder Notebook
+	- Angriff von innen, Sabotage
+	- Network Hacking
 ### Operational Technology (OT)
 - Im Sinne der IT-Sicherheit:
   Hard- und Software, die zur Steuerung und Überwachung physischer Maschinen und industrieller Anlagen eingesetzt werden (inkl. zugehöriger Prozesse).

@@ -32,20 +32,6 @@ Die Schutzziele lauten:
 - Backdoors
 - Schadsoftware
 - Denial of Service
-### Angriffsvektor
-(engl. attack vector)
-Ein Angriffsvektor bezeichnet einen Angriffsweg oder eine Angriffstechnik um die Schutzziele eines Systems zu kompromittieren. Dazu nutzt der Angreifer eine oder mehrere Schwachstellen verteilt oder mehrstufig aus.
-**Beispiel:**
-Angriffsvektoren einer IT-Infrastruktur einer Firma oder organisation wären:
-- Schadsoftware per Web, Mail, App, usw.
-- Angriff auf Firmengerät unterwegs
-- Zugriff auf Daten in der Cloud
-- Home Automation, Schließsysteme, IoT-Geräte, usw.
-- (Spear) Phishing
-- Social Engineering
-- verlorenes/gestohlenes Smartphone oder Notebook
-- Angriff von innen, Sabotage
-- Network Hacking
 # Bedrohungs- und Risikoanalyse
 Ziel: "Security by Design"
 	beim Entwurf eines Systems werden direkt Überlegungen zur Informationssicherheit des Geräts angestellt und entsprechende Gegenmaßnahmen im Entwurf vorgesehen.
