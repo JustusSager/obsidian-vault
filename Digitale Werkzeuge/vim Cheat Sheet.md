@@ -6,11 +6,12 @@
 | visual    | `v`   |
 
 # Im normal mode
-|      |                    |
-| ---- | ------------------ |
-| `dd` | eine Zeile löschen |
-| `:q` | vim verlassen      |
-| `:w` | Datei speichern    |
+|                |                    |
+| -------------- | ------------------ |
+| `dd`           | eine Zeile löschen |
+| `:q`           | vim verlassen      |
+| `:w`           | Datei speichern    |
+| `/SUCHBEGRIFF` | suche              |
 
 # Im visual mode
 |     |              |
