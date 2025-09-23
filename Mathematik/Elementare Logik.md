@@ -90,5 +90,8 @@ $A \cdot (B + C) = (A \cdot B) + (A \cdot C)$
 $A + (B \cdot C) = (A + B) \cdot (A + C)$ 
 $+$ und $\cdot$ sind gleichberechtigt (also kein Punkt vor Strich), daher müssen immer Klammern gesetzt werden!
 ## weitere
-$A \setminus B = A \cdot \bar B$ 
-$A \oplus B = (A \setminus B) + (B \setminus A) = (A \cdot \bar B) + (B \cdot \bar A)$ 
+$A \setminus B \iff A \cdot \bar B$ 
+$A \oplus B \iff (A \setminus B) + (B \setminus A) \iff (A \cdot \bar B) + (B \cdot \bar A)$ 
+$(A \implies B) \iff (\bar B \implies \bar A)$ 
+$(A \implies B) \iff (\bar A \lor B)$ 
+$\overline{(A \implies B)} \iff (A \land \bar B)$ 

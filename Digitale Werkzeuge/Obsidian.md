@@ -22,4 +22,5 @@ https://www.namsu.de/Mathematik/1-7-3.html
 | $$\exists x \in M : A(x)$$     | `\exists x \in M : A(x)`                                             |
 | $$A \iff B$$                   | `A \iff B`                                                           |
 | $$A \implies B$$               | `A \implies B`                                                       |
+| $$\mathbb{N}$$                 | `\mathbb{N}`                                                         |
 
