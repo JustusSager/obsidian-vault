@@ -5,6 +5,8 @@ Der Inhalt dieses Obsidian Vaults ist meine persönliche Wissensdatenbank. Meine
 
 # Quellverweis
 Der Inhalt dieses Wikis ist stark geprägt von meinem eigenen (aktuell noch laufenden) Informatikstudium. In diesem Studium bekomme ich viele Folien und verweise auf andere Quellen innerhalb der einzelnen Module. Diese Module und die Personen dahinter sind hier einmal aufgeführt, da sie und ihre (an uns Studis weiter gegebene) Ausarbeitung der entsprechenden Themenbereiche erheblichen Einfluss auf den Inhalt dieses Wikis haben oder hatten.
+- Einführung in die künstliche Intelligenz (WiSe 2024/25)
+	- Prof. Dr. Jens Lüssem und Eike Petersen
 - Informatik und Gesellschaft (WiSe 2024/25)
 	- von Prof. Dr. Jens Lüssem und Kai Hinkelmann
 - Kommunikationssysteme (WiSe 2024/25)
@@ -21,3 +23,5 @@ Der Inhalt dieses Wikis ist stark geprägt von meinem eigenen (aktuell noch lauf
 	- von Prof. Dr.-Ing. Klaus Lebert und Prof. Dr. Kay Schmidt-Rethmeier
 - Applied Deep Learning (SoSe 2025)
 	- von Dr. Marina Ignatov
+- Mathe 1 für Informatik
+	- 

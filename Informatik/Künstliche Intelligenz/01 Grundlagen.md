@@ -2,27 +2,6 @@ In einem Neuronalen Netzwerk wird ein Netzwerk von Neuronen simuliert, angelehnt
 
 **Artifical Neural Network:**
 Diese simulierten Neuronen haben eine vordefinierte Anzahl von Eingangswert und einen Ausgangswert. Innerhalb des Neurons werden die Eingangswerte verarbeitet und daraus ein Ausgangswert berechnet. Die Eingangswerte können von einer äußeren Quelle kommen (wie die in das Netzwerk gefütterten Werte) oder von anderen Neuronen. Dadurch entsteht ein Netzwerk von miteinander verknüpften Neuronen.
-**Interdisziplinär:**
-Je nach Anwendungsfall gibt es verschiedenste Interdisziplinäre Bereiche die mit Neuronalen Netzwerken in Zusammenhang stehen:
-- Biologie, Physiologie, Anatomie, Neurochemie
-	- Eigenschaften einzelner Neuronen
-	- Verbindung zwischen Neuronen
-	- Physiologische und anatomische Anordnung von Netzwerken
-- Physik
-	- (Folie 14)
-- Informatik und Mathematik
-	- Mustererkennung, und Klassifikation
-	- Künstliche Intelligenz
-	- ...
-# Verwendungszweck
-- Verständnis von biologischen Netzwerken
-- Problemlösung mithilfe von selbstlernenden Algorithmen
-	- Bilderkennung
-	- Text-to-Speech, Speech-to-Text
-	- Autonome Systeme
-	- Industrieprozessoptimierung
-	- Filtern, Klassifizieren von Daten
-	- Datenanalyse
 
 # Einführung anhand eines Beispiels
 Quelle: `How to Create a Neural Network (and Train it to Identify Doodles)` von Sebastian Lague (https://www.youtube.com/watch?v=hfMk-kjRv4c)

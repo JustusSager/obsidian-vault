@@ -1,1 +1,0 @@
-#TODO Geschichte von Neuronalen Netzen oder auch nicht
