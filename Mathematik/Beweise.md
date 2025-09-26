@@ -5,10 +5,26 @@ In Beweisen soll anhand von der Gültigkeit bestimmter Aussagen (den Voraussetzu
 Es wird anhand der Voraussetzung $A$ die Behauptung $B$ hergeleitet. Es wird also die Gültigkeit von $A \implies B$ gezeigt. 
 ## Vorgehensweise
 Es gilt $A$, daraus $B$ folgern.
+## Beispiel
+Satz: Die Summe von drei aufeinander folgenden $\mathbb{N}$ Zahlen ist durch 3 teilbar.
+Aussage A: 
+	$a,b,c \in \mathbb{N} \text{ mit } b = a+1, c=a+2$ 
+Aussage B: 
+	$a,b,c \in \mathbb{N} \text{ ist durch 3 teilbar}$ 
+Behauptung: 
+	$A \implies B$ 
+Vorgehensweise:
+1) Voraussetzung: A wird erfüllt.
+2) Damit folgt: $$a + b + c = a + (a+1) + (a+2) = a + a + a + 1 + 2 = 3 \cdot a + 3=3 \cdot (a + 1) \in \mathbb{N}$$
+   Es ist durch 3 teilbar.
+Also gilt: 
+	$A \implies B$ 
 # Indirekter Beweis durch Kontraposition
 Dadurch dass $A \implies B$ logisch äquivalent ist zu $\bar B \implies \bar A$ lässt sich $A \implies B$ auch durch den indirekten Beweis $\bar B \implies \bar A$ beweisen. Dies ist häufig einfacher als der direkte Beweis $A \implies B$.
 ## Vorgehensweise
 Es gilt $\bar B$, daraus $\bar A$ folgern.
+## Beispiel
+
 # Indirekter Beweis durch Widerspruch
 Es gilt $(A \to B) \iff (\bar A \lor B)$ und für die Negation: $\overline{(A \to B)} \iff (A \land \bar B)$ 
 ## Vorgehensweise
