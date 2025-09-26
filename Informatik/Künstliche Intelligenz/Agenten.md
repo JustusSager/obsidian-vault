@@ -1,4 +1,4 @@
-termAgenten sollen:
+Agenten sollen:
 - autonom mit ihrer Umwelt agieren
 - durch Sensoren ihre Umwelt wahrnehmen (Perzepte)
 - mithilfe ihrer Effektoren ihre Umwelt manipulieren (Aktionen)
