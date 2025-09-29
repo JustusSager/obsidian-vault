@@ -10,3 +10,12 @@ Bildungsgesetze können z.B. so aussehen:
 - durch Messung erfasst 
 	- z.B. Tagestemperaturen, Wechselkursnotierungen, etc.
 # Grenzwert einer Folge
+Der Grenzwert einer Folge ist der Wert den sich die Folge im unendlichen annähert. 
+Wenn eine Zahlenfolge einen Grenzwert $g$ besitzt, nennt man sie **konvergent**, andernfalls **divergent**.
+$$\lim_{n \to \infty } a_n = g$$ 
+## Rechenregeln
+$$\lim_{n \to \infty} (a_n \pm C) = \lim_{n \to \infty} a_n \pm$\lim_{n \to \infty} C = a \pm C$$
+$$ \lim_{n \to \infty} C \cdot a_n = C \cdot \lim_{n \to \infty} a_n = C \cdot a $$
+$$ \lim_{n \to \infty} (a_n \pm b_n) = \lim_{n \to \infty} a_n \pm  \lim_{n \to \infty} b_n = a \pm b $$
+$$ \lim_{n \to \infty} (a_n \cdot b_n) = \lim_{n \to \infty} a_n \cdot \lim_{n \to \infty} b_n = a \cdot b$$
+$$ \lim_{n \to \infty} \left( {a_n \over b_n } \right) = {\lim_{n \to \infty} a_n \over \lim_{n \to \infty} b_n} = {a \over b} (\text{ falls } b \ne 0)$$
