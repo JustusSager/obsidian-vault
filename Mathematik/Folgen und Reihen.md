@@ -23,17 +23,23 @@ $$ \lim_{n \to \infty} \left( {a_n \over b_n } \right) = {\lim_{n \to \infty} a_
 ## Arithmetische Folge
 Es existiert eine Konstante $d  \in \mathbb{R}$, so dass für jedes $n \in \mathbb{N}$ gilt: 
 $$a_{n+1} - a_n = d \iff a_{n+1} = a_n + d$$(Die Differenz von zwei aufeinander folgenden Glieder ist immer Gleich)
+$$ a_n = a_1 + d * (n-1)$$
 z.B. $\{1, 6, 11, 16, 21, \dots\} \text{ mit } d = 5$ 
 ## Geometrische Folge
-Es existiert eine Konstante $q \in \mathbb{R}$, so dass für jeder $n \in \mathbb{N}$ gilt:
+Es existiert eine Konstante $q \in \mathbb{R}$, so dass für jedes $n \in \mathbb{N}$ gilt:
 $$ {a_{n+1} \over a_n} = q \iff a_{n+1} = q \cdot a_n$$ (Quotient zweier aufeinander folgenden Glieder ist immer gleich)
+$$ a_{n} = q^{n-1} \cdot a_1$$
 z.B. $\{1, 2, 4, 8, 16, 32, \dots\} \text{ mit } a = 2$ 
 # Reihen
-Eine Reihe ist die Partialsumme einer Folge.
+Eine Reihe ist die Partialsumme einer Folge. 
 ## Grundbegriffe 
 ### Partialsumme
 Die Summe der ersten $n$ Glieder ist die **Partialsumme** $s_n$.
 $$s_n = \sum_{k=1} ^n a_k = s_1 + s_2 + \dots + s_n$$
+Bei einer **arithmetischen Reihe** lässt es sich vereinfachen zu:
+$$ s_n = n \cdot {a_1 + a_n \over 2} $$
+Bei einer **geometrischen Reihe** lässt es sich vereinfachen zu:
+$$ s_n = a_1 \cdot { 1 - q^n \over 1 - q } \text{ für } q \ne 1$$
 ### (un)endliche Reihe
 Die Folge der Partialsummen heißt **endliche Reihe** $\{s_n\}$.
 Falls $n \to \infty$ heißt sie **unendliche Reihe**.
