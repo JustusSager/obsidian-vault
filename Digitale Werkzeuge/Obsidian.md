@@ -23,4 +23,9 @@ https://www.namsu.de/Mathematik/1-7-3.html
 | $$A \iff B$$                   | `A \iff B`                                                           |
 | $$A \implies B$$               | `A \implies B`                                                       |
 | $$\mathbb{N}$$                 | `\mathbb{N}`                                                         |
-
+| $$ A \times B $$               | `A \times B`                                                         |
+| $$ A \subset B$$               | `A \subset B`                                                        |
+| $$A \subseteq B$$              | `A \subseteq B`                                                      |
+| $$a \in A$$                    | `a \in A`                                                            |
+| $$a \notin B$$                 | `a \notin B`                                                         |
+| $$R \circ S$$                  | `R \circ S`                                                          |

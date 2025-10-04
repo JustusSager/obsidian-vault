@@ -1,7 +1,11 @@
-Die Matrizen bauen auf den Informationen aus [[Vektoren]] auf.
+Voraussetzungen:
+- [[Vektoren]]
 #TODO Matrizenrechnung 
 
 # Grundlagen und Grundbegriffe
 
 $\overline{\overline{A}}=\begin{pmatrix} a_{11} & a_{12} & ... & a_{1n} \\ a_{21} & a_{22} & & a_{2n}\\ ... & & ... & \\ a_{m1} & a_{m2} & & a_{mn}\end{pmatrix}$
-mit $(n \times m)$ Werten. Die Anzahl der Werte nennt man #TODO
+- Das Element $a_{ik}$ steht in der Matrix in der $i$-ten Zeile und in der $k$-ten Spalte.
+- Die Anzahl der Zeilen $m$ und die Anzahl der Spalten $n$ kennzeichnen den **Typ der Matrix** $(m \times n)$ oder $(m, n)$.
+	- wenn $m = n$ handelt es sich um eine **quadratische Matrix**.
+- Eine Matrix, die aus einer einzigen Zeile bzw. Spalte besteht, heißt **Zeilenvektor** bzw. **Spaltenvektor**.
