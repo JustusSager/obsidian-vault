@@ -1,5 +1,5 @@
 # Folgen
-Eine ist eine Menge an geordneten Zahlen (Gliedern). Diese gehorchen häufig einem bestimmten Bildungsgesetz.
+Eine Folge ist eine Menge an geordneten Zahlen (Gliedern). Diese gehorchen häufig einem bestimmten Bildungsgesetz.
 $$\{a_n\}=a_1, a_2, \dots a_n \text{ mit } (n \in \mathbb{N})$$
 Bildungsgesetze können z.B. so aussehen:
 - über Funktionsgleichungen
@@ -31,18 +31,30 @@ $$ {a_{n+1} \over a_n} = q \iff a_{n+1} = q \cdot a_n$$ (Quotient zweier aufeina
 $$ a_{n} = q^{n-1} \cdot a_1$$
 z.B. $\{1, 2, 4, 8, 16, 32, \dots\} \text{ mit } a = 2$ 
 # Reihen
-Eine Reihe ist die Partialsumme einer Folge. 
+Eine Reihe ist die Partialsumme einer Folge.
 ## Grundbegriffe 
 ### Partialsumme
-Die Summe der ersten $n$ Glieder ist die **Partialsumme** $s_n$.
-$$s_n = \sum_{k=1} ^n a_k = s_1 + s_2 + \dots + s_n$$
+Die Summe der ersten $n$ Glieder ist die **Partialsumme** $S_n$.
+$$S_n = \sum_{k=1}^n a_k = s_1 + s_2 + \dots + s_n$$
 Bei einer **arithmetischen Reihe** lässt es sich vereinfachen zu:
-$$ s_n = n \cdot {a_1 + a_n \over 2} $$
+$$ S_n = n \cdot {a_1 + a_n \over 2} $$
 Bei einer **geometrischen Reihe** lässt es sich vereinfachen zu:
-$$ s_n = a_1 \cdot { 1 - q^n \over 1 - q } \text{ für } q \ne 1$$
+$$ S_n = a_1 \cdot { 1 - q^n \over 1 - q } \text{ für } q \ne 1$$
 ### (un)endliche Reihe
-Die Folge der Partialsummen heißt **endliche Reihe** $\{s_n\}$.
+Die Folge der Partialsummen heißt **endliche Reihe** $\{S_n\}$.
 Falls $n \to \infty$ heißt sie **unendliche Reihe**.
 **Grenzwert** einer endlichen Reihe ist das letzte Folgenglied der Partialsummenfolge.
 ### harmonische Reihe $H$
-$$ H = \sum_{k=1} ^{\infty} {1 \over k} = 1 + {1 \over 2} + {1 \over 3} + {1 \over 4} + \dots + {1 \over n} + \dots$$
+$$ H = \sum_{k=1}^{\infty} {1 \over k} = 1 + {1 \over 2} + {1 \over 3} + {1 \over 4} + \dots + {1 \over n} + \dots$$
+## Konvergenz / Divergenz einer unendlichen Reihe
+Eine unendliche Reihe $R_{\infty}$ heißt **konvergent**, wenn die Folge der Partialsummen einen endlichen Grenzwert $S$ besitzt.
+$$ R_{\infty} =\lim_{n \to \infty} S_n = \lim_{n \to \infty} \sum_{k=1}^n a_k = S $$
+- Den Grenzwert $S$ einer unendlichen Reihe nennt man **Summenwert**.
+- Besitzt die unendliche Reihe keinen Grenzwert (Summenwert), nennt man sie **divergent**
+	- Wenn $S = \pm \infty$ nennt man sie **bestimmt divergent**.
+### Konvergenzkriterien
+Für die Konvergenz einer unendlichen Reihe $\sum_{n=1}^{\infty} a_n$ ist die notwendige Bedingung:
+$$ \lim_{n \to \infty} a_n = 0$$
+Eine unendliche Reihe $\sum_{n=1}^{\infty} a_n$ ist konvergent, falls gilt:  (Quotientenkriterium)
+$$ \lim_{n \to \infty} \left\lvert {a_{n+1} \over a_n} \right\rvert = q \lt 1$$
+#TODO Folgen und Reihen sind noch nicht fertig
