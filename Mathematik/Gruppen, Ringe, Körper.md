@@ -55,8 +55,8 @@ Für alle $a,b \in R$ gilt: $a \circ b = b \circ a$
 Es gibt ein $n_\circ \in R$ sodass für alle $a \in R$ gilt: $a \circ n_\circ = a$ 
 # Körper
 Eine Menge mit zwei Verknüpfungen $(K, \oplus, \circ)$ heißt **Körper**, wenn alles folgende gilt:
-- $(K, \oplus)$ ist eine [[#kommutative Gruppe]] mit neutralem Element $n = 0$
-- $(K \setminus \{ n_\oplus \}, \circ)$ ist eine [[#kommutative Gruppe]] mit neutralem Element $n = 1$
+- $(K, \oplus)$ ist eine [[#kommutative Gruppe]] mit neutralem Element $n$
+- $(K \setminus \{ n_\oplus \}, \circ)$ ist eine [[#kommutative Gruppe]] mit neutralem Element $n$
 - Das Distributivgesetz gilt
   Für alle $a,b,c \in K$ gilt: $a \circ (b \oplus c) = (a \circ b) \oplus (a \circ c)$ 
 **Hinweis:**
