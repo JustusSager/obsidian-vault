@@ -1,4 +1,4 @@
-Bei der hybriden Verschlüsselung wird für die aktuelle Sitzung der Übertragung ein [[03-1 symmetrische Verschlüsselung|symmetrischer Schlüssel]] erzeugt mit dem (mit einer guten Performance) die Nachrichten übermittelt werden können. Dieser symmetrische Schlüssel muss jedoch sicher an die Übertragungsteilnehmer übermittelt werden, ohne das vorher ein Nachrichtenaustausch stattgefunden hat. Hierfür kann die [[03-2 asymmetrische Verschlüsselung|asymmetrische Verschlüsselung]] verwendet werden.
+Bei der hybriden Verschlüsselung wird für die aktuelle Sitzung der Übertragung ein [[symmetrische Verschlüsselung|symmetrischer Schlüssel]] erzeugt mit dem (mit einer guten Performance) die Nachrichten übermittelt werden können. Dieser symmetrische Schlüssel muss jedoch sicher an die Übertragungsteilnehmer übermittelt werden, ohne das vorher ein Nachrichtenaustausch stattgefunden hat. Hierfür kann die [[asymmetrische Verschlüsselung|asymmetrische Verschlüsselung]] verwendet werden.
 
 ``` python
 from Crypto.Cipher import PKCS1_OAEP

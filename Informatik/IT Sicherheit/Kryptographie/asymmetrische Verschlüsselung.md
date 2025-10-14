@@ -8,7 +8,7 @@ Dabei muss jedoch folgendes beachtet werden:
 2. Wenn der Private-Key von jemandem bekannt ist, können sämtliche Nachrichten an diese Person entschlüsselt werden. Es darf nicht möglich sein aus dem Public-Key Rückschlüsse auf den Private-Key zu ziehen.
 3. Es muss sichergestellt werden, dass der veröffentlichte Public-Key auch wirklich zu der Person gehört, der dabei angegeben ist. Siehe dazu #TODO Zertifikate.
 4. Eine asymmetrische Verschlüsselung ist deutlich rechenintensiver als eine Symmetrische.
-
+Für den mathematischen Ansatz siehe [[modulare Arithmetik#RSA-Verschlüsselung]].
 ## RSA
 ``` python 
 from Crypto.Cipher import PKCS1_OAEP

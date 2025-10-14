@@ -5,7 +5,7 @@ Dabei müssen sich die Gesprächsteilnehmer auf einen gemeinsamen Schlüssel ein
 - Es wird jeder Buchstabe innerhalb der Nachricht einzeln betrachtet.
 - Jeder Buchstabe wird um eine bestimmte Anzahl $k$ relativ zum Alphabet verschoben.
 - z.B. Bei dem Schlüssel $k=3$ wird der Buchstabe $A$ der Nachricht zu einem $D$ in der Nachricht.
-
+Für den Mathematischen Ansatz siehe [[modulare Arithmetik#Cäsar-Verschlüsselung]].
 ### Python Beispiel
 ``` python
 import random
