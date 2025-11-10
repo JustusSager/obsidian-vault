@@ -82,4 +82,12 @@ function AGENT (Perzept) returns Aktion
 	
 	return Aktion
 ```
-## tabellengesteuerter Agent
+## reflexiver Agent
+![[agentenarchitektur_reflexiver_agent.png|350]]
+Ein reflexiver Agent handelt anhand einer festen Regelbasis entsprechend seiner Wahrnehmung. Es wird dabei immer nur der aktuellste Stand der Wahrnehmung verwendet. 
+## modellbasierter reflexiver Agent
+![[agentenarchitektur_modellbasierter_reflexiver_agent.png|350]]
+Der modellbasierte reflexive Agent speichert einen Zustand der Welt und verwendet seine Wahrnehmung um dieses interne Bild der Welt zu verbessern. Anhand dieses Verbesserten Abbilds wird anhand einer festen Regelbasis gehandelt.
+## lernender Agent
+![[agentenarchitektur_lernender_agent.png|350]]
+Bei einem lernenden Agenten kann sich die Regelbasis welche die passende Aktion anhand des Zustands der Welt auswählt, verändern. Dafür wird jedoch ein externes Benchmark benötigt, welches bewertet, ob eine Veränderung einen positiven oder negativen Effekt auf die Umsetzung der Aufgabe hatte.
