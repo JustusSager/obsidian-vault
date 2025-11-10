@@ -125,7 +125,7 @@ d.h. das Modul $m$ legt den Wertebereich für die Ziffern $x_j$ , der Prüfnumme
 Zehnstellige Internationale Standard-Buchnummer der Form `a-bcd-efghi-p`.
 Jede Stelle kann eine Zahl $1,2,3, \dots , 10$ sein wobei die 10 mit dem Symbol $X$ geschrieben wird. `a` steht für das (ungefähre) Herkunftsland ($a=3$ steht für D, A, CH) und `bcd` für den Verlag. Die Prüfziffer `p` wird so gewählt, dass gilt:
 $$10a+9b+8c+7d+6e+5f+4g+3h+2i+p = 0 \pmod{11}$$
-#TODO Berechnungsverfahren von p
+Zur Berechnung wird es $\pmod{11}$ ausmultipliziert / addiert.
 ## Verschlüsselungen
 ### Cäsar-Verschlüsselung
 Klartext: `HALLO`
