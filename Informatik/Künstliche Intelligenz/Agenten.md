@@ -91,3 +91,5 @@ Der modellbasierte reflexive Agent speichert einen Zustand der Welt und verwende
 ## lernender Agent
 ![[agentenarchitektur_lernender_agent.png|350]]
 Bei einem lernenden Agenten kann sich die Regelbasis welche die passende Aktion anhand des Zustands der Welt auswählt, verändern. Dafür wird jedoch ein externes Benchmark benötigt, welches bewertet, ob eine Veränderung einen positiven oder negativen Effekt auf die Umsetzung der Aufgabe hatte.
+# Multiagentensysteme
+#TODO Multiagentensysteme
