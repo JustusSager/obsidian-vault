@@ -34,3 +34,12 @@ https://www.namsu.de/Mathematik/1-7-3.html
 | $$ a = b \pmod m$$                                                                                                         | `a = b \pmod m`                                                                                                          |
 | $$\begin{aligned} 2x - 4 &= 6 \\ 2x &= 10 \\ x &= 5 \end{aligned}$$                                                        | `\begin{aligned} 2x - 4 &= 6 \\ 2x &= 10 \\ x &= 5 \end{aligned}`<br>Gleichheitszeichen ist auf gleicher höhe.           |
 | $$a_n = (-1)^{n} = \begin{cases} 1 & \text{falls } n \text{ gerade} \\ -1 & \text{falls } n \text{ ungerade} \end{cases}$$ | `a_n = (-1)^{n} = \begin{cases} 1 & \text{falls } n \text{ gerade} \\ -1 & \text{falls } n \text{ ungerade} \end{cases}` |
+| $$\sqrt[m] n$$                                                                                                             | `\sqrt[m] n`                                                                                                             |
+| $$\int_a^b f(x) = $$                                                                                                       |                                                                                                                          |
+## Griechische Zeichen
+|            |          |
+| ---------- | -------- |
+| $\theta$   | `\theta` |
+| $\sigma$   | `\sigma` |
+| $$\Delta$$ | `\Delta` |
+|            |          |

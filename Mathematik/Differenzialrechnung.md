@@ -70,7 +70,7 @@ y' &= {u'(x) \cdot v(x) - u(x) \cdot v'(x) \over v^2(x)} \text{ mit } v(x) \ne 0
 Ableitung von ineinander verschachtelten Funktionen
 $$\begin{align}
 y &= {f(u(x))} \\
-y' &= f'(u) \cdot u'(x)
+y' &= f'(u(x)) \cdot u'(x)
 \end{align}$$
 ## Ableitung spezieller Funktionen
 ### Ableitung impliziter Funktionen
