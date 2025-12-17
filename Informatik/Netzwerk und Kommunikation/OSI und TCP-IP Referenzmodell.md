@@ -6,8 +6,8 @@
 
 Protokolle, die sich Übertragung von Nachrichten beschäftigen.
 **Beispiel:**
-- [[Ethernet]]
-- WiFi
+- [[Netzwerkprotokolle#Ethernet|Ethernet]] 
+- [[Netzwerkprotokolle#WiFi|WiFi]]
 Die Netzzugangsschicht besteht aus Hardware und Software-Komponenten. 
 ![[netzzugangsschicht_hard_und_software.png|300]]
 
@@ -25,7 +25,7 @@ Protokolle, die sich mit der Weitervermittlung und Wegfindung von Paketen befass
 ## Schicht 3 – Transportschicht ^3189dd
 Protokolle, die Verbindungen zwischen verschiedenen Teilnehmern aufbauen.
 **Beispiel:**
-- [[TCP]] (Transmission Control Protocol)
+- [[Netzwerkprotokolle#TCP|TCP]] (Transmission Control Protocol)
 - UDP (User Datagram Protocol)
 
 ## Schicht 4 – Anwendungsschicht

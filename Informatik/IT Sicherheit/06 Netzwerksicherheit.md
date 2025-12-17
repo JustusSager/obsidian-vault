@@ -15,7 +15,7 @@ Zusätzlich lässt sich der Benutzer auch noch als Layer 8 im [[OSI und TCP-IP R
 
 ## Gängige Angriffsmethoden
 ### Hardware Address Spoofing
-- Fälschen von [[MAC-Adressen]], z.B. im [[Ethernet]]-Protokoll
+- Fälschen von [[MAC-Adressen]], z.B. im [[Netzwerkprotokolle#Ethernet|Ethernet-Protokoll]]
 - "Stehlen" der Rahmen, die für ein anderes Gerät bestimmt sind
 - Umgehen einfacher Zugriffsbeschränkungen
 	- z.B. MAC-Filterung -> MAC-Adressfilterung ist jedoch veraltet und unpraktisch
@@ -41,10 +41,10 @@ Zusätzlich lässt sich der Benutzer auch noch als Layer 8 im [[OSI und TCP-IP R
 	- korrekte Konfiguration sicherstellen
 
 # Internetschicht
-Siehe [[IPv4]] und [[IPv6]]
+Siehe [[Netzwerkprotokolle#IPv4|IPv4]] und [[Netzwerkprotokolle#IPv6|IPv6]]
 
 # Transportschicht
-## [[TCP]]-Verbindungsaufbau missbrauchen
+## [[Netzwerkprotokolle#TCP|TCP]]-Verbindungsaufbau missbrauchen
 ### Portscans
 - Ermitteln von offenen Ports des Servers. Z.B. mithilfe von [[_IT-Sec Tools#^313460|nmap]].
 - Connect-Scan: vollständiger TCP-Verbindungsaufbau
