@@ -76,4 +76,4 @@ int main() {
 # Adapter
 - Passt gegebene Klassen an neue Interfaceanforderungen an, ohne Vererbung anzuwenden.
 - Gehört zur Gruppe der Strukturentwurfsmuster
-- z.B. [[Standardcontainer#^cbeee3|std::queue]] oder std::stack.
+- z.B. [[Informatik/Softwareentwicklung/C++/Bibliotheken#std deque|std::deque]] oder std::stack

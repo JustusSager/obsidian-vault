@@ -1,5 +1,6 @@
-numpy wird hauptsächlich zur Berechnung von/mit Vektoren und Matrizen verwendet. Siehe hierzu den Mathematischen Ansatz unter [[Vektoren]] und [[Matrizen]].
-# Basics
+# numpy
+numpy wird hauptsächlich zur Berechnung von/mit Vektoren und Matrizen verwendet. Siehe hierzu den Mathematischen Ansatz unter [[Vektoren, Matrizen]].
+## Basics
 ``` python
 import numpy as np
 
@@ -20,7 +21,7 @@ print(arr2.ndim)  # Dimension des arrays, hier 2
 print(arr2.shape)  # From des Arrays ausgeben, hier (2, 4)
 ```
 
-# Platzhalter Arrays/Matrizen
+## Platzhalter Arrays/Matrizen
 ``` python
 import numpy as np
 
@@ -56,7 +57,7 @@ seed_value = 2 # selber seed führt zu selber "zufälliger" Zahl
 np.random.seed(seed_value)
 ```
 
-# Rechnen mit Arrays / Matrizen
+## Rechnen mit Arrays / Matrizen
 ``` python
 import numpy as np
 
@@ -83,7 +84,7 @@ arr6 = np.divide(arr1, arr2)
 arr7 = np.dot(arr1, arr2)
 ```
 
-## Aggregation
+### Aggregation
 ``` python
 import numpy as np
 
@@ -91,7 +92,7 @@ arr1 = np.array([1, 2, 3, 4, 5])
 i = arr1.sum()  # Summe der Elemente
 ```
 
-# Elementweise Funktionen ausführen
+## Elementweise Funktionen ausführen
 ``` python
 import numpy as np  
   
@@ -109,3 +110,7 @@ result = vectorized_square(arr)
 print("Original Array:", arr)  
 print("Squared Array:", result)
 ```
+# pandas
+#TODO pandas
+# PyQGIS
+#TODO PyQGIS

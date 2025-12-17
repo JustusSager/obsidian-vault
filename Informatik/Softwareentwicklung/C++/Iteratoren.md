@@ -1,5 +1,5 @@
 # Iteratoren als Teil von Arrays und Vektoren
-Eine Klasse welche, ähnlich zu Zeigern eines C-Array, ermöglicht auf eine Datenmenge zu zu greifen. [[Standardcontainer]] wie z.B. std::vector haben eingebaute Methoden die Zugriff ermöglichen. 
+Eine Klasse welche, ähnlich zu Zeigern eines C-Array, ermöglicht auf eine Datenmenge zu zu greifen. [[Informatik/Softwareentwicklung/C++/Bibliotheken#Standardcontainer|Standardcontainer]] wie z.B. std::vector haben eingebaute Methoden die Zugriff ermöglichen. 
 Es gibt verschiedene Iterator-Klassen, welche aufeinander aufbauen und unterschiedlich viel können. Siehe dazu: https://cplusplus.com/reference/iterator/
 
 

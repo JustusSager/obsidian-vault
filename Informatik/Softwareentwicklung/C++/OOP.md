@@ -16,7 +16,7 @@ Die Grundideen von OOP lassen sich aufteilen in folgende vier Punke:
 - Richtig angewendetes RAII extrem wichtig für die Vermeidung von Speicherleaks!
 - Eigener dtor nicht nötig wenn Klasse nur ...
 	- 'Werte' d.h. keinen dynamisch mit new/delete verwalteten Speicher nutzt
-	- Container wie bspw. [[Standardcontainer#^3232b4|std::vector]] aus der Standardbibliothek nutzt, da diese bereits selbst Acquise und Freigabe des dynamischen Speichers verwalten
+	- Container wie bspw. [[Informatik/Softwareentwicklung/C++/Bibliotheken#std vector|std::vector]] aus der Standardbibliothek nutzt, da diese bereits selbst Acquise und Freigabe des dynamischen Speichers verwalten
 
 # Rule of three/five/zero
 Best Practice bezüglich der Implementierung bestimmter Methoden in Klassen.
