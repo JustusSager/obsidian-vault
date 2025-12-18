@@ -171,7 +171,7 @@ x &= 3 \cdot y \pmod{26}
 \end{align}$$
 Entschlüsselt: $x = 6, 0, 1, 4, 11$ 
 ### RSA-Verschlüsselung
-ist eine [[asymmetrische Verschlüsselung]] bei der es einen öffentlich zugänglichen public key gibt und einen geheim zu haltenden private key.
+ist eine [[Kryptographie#asymmetrische Verschlüsselung]] bei der es einen öffentlich zugänglichen public key gibt und einen geheim zu haltenden private key.
 **Schlüssel generieren:**
 Man wählt zwei Primzahlen $p, q$ und bildet $n = p \cdot q$ und $m=(p-1) \cdot (q-1)$.
 $$\begin{align}
