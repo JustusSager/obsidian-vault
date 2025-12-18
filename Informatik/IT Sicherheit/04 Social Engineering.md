@@ -46,3 +46,7 @@ _Je knapper eine Ware ist, desto mehr gewinnt sie an Wert. So führt beispielswe
 - `Drive-by-Download` - Herunterladen von Schadsoftware über eine manipulierte Website.
 - `gefälschte Viren-Warnungen`
 - `Sextortion` - Erpressung mit Nacktfotos / -videos.
+# Phishing Mails
+## Werkzeuge für eine Phishing Kampagne
+- [[MailHog]] 
+- [[_IT-Sec Tools#^7dddde|GoPhish]] 

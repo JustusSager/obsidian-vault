@@ -1,1 +1,0 @@
-Siehe dazu die Tools [[MailHog]] und [[_IT-Sec Tools#^7dddde|GoPhish]].
