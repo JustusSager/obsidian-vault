@@ -9,7 +9,7 @@
 	- alle Verkehrsdaten sind relevant, z.B. sniffing (Mitlesen mittels Wireshark)
 
 Jede dieser Verwundbarkeiten kann auf jeder Schicht des [[OSI und TCP-IP Referenzmodell|Schichtenmodells]] auftreten. 
-Zusätzlich lässt sich der Benutzer auch noch als Layer 8 im [[OSI und TCP-IP Referenzmodell#^42221f|OSI-Referenzmodell]] bezeichnen, welcher mit [[04 Social Engineering|Social Engineering]] auch angreifbar ist.
+Zusätzlich lässt sich der Benutzer auch noch als Layer 8 im [[OSI und TCP-IP Referenzmodell#^42221f|OSI-Referenzmodell]] bezeichnen, welcher mit [[Social Engineering|Social Engineering]] auch angreifbar ist.
 
 # Netzzugangsschicht
 

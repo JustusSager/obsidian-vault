@@ -514,7 +514,7 @@ Ausgabe:
 Siehe auch CMAC (Cypher Message Authentication Code)
 Mit HMAC soll der Empfänger einer Nachricht einen Nachweis haben, dass die übermittelte Nachricht wirklich von dem Absender kommt und das die Nachricht im Transit nicht manipuliert wurde.
 
-Welche beiden [[01 Bedrohungen und Risiken#^b9a4e3|Schutzziele]] sollen somit durch MACs gewährleistet werden?
+Welche beiden [[Bedrohungen und Risiken#Schutzziele|Schutzziele]] sollen somit durch MACs gewährleistet werden?
 - Authentizität
 - Integrität
 ### Python Beispiel

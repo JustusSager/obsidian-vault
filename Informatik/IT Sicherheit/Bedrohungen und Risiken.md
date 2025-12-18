@@ -4,7 +4,7 @@ Dem Allianz Risk Barometer zufolge stellen Cyber-Vorfälle das größte Risiko f
 ## IT-Sec eine rein technische Herausforderung?
 #TODO IT-Sec eine rein technische Herausforderung?
 ![[Pasted image 20250326211928.png]]
-# Schutzziele ^b9a4e3
+# Schutzziele
 ### Modelle
 Hier sind 2 verschiedene Modelle die die wichtigsten Schutzziele dargestellt. Links die CIA-Triade, Rechts das VIVA-Modell. Im vergleich fällt auf, dass in der CIA-Triade die Authentizität fehlt.
 ![[schutzziele_modelle.png]]
