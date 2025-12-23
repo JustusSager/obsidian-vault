@@ -11,10 +11,10 @@ $$ a = b \pmod m $$
 D.h., wenn die Differenz ein Vielfaches $k \in \mathbb{Z}$ des Moduls  ist:
 $$ a - b = k \cdot m $$
 **Hinweis:**
-- kongruent modulo $m$ ist eine [[Relationen#Äquivalenzrelation|Äquivalenzrelation]] und damit:
-	- [[Relationen#reflexiv|reflexiv]]: $a = a \pmod m$ 
-	- [[Relationen#transitiv|transitiv]]: $a=b \pmod m \land b=c \pmod m \implies a=c \pmod m$ 
-	- [[Relationen#symmetrisch|symmetrisch]]: $a=b \pmod m \implies b=a \pmod m$ 
+- kongruent modulo $m$ ist eine [[Mengenlehre#Äquivalenzrelation|Äquivalenzrelation]] und damit:
+	- [[Mengenlehre#reflexiv|reflexiv]]: $a = a \pmod m$ 
+	- [[Mengenlehre#transitiv|transitiv]]: $a=b \pmod m \land b=c \pmod m \implies a=c \pmod m$ 
+	- [[Mengenlehre#symmetrisch|symmetrisch]]: $a=b \pmod m \implies b=a \pmod m$ 
 ## Restklasse
 Enthält alle Zahlen die zu einander kongruent modulo $m$ sind. Zu dem Modul $m$ erhält man $m$ verschiedene Restklassen. 
 Alle Zahlen innerhalb einer Restklasse verhalten sich bei Addition (bzw. Multiplikation) gleich:
@@ -29,7 +29,7 @@ Zu dem Modul $m=5$ existieren 5 Restklassen:
 - Rest $r=3$: $\mathbb{Z}_3 = \{ 3, 8, 13, 18, 23, 28, \dots \}$ 
 - Rest $r=4$: $\mathbb{Z}_4 = \{ 4, 9, 14, 19, 24, 29, \dots \}$  
 **Hinweis:**
-- Restklassen sind [[Relationen#Äquivalenzklasse|Äquivalenzklassen]] 
+- Restklassen sind [[Mengenlehre#Äquivalenzklasse|Äquivalenzklassen]] 
 - In Summen und Produkten darf jede Zahl durch irgendeinen Vertreter aus ihrer Restklasse ersetzt werden, sofern man nur am Ergebnis modulo $m$ interessiert ist.
 	- Insbesondere kann jede Zahl durch den kleinsten Vertreter der Restklasse (der Rest modulo $m$) ersetzt werden.
 - Auf beiden Seiten der Kongruenzgleichung kann eine ganze Zahl $z$ addiert (bzw. multipliziert) werden
