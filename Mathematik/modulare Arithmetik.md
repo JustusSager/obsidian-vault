@@ -1,3 +1,4 @@
+Tags: #Mathematik 
 Voraussetzung:
 - [[Elementare Logik]]
 # Modulo Rechnung
@@ -35,7 +36,7 @@ Zu dem Modul $m=5$ existieren 5 Restklassen:
 - Auf beiden Seiten der Kongruenzgleichung kann eine ganze Zahl $z$ addiert (bzw. multipliziert) werden
 	- Achtung: Kürzen ist nicht erlaubt! $8 = 2 \pmod 6 \not\!\!\!\implies 4 = 1 \pmod 6$ 
 ## Additive Inverse
-Basierend auf der [[Gruppen, Ringe, Körper#Inverse|Inverse von Gruppen]] lässt sich für die modulare Arithmetik die additive Inverse definieren als:
+Basierend auf der [[Mengenlehre#Inverse|Inverse von Gruppen]] lässt sich für die modulare Arithmetik die additive Inverse definieren als:
 $$ a + i_a = 0 \pmod m $$
 **Hinweis:**
 - Die add. Inverse wird auch als $-a$ geschrieben in Anlehnung an die gewohnte Schreibweise für reelle Zahlen.
@@ -56,7 +57,7 @@ a = 4 &\implies i_a = 1 \quad
 \text{Probe: } a + i_a = 4 + 1 = 0 \pmod 5 \\
 \end{align}$$
 ## Multiplikative Inverse
-Basierend auf der [[Gruppen, Ringe, Körper#Inverse|Inverse von Gruppen]] lässt sich für die modulare Arithmetik die multiplikative Inverse definieren als:
+Basierend auf der [[Mengenlehre#Inverse|Inverse von Gruppen]] lässt sich für die modulare Arithmetik die multiplikative Inverse definieren als:
 $$ e \cdot i_e = 1 \pmod m $$
 **Hinweis:**
 - Die mult. Inverse wird auch als $e^{-1}$ oder ${1 \over e}$ geschrieben in Anlehnung an die gewohnte Schreibweise für reelle Zahlen.
