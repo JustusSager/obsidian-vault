@@ -1,3 +1,4 @@
+#Informatik #IT-Sicherheit 
 # Menschliche Entscheidungen
 - Es sollen automatische Entscheidungen gefördert werden, um den Nutzer vom Nachdenken abzuhalten
 
@@ -49,4 +50,4 @@ _Je knapper eine Ware ist, desto mehr gewinnt sie an Wert. So führt beispielswe
 # Phishing Mails
 ## Werkzeuge für eine Phishing Kampagne
 - [[MailHog]] 
-- [[_IT-Sec Tools#^7dddde|GoPhish]] 
+- [[GoPhish]] 

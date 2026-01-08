@@ -1,3 +1,4 @@
+#Informatik 
 # Jupyter
 Jupyter ist eine Notizenformat welches die Integration von Programmcode in die Notizen unterstützt. 
 - Die Notizen basieren dabei auf dem Markdown-Format. 

@@ -1,5 +1,5 @@
+#Informatik 
 # Lokal
-
 ## Konfigurieren
 ``` bash
 git config --global user.name "<name>"

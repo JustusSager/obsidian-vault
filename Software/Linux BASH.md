@@ -1,3 +1,4 @@
+#Informatik 
 ``` bash
 # Wechselt das Verzeichnis
 cd <path>

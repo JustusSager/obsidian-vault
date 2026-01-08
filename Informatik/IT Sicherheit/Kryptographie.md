@@ -1,3 +1,4 @@
+Tags: #Kryptographie 
 # symmetrische Verschlüsselung
 Bei der symmetrischen Verschlüsselung wird der selbe Schlüssel zum Ver- und Entschlüsseln verwendet.
 Dabei müssen sich die Gesprächsteilnehmer auf einen gemeinsamen Schlüssel einigen. Dies hat den Nachteil, dass es einen direkten Kontakt gegeben haben muss, um diesen Schlüssel auszutauschen.

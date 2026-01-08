@@ -1,4 +1,5 @@
-# Jetbrains IntelliJ
+#Informatik 
+# IntelliJ
 ## Plugins
 ### ktLint
 - damit lassen sich Codestyle Fehler finden und beheben.

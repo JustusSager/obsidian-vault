@@ -1,4 +1,54 @@
-# ARRAY_CAT als Aggregationsfunktion
+#Informatik 
+# Backups
+Es gibt grundsätzlich 3 verschiedene Herangehensweisen:
+- SQL Dump
+- File system level backup
+- Continuous archiving
+
+# Erweiterungen
+## pg_cron
+### cron_job für eine andere Datenbank erstellen:
+``` sql
+SELECT cron.schedule_in_database(
+	'<Name des cron_jobs>',
+	'<schedule>',
+	'<SQL Skript, dass ausgeführt werden soll>',
+	'<Datenbank>',
+	'<User mit dem ausgeführt wird>',
+	TRUE -- Effective or not
+```
+### Wiederholrate/Schedule
+``` sql
+┌───────────── Minutes:0~59
+│ ┌────────────── Hours:0~23
+│ │ ┌─────────────── Date:1~31
+│ │ │ ┌──────────────── Month:1~12
+│ │ │ │ ┌───────────────── Day of the week: 0 to 6, 0 representing Sunday.
+│ │ │ │ │
+* * * * *
+```
+**Beispiel:**
+``` sql
+'00 03 * * *' -- entspricht jeden Tag um 03:00 Uhr
+```
+
+## PostGIS
+### Geometriefunktionen
+``` SQL
+-- Zentroid einer geometrie berechnen
+ST_CENTROID(geom)
+-- Prüfen, ob eine geometrie in einer anderen ist
+ST_CONTAINS(geom, geom)
+
+```
+### Aggregationsfunktionen
+``` SQL
+-- Geometrien aggregieren
+ST_UNION(geom)
+```
+
+# Zusätzliche Funktionen
+## ARRAY_CAT als Aggregationsfunktion
 Standardmäßig gibt es keine Aggregationsfunktion von ARRAY_CAT() in PostgreSQL. Mit folgendem Skript kann eine erstellt werden.
 Wird in public angelegt.
 ### Funktion
@@ -9,7 +59,7 @@ CREATE AGGREGATE array_accum (anycompatiblearray) (
     initcond = '{}'
 );
 ```
-# Mittelwert über mehrere Spalten
+## Mittelwert über mehrere Spalten
 Standardmäßig lässt sich der Mittelwert nur als Aggregation einer Spalte erzeugen. Mithilfe dieser Funktionen lässt sich der Mittelwert von mehreren ( 2 - 8 ) Spalten bilden.
 Nullwerte werden bei der Berechnung ausgelassen.
 Quelle: https://stackoverflow.com/questions/7367750/average-of-multiple-columns
@@ -183,7 +233,7 @@ BEGIN
 END
 $FUNCTION$ LANGUAGE PLPGSQL;
 ```
-# Text zu Integer konvertieren
+## Text zu Integer konvertieren
 Von https://hawki.fh-kiel.de generiert und von mir angepasst.
 Konvertiert einen String zu einer Zahl falls möglich. Falls nicht wird NULL zurückgegeben.
 ### Funktion
@@ -206,7 +256,7 @@ BEGIN
 END
 $FUNCTION$ LANGUAGE PLPGSQL;
 ```
-# Nutzer ist Teil einer Gruppe
+## Nutzer ist Teil einer Gruppe
 Überprüft ob ein Nutzer teil einer bestimmten Nutzergruppe ist.
 ### Funktion
 ``` sql
@@ -228,4 +278,18 @@ AS $BODY$
       and c.rolname = (SELECT CURRENT_USER)::TEXT
   );
 $BODY$;
+```
+
+# Code Schnipsel
+## Tabellenberechtigungen eines Benutzers anzeigen
+``` SQL
+SELECT *
+FROM information_schema.role_table_grants 
+WHERE grantee = 'BENUTZER';
+```
+## Tabellen die einem bestimmten Benutzer gehören anzeigen
+``` SQL
+SELECT *
+FROM pg_tables 
+WHERE tableowner = 'BENUTZER';
 ```

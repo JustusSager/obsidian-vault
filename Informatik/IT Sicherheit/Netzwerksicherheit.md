@@ -1,3 +1,4 @@
+#Informatik #IT-Sicherheit 
 # Klassifikation von Verwundbarkeiten und Angriffen
 - header-basiert
 	- Manipulation der Header-Felder, z.B. alle Bits auf "0"
@@ -46,14 +47,14 @@ Siehe [[Netzwerkprotokolle#IPv4|IPv4]] und [[Netzwerkprotokolle#IPv6|IPv6]]
 # Transportschicht
 ## [[Netzwerkprotokolle#TCP|TCP]]-Verbindungsaufbau missbrauchen
 ### Portscans
-- Ermitteln von offenen Ports des Servers. Z.B. mithilfe von [[_IT-Sec Tools#^313460|nmap]].
+- Ermitteln von offenen Ports des Servers. Z.B. mithilfe von [[nmap]].
 - Connect-Scan: vollständiger TCP-Verbindungsaufbau
 - SYN-Scan: Abbruch nach Antwort des Servers
 ### Denial-of-Service-Angriff
 - Überfluten des Servers mit SYN-Nachrichten
 - Verbrauchen sämtlicher Ressourcen für TCP-Verbindungen
 - keine Verbindung zu Server-Dienst mehr möglich
--> **SYN-Flooding** z.B. mit [[_IT-Sec Tools#^3cba1b|hping3]].
+-> **SYN-Flooding** z.B. mit [[hping3]].
 **Gegenmaßnahmen gegen SYN-Flooding:**
 -> SYN-Cookies
 - Speichern der für den Verbindungsaufbau benötigten Daten in Sequenznummer
