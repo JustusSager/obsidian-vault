@@ -1,3 +1,4 @@
+#Informatik #Robotik 
 Siehe hierzu auch [[Agenten]].
 # Sense-Plan-Act
 ![[sense-plan-act-architektur.png]]
