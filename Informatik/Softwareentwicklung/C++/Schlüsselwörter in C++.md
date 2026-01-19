@@ -1,3 +1,4 @@
+#Informatik
 # extern
 Kann für globale Variablen verwendet werden, sollten nicht zu sehr genutzt werden.
 Eine Möglichkeit der Strukturierung ist alle in einem Modul zu sammeln. Damit ist eindeutig wo sie sind und welche existieren.
@@ -40,7 +41,7 @@ public:
 ```
 
 # static
-## static macht lokal: Internal Linkage ^0a1f78
+## static macht lokal: Internal Linkage
 Das Keyword static sorgt dafür, dass ein Name (also ein Bezeichner für Variablen und Funktionen) nur innerhalb des Moduls zur Verfügung steht. Dadurch lassen sich Namen über die Module hinweg mehrfach verwenden.
 
 Beispiel:
@@ -289,7 +290,7 @@ struct Derived2 : public Derived{
 };
 ```
 
-# virtual ^3bfa14
+# virtual
 
 ## virtual vor einer Methode einer Klasse
 #TODO Folie 188
@@ -314,8 +315,8 @@ int main() {
 Bei "w.print()" wird auf das "print()" von "Basis" zugegriffen. "Basis" kennt jedoch nur seine eigene "wert()" Methode, welche auf das "s" von "Basis" zugreift und damit "Basis" zurückgibt.
 Durch das virtual bekommt der compiler die Information, dass der Zugriff auf "wert()" zur Laufzeit ausgewertet werden soll. Dadurch wird bei dem "print()" von "Basis" nicht mehr auf das "wert()" von "Basis" zugegriffen, sondern auf das "wert()" von "Wert".
 
-## virtual bei der Vererbung von Klassen ^5cddfb
-Lösung für das [[OOP#^4efd9e|Rautenproblem]]. 
+## virtual bei der Vererbung von Klassen
+Lösung für das [[OOP#Rautenproblem|Rautenproblem]]. 
 ``` C++
 #include <iostream>
 struct P{
@@ -337,7 +338,7 @@ int main() {
 }
 ```
 
-# override ^f4ccf4
+# override
 - Mit override verlangt der Compiler, dass das Überschreiben der Methode auch wirklich eine andere überschreibt
 - Hilft zur Vermeidung und zum Entdecken von Programmierfehlern
 - I.d.R. immer override beim überschreiben von Methoden verwenden!

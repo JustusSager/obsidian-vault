@@ -1,3 +1,4 @@
+#Informatik 
 # Konsolen Ein-/Ausgabe
 ## std::iostream
 https://cplusplus.com/reference/istream/iostream/
@@ -360,7 +361,7 @@ int main() {
 - https://cplusplus.com/reference/array/array/ 
 - Lineares Array Aggregat
 - statische Speicherverwaltung, d.h. die Größe eines Array kann während der Laufzeit nicht geändert werden.
-- liefert einen [[Iteratoren#^258c73|Random Access Iterator]].
+- liefert einen [[Iteratoren#Random Access Iterator|Random Access Iterator]].
 #### Verwendung
 ``` C++
 #include<array>
@@ -394,7 +395,7 @@ int main(){
 - https://cplusplus.com/reference/vector/vector/
 - Lineare Datenstruktur 
 - dynamischer Speicherverwaltung, d.h. hierbei wird der Speicher automatisch verwaltet, es ist keine manuelle Allokation nötig. 
-- liefert einen [[Iteratoren#^258c73|Random Access Iterator]].
+- liefert einen [[Iteratoren#Random Access Iterator|Random Access Iterator]].
 #### Verwendung
 ``` C++
 #include<vector>
@@ -423,7 +424,7 @@ int main() {
 - Double Ended Queue
 - schnelles Einfügen / Lesen / Löschen an beiden Enden der Queue
 - Kann (in Blöcken) fragmentiert auf dem Speicher liegen.
-- liefert einen [[Iteratoren#^258c73|Random Access Iterator]].
+- liefert einen [[Iteratoren#Random Access Iterator|Random Access Iterator]].
 #### Verwendung
 ``` C++
 #include <iostream>
@@ -445,13 +446,13 @@ int main(){
 - Doppelt verkettete Liste
 - einfügen, löschen, teilen meist ressourcenintensiver zum vector.
 - liegt fragmentiert im Speicher.
-- liefert einen [[Iteratoren#^0bd03d|Bidirectional Iterator]].
+- liefert einen [[Iteratoren#Bidirectional Iterator|Bidirectional Iterator]].
 ### std::forward_list
 - https://cplusplus.com/reference/forward_list/forward_list/
 - Einfach verkettete Liste
 - weniger Speicherbedürftig als list, aber hat auch weniger features.
 - kann Fragmentiert im Speicher liegen.
-- liefert einen [[Iteratoren#^bba8d7|Forward Iterator]].
+- liefert einen [[Iteratoren#Forward Iterator|Forward Iterator]].
 ## Assoziative Container
 ### std::map
 - https://cplusplus.com/reference/map/map/
@@ -475,11 +476,11 @@ int main(){
 ```
 ## Container adaptors
 - Liefern ein anderes Interface für einen darunterliegenden sequentiellen Container.
-### std::queue ^cbeee3
+### std::queue
 - https://cplusplus.com/reference/queue/queue/
 - Queue. 
 - Achtung, nicht threadsicher!
-- Standardmäßig wird [[#^637306|deque]] darunterliegend verwendet.
+- Standardmäßig wird [[#std deque]] darunterliegend verwendet.
 #### Verwendung
 ``` C++
 #include <iostream>
@@ -656,7 +657,7 @@ int main() {
 }
 ```
 ### std::move
-- macht aus einer [[Wertkategorien#^ee367c|lvalue]] eine [[Wertkategorien#^87baab|rvalue Referenz]].
+- macht aus einer [[Wertkategorien#lvalue|lvalue]] eine [[Wertkategorien#lvalue Referenz|rvalue Referenz]].
 - Ein Objekt wird verschoben statt kopiert.
 ``` C++
 #include <utility>

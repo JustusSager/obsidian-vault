@@ -1,3 +1,4 @@
+#Informatik 
 # Iteratoren als Teil von Arrays und Vektoren
 Eine Klasse welche, ähnlich zu Zeigern eines C-Array, ermöglicht auf eine Datenmenge zu zu greifen. [[Informatik/Softwareentwicklung/C++/Bibliotheken#Standardcontainer|Standardcontainer]] wie z.B. std::vector haben eingebaute Methoden die Zugriff ermöglichen. 
 Es gibt verschiedene Iterator-Klassen, welche aufeinander aufbauen und unterschiedlich viel können. Siehe dazu: https://cplusplus.com/reference/iterator/
@@ -32,30 +33,21 @@ int main(){
 
 # Input Iterator
 - Unterstützt Vergleichsoperationen
-- Dereferenzierung als [[Wertkategorien#^4dff75|rvalue]].
+- Dereferenzierung als [[Wertkategorien#rvalue|rvalue]].
 - Kann inkrementiert werden.
 
 # Output Iterator
-- Dereferenzierung als [[Wertkategorien#^ee367c|lvalue]].
+- Dereferenzierung als [[Wertkategorien#lvalue|lvalue]].
 - Kann inkrementiert werden.
 
 # Forward Iterator
-
-^bba8d7
-
 - Aufbauend auf Input und Output Iterator
 
 # Bidirectional Iterator
-
-^0bd03d
-
 - Aufbauend auf Forward Iterator
 - Kann dekrementiert werden
 
 # Random Access Iterator
-
-^258c73
-
 - Aufbauend auf Bidirectional Iterator
 - unterstützt Rechenoperationen
 - unterstützt Ungleichungen

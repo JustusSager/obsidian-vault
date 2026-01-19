@@ -123,6 +123,6 @@ Am Ende müssen sich alle `Developer` auf eine Anzahl an `Story Points` einigen.
 
 ## Story Point
 Ein `Story Point` ist eine Art Aufwandseinheit für Aufgaben. Hierbei einigt man sich im Team auf eine Tätigkeit, die als Referenzwert für die Aufwandseinschätzung verwendet wird. Dadurch soll die Aufwandsschätzung zwischen den Developern vergleichbarer werden. Ein Entwickler der etwas langsamer arbeitet als ein Anderer kommt bei der Aufwandsschätzung dadurch dennoch auf den selben Aufwand.
-z.B. Als `Story Point` wird die Implementierung der [[OOP#^42ba48|Rule of Five]] in einer Klasse angesetzt. Beim Einschätzen einer Aufgabe wird jetzt überlegt wie vielen Implementierungen der `Rule of Five` diese Aufgabe entspricht.
+z.B. Als `Story Point` wird die Implementierung der [[OOP#Rule of Five|Rule of Five]] in einer Klasse angesetzt. Beim Einschätzen einer Aufgabe wird jetzt überlegt wie vielen Implementierungen der `Rule of Five` diese Aufgabe entspricht.
 # Quelle
 - https://scrumguides.org/scrum-guide.html

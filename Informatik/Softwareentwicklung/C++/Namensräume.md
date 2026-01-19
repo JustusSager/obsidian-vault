@@ -1,3 +1,4 @@
+#Informatik 
 Namensräume sollten nur innerhalb von .cpp Dateien bwz. nur innerhalb von fest definierten Blöcken verwendet werden, um den Namensraum auf einen abgesteckten Bereich zu begrenzen.
 main.cpp
 ``` C++
@@ -25,7 +26,7 @@ int main() {
 
 ## Anonymer Namensraum
 ist ein Namensraum, der keinen identifier hat. Dadurch steht der Inhalt nur innerhalb von dem Modul zur Verfügung. Stichwort Kapselung -> internal linkage.
-Eine alternative Form der Kapselung zu [[Schlüsselwörter in C++#^0a1f78|static]].
+Eine alternative Form der Kapselung zu [[Schlüsselwörter in C++#s|static]].
 Funktioniert auch für lokale [[#^5925c2|Typdefinition]].
 
 modul1.hpp

@@ -1,3 +1,4 @@
+#Informatik
 # Stack- oder auch Stapelspeicher
 Wird automatisch vom Compiler verwaltet. D.h. Objekte werden im Scope automatisch erzeugt und bereinigt. 
 Die Stackgröße ist i.d.R. begrenzt.
@@ -15,7 +16,7 @@ void f(int p) {
 # Heapspeicher
 Frei allokierbarer Speicherpool
 Manuelle Verwaltung (new / delete)
-	in der Regel benutzerspezifische ctor/dtor nötig. Siehe dazu[[Klassen#^6cee62|Konstruktor]].
+	in der Regel benutzerspezifische ctor/dtor nötig. Siehe dazu[[Klassen#Konstruktor|Konstruktor]].
 Rohe Zeiger -> sollte man im modernen C++ soweit möglich vermeiden.
 Objektlebenszeit über den Scope hinweg.
 

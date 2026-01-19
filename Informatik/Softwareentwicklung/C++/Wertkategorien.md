@@ -1,4 +1,5 @@
-# lvalue ^ee367c
+#Informatik
+# lvalue
 - Benutzt identifizierbaren Speicherbereich
 - auch left-hand-side-value oder locator value genannt
 - sind nie rvalue
@@ -6,7 +7,7 @@
 a = 55; // a ist lvalue
 ```
 
-# rvalue ^4dff75
+# rvalue
 - Temporäre Objekte
 - kein identifizierbarer Speicherbereich
 - auch right-hand-side-value genannt
@@ -16,11 +17,11 @@ a = 55; // 55 ist rvalue -> literal
 vector.push_back(C{}) // C{} ist rvalue und temporär
 ```
 
-# lvalue Referenz ^58c9e0
+# lvalue Referenz
 - lvalue Referenzen sind "normale" Referenzen
 - Objekt darf nicht "geklaut" (d.h. verschoben) werden.
 
-# rvalue Referenz ^87baab
+# rvalue Referenz
 - rvalue Referenzen sind Referenzen auf temporäre Werte 
 - Eingeleitet mit "&&"
 - Vergrößert die Lebenszeit eines temporären Werts
