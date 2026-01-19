@@ -1,3 +1,4 @@
+#Mathematik
 # Permutation
 - Anordnung von allen $n$ Elementen in einer bestimmten Reihenfolge
 ## Alle Elemente sind verschieden

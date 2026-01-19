@@ -1,3 +1,4 @@
+#Mathematik
 $$P(x) = \sum_{n=0}^\infty a_n \cdot (x-x_0)^n$$
 Kann vereinfacht werden, wenn $x_0 = 0$, zu:
 $$P(x) = \sum_{n=0} ^\infty a_n \cdot x^n$$

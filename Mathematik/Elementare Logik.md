@@ -1,3 +1,4 @@
+#Mathematik
 # Aussage
 Ein Satz bei dem eindeutig gesagt werden kann, ob er wahr oder falsch ist. Aussagen können auch negiert oder miteinander verknüpft werden.
 ## Operatoren (von Aussagen)

@@ -1,3 +1,4 @@
+#Mathematik
 # Potenzgesetze
 $$x^a \cdot x^b = x^{a+b}$$
 $${x^a \over x^b} = x^{a-b}$$
@@ -37,10 +38,4 @@ $$\lim_{x \to \infty} (f(x))^p = (\lim_{x \to \infty} f(x))^p = a^p$$
 ## Potenzregel 3:
 $$\lim_{x \to \infty} \sqrt[p]{f(x)} = \sqrt[p]{\lim_{x \to \infty} f(x)} = \sqrt[p]{a}$$
 # Differenzieren
-![[Differenzialrechnung#Potenzregel]]
-![[Differenzialrechnung#Konstantenregel]]
-![[Differenzialrechnung#Summenregel]]
-![[Differenzialrechnung#Produktregel]]
-![[Differenzialrechnung#Quotientenregel]]
-![[Differenzialrechnung#Kettenregel]]
-![[Differenzialrechnung#Ableitungen elementarer Funktionen]]
+![[Analysis, Kurvendiskussion#Grundlegende Ableitungsregeln]]

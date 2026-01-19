@@ -1,3 +1,4 @@
+#Mathematik
 # Folgen
 Eine Folge ist eine Menge an geordneten Zahlen (Gliedern). Diese gehorchen häufig einem bestimmten Bildungsgesetz.
 $$\{a_n\}=a_1, a_2, \dots a_n \text{ mit } (n \in \mathbb{N})$$

@@ -1,4 +1,4 @@
-Tags: #Mathematik 
+#Mathematik 
 Voraussetzung:
 - [[Elementare Logik]]
 # Modulo Rechnung

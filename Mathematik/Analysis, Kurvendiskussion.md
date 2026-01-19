@@ -1,6 +1,7 @@
+#Mathematik
 Hier kommt alles rund um Analysis und Kurvendiskussion rein.
 **Hinweis:**
-- Teil der Analysis wäre auch das Rechnen mit Vektoren und Matrizen, dies ist jedoch ausgelagert in [[Vektoren]], [[Matrizen]].
+- Teil der Analysis wäre auch das Rechnen mit Vektoren und Matrizen, dies ist jedoch ausgelagert in [[Vektoren, Matrizen]].
 # Steigung einer Funktion
 ## Steigung einer Geraden
 ![[steigung_gerade.png]]

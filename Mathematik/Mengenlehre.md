@@ -1,4 +1,4 @@
-Tags: #Mathematik
+#Mathematik
 # Grundlegende Mengenoperatoren
 ## Schnittmenge
 die Elemente, die in `A und B` enthalten sind. Siehe auch [[Elementare Logik#UND|UND aus der boolschen Algebra]].
