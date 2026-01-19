@@ -169,32 +169,6 @@ Verwendet für:
 - kurz setter
 - Verändern den Wert eines Attributes
 
-## #TODO wo gehört das hin?
-
-``` C++
-class Example{
-	int sz, *ia;
-public:
-	// ctor
-	Example(int const n) : sz{n}, ia{new int[n]} {
-	}
-	// dtor
-	~Example(){
-		delete [] ia;
-	};
-};
-int main(){
-	// Variante 1
-	Example e{24}; 
-	// Variante 2
-	Example *pt {new Test};
-		// Zeugs
-	delete pt;
-	return 0;
-}
-```
-Bei der Variante 1 ist das Objekt "e" auf dem Stack. Dabei wird "e" automatisch allokiert (ctor) und zerstört (dtor).
-Bei der Variante 2 wird das Objekt "händisch" allokiert (ctor) und zerstört (dtor). Das Objekt auf das der Zeiger "pt" zeigt liegt hierbei auf dem Heap.
 # Kopier- und Verschiebesemantik
 Standardmäßig wird in einer Klasse zusätzlich zum leeren Konstruktor auch ein copy-Konstruktor, move-Konstruktor, Kopier-Zuweisungsoperator und Verschiebe-Zuweisungsoperator erstellt. 
 
