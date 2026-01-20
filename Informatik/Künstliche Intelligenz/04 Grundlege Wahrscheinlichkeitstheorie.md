@@ -28,14 +28,14 @@ $h_n(A)=\frac{H_n(A)}{n}$
 - $n$: Anzahl der durchgeführten Experimente
 
 ### Erwartungswert (Mittelwert)
-[[31-1 Numerische Maßzahlen#^310b8e|Siehe Arithmetischer Mittelwert]]
+[[Statistik#Arithmetischer Mittelwert|Siehe Arithmetischer Mittelwert]]
 $E[x]=\mu=\sum_{x \in X} x \cdot P(x) = \sum_{i=1}^m v_i \cdot p_i$
 #### Bei zwei Variablen
 $\mu_x=E[x]=\sum_{x \in X} \sum_{y \in Y} x \cdot P(x,y)$
 $\mu_y=E[y]=\sum_{x \in X} \sum_{y \in Y} y \cdot P(x,y)$
 
 ### Varianz
-[[31-1 Numerische Maßzahlen#^651312|Siehe Varianz]]
+[[Statistik#Varianz|Siehe Varianz]]
 $Var[x]= \sigma^2 = E[(x-\mu)^2]=\sum_{x \in X} (x-\mu)^2 \cdot P(x)$
 - $Var[x]$: Varianz
 - $\sigma^2$: Standardabweichung $\sigma$
