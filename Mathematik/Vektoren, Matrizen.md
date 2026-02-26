@@ -1,5 +1,5 @@
 #Mathematik
-# Vektoren #TODO
+# Vektoren
 ## Grundlagen und Grundbegriffe (Vektoren)
 Ein Vektor:
 $\overline{v}=\begin{pmatrix} v_1 \\ v_2 \\ ... \\ v_n \end{pmatrix}$
@@ -21,7 +21,7 @@ $\overrightarrow{PQ} = Q - P = \begin{pmatrix} Q_1 \\ Q_2 \\ ... \\ Q_n \end{pma
 
 **Voraussetzungen:**
 - Die beiden Punkte haben die selbe Anzahl an Dimensionen
-# Matrizen #TODO 
+# Matrizen 
 
 ## Grundlagen und Grundbegriffe (Matrizen)
 

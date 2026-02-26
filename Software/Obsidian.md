@@ -36,6 +36,8 @@ https://www.namsu.de/Mathematik/1-7-3.html
 | $$a_n = (-1)^{n} = \begin{cases} 1 & \text{falls } n \text{ gerade} \\ -1 & \text{falls } n \text{ ungerade} \end{cases}$$ | `a_n = (-1)^{n} = \begin{cases} 1 & \text{falls } n \text{ gerade} \\ -1 & \text{falls } n \text{ ungerade} \end{cases}` |
 | $$\sqrt[m] n$$                                                                                                             | `\sqrt[m] n`                                                                                                             |
 | $$\int_a^b f(x) = $$                                                                                                       |                                                                                                                          |
+| $$\vec v$$                                                                                                                 | `\vec v`                                                                                                                 |
+|                                                                                                                            |                                                                                                                          |
 ## Griechische Zeichen
 |            |          |
 | ---------- | -------- |

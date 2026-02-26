@@ -93,7 +93,8 @@ Ein Bild im Speicher ist also ein Array an Bytes, welches erst durch weitere zus
 - Format, also z.B. RGB, BGR, BGRA, (...)
 benötigt um das Array an Bytes als ein sinnvolles Bild auf dem Bildschirm auszugeben.
 
-#### Code #TODO
+#### Code
+#TODO 
 
 ## Farbpaletten
 Statt für jedes Pixel den RGB-Wert zu speichern, kann auch zum Zwecke der Bildkompression eine Farbpalette verwendet werden. Hierfür wird ein Array an möglichen verwendbaren Farben definiert und das Pixel enthält nur noch einen Verweis auf eine bestimmte Stelle in dem Farbpaletten-Array. Diese Farbpalette wird damit als LookupTable (LUT) realisiert.

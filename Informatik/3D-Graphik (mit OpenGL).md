@@ -111,7 +111,7 @@ glfwSwapBuffers(window);
 Dies sollte am Ende der Hauptschleife durchgeführt werden.
 
 # Erste Schritte mit OpenGL
-Den Bildschirm mit einer Farbe leeren:
+Den Bildschirm mit einer Farbe leeren. Farben werden dabei im [[2D-Grafik#RGB-Farbsystem|RGB-Farbsystem]] angegeben
 ``` C++
 //Farbe       R     G     B     A
 glClearColor(0.5f, 0.2f, 0.3f, 1.0f); // Die clear color setzen
@@ -148,7 +148,7 @@ glTranslatef(0.2, 0, 0);
 Hier wird um 0.2, 0, 0 verschoben.
 
 ## Rotation
-Eine Rotation ist eine **lineare Transformation** und lässt sich daher als eine Matrixmultiplikation ausdrücken, welche die gedrehten Einheitsvektoren als Spalten enthält. Eine Rotation im 3-Dimensionalen kann um jede der 3 Achsen geschehen, dementsprechend gibt es 3 verschiedene Rotationsmatrizen mit denen multipliziert werden kann.
+Eine Rotation ist eine **lineare Transformation** und lässt sich daher als eine [[Vektoren, Matrizen#Matrizenmultiplikation|Matritzenmultiplikation]] zwischen einer Rotations[[Vektoren, Matrizen#Matrizen|matrix]] und einem [[Vektoren, Matrizen#Vektoren|Vektor]] ausdrücken, welche die gedrehten Einheitsvektoren als Spalten enthält. Eine Rotation im 3-Dimensionalen kann um jede der 3 Achsen geschehen, dementsprechend gibt es 3 verschiedene Rotationsmatrizen mit denen multipliziert werden kann.
 $$
 \begin{align}
 \vec{x_p}' &= \begin{pmatrix} 
@@ -168,6 +168,8 @@ $$
 \end{pmatrix} \cdot \vec{x_p} \quad \text{Rotation um x-Achse} \\
 \end{align}
 $$
+Rotation um y-Achse:
+![[rotation_um_y_achse.png|300]]
 In OpenGL muss das zum Glück nicht selbst implementiert werden, sondern kann mit folgendem Befehl umgesetzt werden:
 ``` C++
 glRotatef(rotationAngle, 0, 0, -1);
@@ -177,6 +179,7 @@ Es können auch Rotationen um mehrere Achsen durchgeführt werden. Hierbei wird 
 ### Rotation als Rotationsmatrix
 Es kann auch eine Rotationsmatrix erstellt werden, auf die die Rotationen draufmultipliziert wird.
 ``` C++
+#include <linmath.h>
 //Über die Linmath.h wird eine 4x4 Einheitsmatrix erzeugt
 mat4x4 m;
 mat4x4_identity(m); 
@@ -189,6 +192,8 @@ mat4x4_rotate_X(m, m, 3 * ((float)glfwGetTime() / 10));
 glUniformMatrix4fv(matrix_access, 1, GL_FALSE, (const GLfloat*)m);
 ```
 Diese Rotationsmatrix lässt sich dann auch an einen Shader übergeben. Siehe dazu [[#Ein einfacher Shader]] und die [[#Rendering Pipeline]].
+### Rotationen umkehren
+Eine Rotationsmatrix kann umgekehrt werden indem sie Transponiert wird.
 ### Zu viele Rotationen
 Wenn zu viele Rotationen durchgeführt werden, kann das dazu führen, dass wegen Berechnungsungenauigkeiten die Rotationsmatrix nicht mehr orthogonal ist. Zu erkennen ist das an der Determinante der Matrix, diese muss immer 1 sein.
 Dies lässt sich einfach reparieren:
@@ -213,11 +218,55 @@ glLoadIdentity();
 ```
 
 ## Homogene Transformationsmatrix
-Die homogene Transformationsmatrix ist eine Kombination aus [[#Rotation]], [[#Translation]], Reflektion, Skalierung und dem perspektivischen Faktor für zentrale Projektion
+Eine Kombination von Rotation und Translation sieht folgendermaßen aus:
+$$\vec x_p' = R \cdot \vec x_p + \vec x_t$$
+Hier wird um den Koordinatenursprung $(0, 0, 0)$ mit der Rotationsmatrix $R$ rotiert und um den Vektor $\vec x_t$ verschoben. Es kann um einen anderen Punkt rotiert mit folgender Formel:
+$$\vec x_p' = R \cdot (\vec x_p - \vec x_{t1}) + \vec x_{t1} + \vec x_{t2}$$
+Eine Rotation und Translation kann nicht durch eine Multiplikation von Matrizen realisiert werden.
+Translation ist keine lineare Abbildung und daher von einer Graphikkarte schwieriger zu berechnen. Es wird also ein Trick benötigt Translation zu berechnen als wäre es eine lineare Abbildung.
+Die **homogene Transformationsmatrix** ist eine Kombination aus [[#Rotation]], [[#Translation]], Reflektion, Skalierung und dem perspektivischen Faktor für [[#zentrale Projektion]]
 ![[homogene_transformationsmatrix.png|400]]
+Hierfür muss jeder Punkt / Vektor um eine weiter Dimension erweitert werden, mit der neuen Komponente immer 1. (Im folgenden Beispielhaft in 2D)
+$$\begin{pmatrix} x \\ y \end{pmatrix} \to \begin{pmatrix} x \\ y \\ 1 \end{pmatrix}$$
 
+### Herleitung der kombinierten Rotation und Translation
+Folgendes ist berechnet Beispielhaft für 2 Dimensionen, lässt sich jedoch analog für 3 Dimensionen durchführen.
+Rotation lässt sich dadurch als folgende Matrixmultiplikation darstellen:
+$$\begin{pmatrix} x' \\ y' \\ 1 \end{pmatrix} = \begin{pmatrix} \cos(\alpha) & -\sin(\alpha) & 0 \\ \sin(\alpha) & \cos(\alpha) & 0 \\ 0 & 0 & 1 \end{pmatrix} \cdot \begin{pmatrix} x \\ y \\ 1\end{pmatrix}$$
+Translation hierdurch:
+$$\begin{pmatrix} x' \\ y' \\ 1 \end{pmatrix} = \begin{pmatrix} 1 & 0 & x_t \\ 0 & 1 & y_t \\ 0 & 0 & 1 \end{pmatrix} \cdot \begin{pmatrix} x \\ y \\ 1\end{pmatrix} = \begin{pmatrix} x + x_t \\ y + y_t \\ 1\end{pmatrix}$$
+Durch die Erweiterung um eine weitere Dimension lassen sich Rotation und Translation in eine gemeinsame Matrix zusammenfassen und berechnen als wäre es eine lineare Abbildung. 
+$$\begin{pmatrix} 
+	x' \\ y' \\ 1 
+\end{pmatrix} = \begin{pmatrix} 
+	\cos(\alpha) & -\sin(\alpha) & x_t \\ 
+	\sin(\alpha) & \cos(\alpha) & y_t \\ 
+	0 & 0 & 1 
+\end{pmatrix} \cdot \begin{pmatrix} 
+	x \\ y \\ 1 
+\end{pmatrix}
+$$
+**Achtung:** hierbei ist die Rotation immer vor der Translation! Anders herum wäre die Formel deutlich komplizierter.
+**Mehrere Transformationen** lassen sich ebenfalls einfach als Matritzenmultiplikation mehrerer Transformationsmatrizen berechnen.
 
-
+### Zentrale Projektion
+![[zentrale_projektion.png]]
+Bei der **zentralen Projektion** werden Objekte die weiter weg von der Kamera sind, kleiner auf dem Bildschirm dargestellt. Im Vergleich zur **orthogonalen Projektion**, bei der die Entfernung des Objekts keinen Einfluss auf die Größe der Objekts auf dem Bildschirm hat. 
+Der Abstand (die **Kamerakonstante**) zwischen dem virtuellen (Kamera)punkt und der Leinwand (dem Nullpunkt des Koordinatensystems) bestimmt, wie stark die Entfernung die Größe des Objekts verzerrt. Je größer die Entfernung, desto weniger ist der Einfluss der Entfernung. Bei einer "unendlichen" Kamerakonstanten wäre das Ergebnis die orthogonale Projektion. 
+**Zentralprojektion:**
+$$P_{cp} = \begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & -1/d & 1 \\
+\end{pmatrix}$$
+Orthogonale Projektion ($d \to \infty$)
+$$P_{cp} = \begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}$$
 # Rendering Pipeline
 
 # Ein einfacher Shader
