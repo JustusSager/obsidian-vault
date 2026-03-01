@@ -269,8 +269,19 @@ $$P_{cp} = \begin{pmatrix}
 \end{pmatrix}$$
 # Rendering Pipeline
 ![[rendering_pipeline.png]]
-In der Rendering Pipeline werden verschiedene Shader zur graphischen Verarbeitung verwendet. Zwischendrin werden noch andere Zwischenschritte durchgeführt, z.B. werden vor dem Fragment Shader automatisch die Vertexe in interpolierte Fragmente umgewandelt.
-
+In der Rendering Pipeline werden verschiedene Shader zur graphischen Verarbeitung verwendet. 
+![[rendering_pipeline_shape_assemply_rasterization.png]]
+Zwischendrin werden jedoch auch noch andere Zwischenschritte durchgeführt. Kurz zusammengefasst passiert folgendes in der Rendering Pipeline:
+**Vertex Shader**
+Hier werden die rohen Vertices verarbeitet und z.B. im Raum transformiert ([[#Rotation]] und [[#Translation]]) und Berechnungen durchgeführt, welche zur späteren Verarbeitung im Fragment Shader nötig sind. 
+Mehr dazu in [[#Vertex Shader]].
+**Shape Assembly**
+Die jetzt transformierten Vertices (die zu diesem Zeitpunkt einfache Punkte im 3D-Raum sind) werden zu Dreiecken (müssen nicht Dreiecke sein) zusammengesetzt. 
+**Rasterization**
+Diese Dreiecke werden daraufhin in potenzielle Pixel (Fragmente) übersetzt und die Werte in dem Dreieck zwischen den Eckpunkten (den Vertices) interpoliert.
+**Fragment Shader**
+Hier werden die finalen Farbwerte der Fragmente berechnet. Es werden also z.B.  Lichteffekte mit auf die ursprünglichen Farben der Vertices eingerechnet. 
+Mehr dazu in [[#Fragment Shader]].
 ## Shader
 Jeder Shader ist ein eigenes kleines Programm mit Input und Output. Diese werden in einer eigenen Sprache geschrieben, In OpenGL ist das `OpenGL Shading Language (GLSL oder glSlang)`. Ihre Syntax ist von C inspiriert. 
 Shader können zur Laufzeit kompiliert werden.
@@ -355,8 +366,66 @@ glAttachShader(complete_shader_program, fragment_shader);
 glLinkProgram(complete_shader_program);
 ```
 
-## Vertexe an den Shader übergeben und Ausführen
+## Vertexe an den Shader übergeben
+Die Vertexe können auf beliebige Weise im Programm organisiert werden, müssen dem Shader jedoch "erklärt" werden, es kann z.B. ein `struct` für die Vertexe angelegt werden.
+``` C++
+struct myVertexType {
+	float x, y, z;
+	float r, g, b;
+}
+myVertexType vertices = ...
+```
 
+OpenGL die `vertices` übergeben
+``` C++
+GLuint vertex_buffer;
+glGenBuffers(1, &vertex_buffer);
+glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
+glBufferData(
+	GL_ARRAY_BUFFER, 
+	numOfVertices * sizeof(myVertexType), // Größe des vertices-Arrays
+	vertices, // Pointer oder Variable zum Array
+	GL_STATIC_DRAW
+);
+```
+**Hinweis:** Je nachdem ob `vertices` auf dem Heap oder Stack allokiert wurde, gibt `sizeof()` unterschiedliche Werte zurück. Siehe dazu [[Speicherverwaltung#sizeof()]]. Je nachdem muss ob `vertices` auf dem Stack oder Heap liegt muss `numOfVertices * sizeof(myVertexType)` ausgetauscht werden, sodass es die Größe des `vertices`-Arrays in Bytes ergibt.
+
+Dem Shader die `vertices` erklären:
+``` C++
+// Identifier für den Shader generieren
+GLint position_access = glGetAttribLocation(complete_shader_program, "position");
+GLint color_access = glGetAttribLocation(complete_shader_program, "color");
+
+// 
+glEnableVertexAttribArray(position_access);
+glVertexAttribPointer(
+	position_access, 3, GL_FLOAT, GL_FALSE,
+	sizeof(myVertexType), // stride, also Größe des Datentyps
+	(void*)0 // offset des position-Speicherbereichs in myVertexType
+);
+
+glEnableVertexAttribArray(color_access);
+glVertexAttribPointer(
+	color_access, 3, GL_FLOAT, GL_FALSE,
+	sizeof(myVertexType), // stride, also Größe des Datentyps
+	(void*)(sizeof(float) * 3) // offset des color-Speicherbereichs in myVertexType
+);
+```
+
+## Vertexe zeichnen
+Innerhalb der Fensterschleife:
+``` C++
+// Ab hier diesen Shader nutzen
+//   muss nicht zwingend in der Hauptschleife geschehen
+glUseProgram(complete_shader_program); 
+
+// Die Vertices zeichnen
+glDrawArrays(
+	GL_TRIANGLES, 
+	0,             // offset im buffer
+	numOfVertices  // Anzahl der Vertexe
+);
+```
 
 ## uniform-Variablen im Shader
 Um Variablen für einen Shader (als `uniform`) erreichbar zu machen, kann folgendes ausgeführt werden. 
@@ -391,9 +460,107 @@ glUniform1f(float_access, float_var);
 glUniform3f(vec3_access, vec3_var[0], vec3_var[1], vec3_var[2]);
 
 // Die Matrix m wird in das Shader-Programm übertragen
-glUniformMatrix4fv(matrix_access, 1, GL_FALSE, (const GLfloat*) matrix_var);
+glUniformMatrix4fv(
+	matrix_access, 
+	1,                          // wie viele Elemente?
+	GL_FALSE,                   // transponieren?
+	(const GLfloat*) matrix_var // wo sind sie zu finden?
+);
 ```
 Hier muss je nach Variablentyp die richtige OpenGL-Methode verwendet werden, um die Daten zu übertragen.
+`glUniformMatrix4fv` kann dabei sehr gut für eine [[#Rotation als Rotationsmatrix|Rotationsmatrix]] verwendet werden.
 
-# Licht ()
+# Licht (Phong-Model)
+Die Lichtverarbeitung und Berechnung findet fast ausschließlich im [[#Fragment Shader]] statt, jedoch werden hierfür ein paar Dinge benötigt, die vorher definiert / berechnet werden müssen.
+Im folgenden wird das Phong-Modell umgesetzt. Dabei lässt sich das Licht in 3 verschiedene Bereiche aufteilen:
+- Ambient
+- Diffus
+- Specular
+## Ambient
+Dies ist das einfachste der 3 Bereiche. Hier wird einfach angenommen, dass jedes Fragment grundsätzlich eine bestimmte fest definierte Menge an Licht bekommt.
+Die Umsetzung ist einfach:
+$$\begin{align}
+R_{neu} &= \text{ambientFaktor} \cdot R_{alt} \\
+G_{neu} &= \text{ambientFaktor} \cdot G_{alt} \\
+B_{neu} &= \text{ambientFaktor} \cdot B_{alt}
+\end{align}$$
+Der `ambientFaktor` ist dabei ein Wert zwischen 0 und 1 und wird einfach auf die urspüngliche Farbe drauf multipliziert.
+
+Im Fragment Shader sieht das folgendermaßen aus:
+``` GLSL
+#version 410
+uniform float ambientFactor;
+in vec3 colorFrag;
+void main()  
+{  
+    gl_FragColor = vec4(ambientFactor*colorFrag, 1.0);
+};
+```
+## Diffus
+Beim Diffusen Licht soll berücksichtigt werden, dass Licht von einer bestimmten Lichtquelle kommt. Je nachdem in welchem Winkel das Licht auf die Oberfläche trifft, wirkt die Oberfläche heller oder dunkler. 
+Berechnen lässt sich die folgendermaßen:
+$$ \begin{align}
+\vec l &= \text{Vektor von der Lichtquelle zum Oberflächenpunkt / Fragment} \\
+\vec n &= \text{Normalenvektor des Fragments} \\
+k_{diff} &= \vec l \cdot \vec n = |\vec l| \cdot |\vec n| \cdot \cos(\alpha) = \cos(\alpha)
+\end{align}$$
+D.h. der Diffusionsfaktor lässt sich anhand des [[Vektoren, Matrizen#Skalarprodukt|Skalarprodukts]] berechnen. Zusätzlich kann noch ein Faktor genutzt werden, um die Stärke dieses Effekts zu bestimmen.
+Wir benötigen also den Normalenvektor der Oberfläche und einen Vektor von der Lichtquelle zum Oberflächenpunkt.
+
+Der Normalenvektor kann im Shader nicht gut berechnet werden, daher ist es sinnvoller diesen in das Objekt mit den Vertices mit aufzunehmen und bei der Erstellung der Vertices mit zu berechnen / zu definieren.
+``` C++
+struct myVertexType {
+	float x, y, z;
+	float nx, ny, nz;
+	float r, g, b;
+}
+```
+Diese müssen dem Shader jedoch auch noch bekannt gemacht werden. Siehe dazu [[#Vertexe an den Shader übergeben]].
+Der Vertex Shader kann nun die Normalenvektoren mit transformieren.
+``` GLSL
+#version 410
+uniform mat4 transformationMatrix;
+
+in vec3 position;
+in vec3 normalVector;
+in vec3 color;
+
+out vec3 positionFrag;
+out vec3 normalVectorFrag;
+out vec3 colorFrag;
+
+void main()
+{
+    gl_Position = matrix * vec4(position, 1.0);
+    
+    positionFrag = gl_Position.xyz;
+    normalVectorFrag = (transformationMatrix * vec4(normalVector, 1.0)).xyz;
+    colorFrag = color;
+};
+```
+Im Fragment Shader kann jetzt das diffuse Licht berechnet werden.
+``` GLSL
+#version 410
+uniform float ambientFactor;
+uniform float diffuseFactor;
+in vec3 positionFrag;
+in vec3 normalVectorFrag;
+in vec3 colorFrag;
+
+vec3 lightPos = (0, 0, 1)
+
+void main()  
+{  
+    vec3 lightDir = normalize(lightPos - positionFrag);
+	float diffuse = max(
+		dot(normalVectorFrag, lightDir), 0.0
+	) * diffuseFactor;
+    gl_FragColor = vec4(ambientFactor * diffuse * colorFrag, 1.0);
+};
+```
+Hier wird eine feste Lichtquelle im Fragment-Shader definiert, diese kann jedoch auch als `uniform` übergeben werden.
+## Specular
+
+
+
 # Texturen

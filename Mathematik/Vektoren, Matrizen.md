@@ -21,6 +21,16 @@ $\overrightarrow{PQ} = Q - P = \begin{pmatrix} Q_1 \\ Q_2 \\ ... \\ Q_n \end{pma
 
 **Voraussetzungen:**
 - Die beiden Punkte haben die selbe Anzahl an Dimensionen
+### Skalarprodukt
+Produkt zweier Vektoren, bei dem ein Skalar herauskommt. 
+$$\vec v \cdot \vec w = \begin{pmatrix} 
+	v_1 \\ v_2 \\ ... \\ v_n 
+\end{pmatrix} \cdot \begin{pmatrix} 
+	w_1 \\ w_2 \\ ... \\ w_n 
+\end{pmatrix} = v_1 \cdot w_1 + v_2 \cdot w_2 + \dots + v_n \cdot w_n$$
+**Voraussetzungen:**
+- Die beiden Punkte haben die selbe Anzahl an Dimensionen
+
 # Matrizen 
 
 ## Grundlagen und Grundbegriffe (Matrizen)
