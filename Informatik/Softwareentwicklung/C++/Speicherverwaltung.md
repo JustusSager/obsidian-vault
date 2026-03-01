@@ -98,3 +98,49 @@ int main() {
 	}
 }
 ```
+
+# sizeof()
+Mithilfe von `sizeof()` kann der Speicherbedarf einer Variable oder eines Typs bestimmt werden. Dabei muss jedoch sehr darauf geachtet werden, von was die Größe bestimmt wird.
+**Bei einem Datentyp**
+``` C++
+// Größe eines primitiven Datentyps, gibt die Größe des Datentyps in Bytes zurück.
+int a = 0;
+sizeof(int); // returns: 4
+sizeof(a);   // returns: 4
+
+// Größe eines eigenen Datentyps, gibt die Größe des structs zurück. Also die Summe der Größen der darin organisierten Variablen.
+struct MyData {
+	float a, b, c;
+	int d;
+}
+MyData data;
+sizeof(MyData); // returns: 16
+sizeof(data);   // returns: 16
+```
+
+**Bei einem Array auf dem Stack:**
+siehe [[#Stack- oder auch Stapelspeicher]].
+``` C++
+// Hier wird die Größe des Arrays in Bytes angegeben, 
+// also die Anzahl der Elemente * die Größe des Datentyps.
+int a[] {1, 2, 3};
+sizeof(a); // returns: 12
+
+// entsprechend wenn man wissen möchte wie viele Elemente ein Array hat, kann man:
+int a[] {1, 2, 3};
+(sizeof(a) / sizeof(int)); // returns: 3
+```
+
+**Bei einem Array auf dem Heap**
+siehe [[#Heapspeicher]].
+``` C++
+// Hier wird die Größe des Pointers zurückgegeben, nicht die Größe des Arrays welches bei der Pointeradresse startet.
+int *ia {nullptr};
+ia = (int*) malloc(10*sizeof(int));
+sizeof(ia); // returns: 8
+
+// Analog mit new im C++ Stil
+int *ja {nullptr};
+ja = new int[10];
+sizeof(ja); // returns: 8
+```
