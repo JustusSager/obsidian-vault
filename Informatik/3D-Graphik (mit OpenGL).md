@@ -476,6 +476,12 @@ Im folgenden wird das Phong-Modell umgesetzt. Dabei lässt sich das Licht in 3 v
 - Ambient
 - Diffus
 - Specular
+![[phong_lichtmodell.png]]
+Das Phong-Modell hat folgende Einschränkungen:
+- Keine Energieerhaltung (?)
+- Alle Lichtquellen sind Punktquellen
+- Diffuses und spiegelndes Licht werden nur lokal berechnet (keine Schatten)
+- Umgebungslicht (Ambientes Licht) wird nur global berechnet
 ## Ambient
 Dies ist das einfachste der 3 Bereiche. Hier wird einfach angenommen, dass jedes Fragment grundsätzlich eine bestimmte fest definierte Menge an Licht bekommt.
 Die Umsetzung ist einfach:
@@ -497,7 +503,7 @@ void main()
 };
 ```
 ## Diffus
-Beim Diffusen Licht soll berücksichtigt werden, dass Licht von einer bestimmten Lichtquelle kommt. Je nachdem in welchem Winkel das Licht auf die Oberfläche trifft, wirkt die Oberfläche heller oder dunkler. 
+Beim Diffusen Licht soll berücksichtigt werden, dass Licht von einer bestimmten Lichtquelle kommt. Je nachdem in welchem Winkel das Licht auf die Oberfläche trifft, wirkt die Oberfläche heller oder dunkler. Das Licht wird gleichmäßig in alle Richtungen verteilt.
 Berechnen lässt sich die folgendermaßen:
 $$ \begin{align}
 \vec l &= \text{Vektor von der Lichtquelle zum Oberflächenpunkt / Fragment} \\
@@ -516,6 +522,8 @@ struct myVertexType {
 }
 ```
 Diese müssen dem Shader jedoch auch noch bekannt gemacht werden. Siehe dazu [[#Vertexe an den Shader übergeben]].
+Falls es möglich ist den Normalenvektor anhand einer übergeordneten Struktur besser abzuleiten (Eine Kugel, statt einer Kugel aus einzelnen Flächen), kann dies die Lichtberechnung deutlich verbessern.
+![[phong_normalenvektoren_verbessern.png]]
 Der Vertex Shader kann nun die Normalenvektoren mit transformieren.
 ``` GLSL
 #version 410
@@ -532,7 +540,6 @@ out vec3 colorFrag;
 void main()
 {
     gl_Position = matrix * vec4(position, 1.0);
-    
     positionFrag = gl_Position.xyz;
     normalVectorFrag = (transformationMatrix * vec4(normalVector, 1.0)).xyz;
     colorFrag = color;
@@ -547,20 +554,137 @@ in vec3 positionFrag;
 in vec3 normalVectorFrag;
 in vec3 colorFrag;
 
-vec3 lightPos = (0, 0, 1)
+vec3 lightPos = (0, 0, 1);
 
 void main()  
 {  
+    float ambient = ambientFactor;
+    
     vec3 lightDir = normalize(lightPos - positionFrag);
 	float diffuse = max(
 		dot(normalVectorFrag, lightDir), 0.0
 	) * diffuseFactor;
-    gl_FragColor = vec4(ambientFactor * diffuse * colorFrag, 1.0);
+	
+    gl_FragColor = vec4((ambient + diffuse) * colorFrag, 1.0);
 };
 ```
 Hier wird eine feste Lichtquelle im Fragment-Shader definiert, diese kann jedoch auch als `uniform` übergeben werden.
 ## Specular
+Bei der spiegelnden Reflektion wird zusätzlich die Position des Betrachters berücksichtigt. Es wird ein Spiegelungseffekt zur Oberfläche hinzugefügt, der wenn der Betrachter genau im optimalen Reflektionsvektor steht, einen "Glanzeffekt" auf die Oberfläche legt.
+![[phong_specular.png]]
+$$\begin{align}
+\vec r &= \text{Vektor für die ideale Reflexion (blau)} \\
+\vec v &= \text{Vektor vom Fragment zum Beobachter (rot)} \\
+n &= \text{der Strafexponent für die Winkelabweichung} \\
+k_{spec} &= (\vec r \cdot \vec v)^n = (|\vec r|\cdot |\vec v| \cdot \cos(\beta))^n = (\cos(\beta))^n
+\end{align}$$
+Im Fragment Shader kann dies folgendermaßen berechnet werden:
+``` GLSL
+#version 410
+uniform float ambientFactor;
+uniform float diffuseFactor;
+uniform float specularFactor;
+uniform float shininess;
+in vec3 positionFrag;
+in vec3 normalVectorFrag;
+in vec3 colorFrag;
 
+vec3 cameraPos = (0, 0, 1);
+vec3 lightPos = (0, 0, 1);
 
-
+void main()  
+{  
+    float ambient = ambientFactor;
+    
+    vec3 lightDir = normalize(lightPos - positionFrag);
+	float diffuse = max(
+		dot(normalVectorFrag, lightDir), 0.0
+	) * diffuseFactor;
+	
+	vec3 viewDir = normalize(cameraPos - positionFrag);
+	vec3 reflectDir = reflect(-lightDir, normalVectorFrag);
+	float specular = pow(
+		max(dot(viewDir, reflectDir), 0.0), 
+		shininess
+	) * specularFactor;
+	
+    gl_FragColor = vec4((ambient + diffuse + specular) * colorFrag, 1.0);
+};
+```
 # Texturen
+Texturen sollen es ermöglichen Bitmaps (Bilder) auf ein Objekt zu projizieren um damit innerhalb einer durch Vertices generierten Fläche unterschiedliche Farben darzustellen, welche nicht nur durch den Rasterizer interpoliert werden. 
+Statt einer Farbe enthält ein Vertex eine zusätzliche 2D-Koordinate, der **uv-Koordinate**, welche die Position auf einem Bild entspricht. Diese kann durch den Rasterizer interpoliert werden, um die Zwischenpositionen zu generieren.
+![[uv_koordinaten.png]]
+Anhand der uv-Koordinate kann im Fragment Shader die Farbe aus dem Bild genommen werden.
+## Vertices vorbereiten
+Die uv-Koordinate ersetzt die `color` in unserem `MyVertexType`:
+``` C++
+struct myVertexType {
+	float x, y, z;
+	float nx, ny, nz;
+	float u, v;
+}
+```
+Die `vertices` benötigen jetzt zusätzlich die Information, wo auf dem Bild ihre entsprechende Farbe zu finden ist. Es reicht dabei die "Eckpunkte" anzugeben, da der Rasterizer die Koordinaten dazwischen interpoliert. Diese müssen entsprechend übergeben werden ([[#Vertexe an den Shader übergeben]])
+
+## Bitmap laden
+Siehe dazu auch [[2D-Grafik#Bilder im Speicher]]. Hier wird eine anderes Skript genutzt um eine Bitmap-Datei als ein Bytearray in den Speicher zu laden.
+``` C++
+// Das Bild in den RAM laden
+int bmpWidth;
+int bmpHeight;
+unsigned char* image = loadBMP24("Textures/Bear.bmp", &bmpWidth, &bmpHeight);
+```
+
+Danach muss das Bytearray an den VRAM von OpenGL übergeben werden:
+``` C++
+// Das Bild als texture vom RAM in den VRAM übergeben
+GLuint textureCube;
+glGenTextures(1, &textureCube);
+glActiveTexture(GL_TEXTURE0);
+glBindTexture(GL_TEXTURE_2D, textureCube);
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, bmpWidth, bmpHeight, 0, GL_BGR, GL_UNSIGNED_BYTE, image);
+delete[] image; // Den Speicher auf dem RAM wieder freigeben
+// glGenerateMipmap(GL_TEXTURE_2D);
+```
+ggfs. Kann hier auch noch gesagt werden, dass [[#MipMaps]] generiert werden sollen
+
+Jetzt muss noch ein Zugriff für den Fragment Shader auf die im VRAM abgelegte Texture geschaffen werden. Dies geht über einen `uniform` Parameter.
+``` C++
+GLuint TextureID = glGetUniformLocation(complete_shader_program, "textureCubeSampler");
+```
+#TODO Wieso findet der Shader die Textur obwohl es keine Verknüpfung zwischen `TextureID` und `textureCube` gibt?
+
+## Im Shader verarbeiten
+Der Vertex Shader reicht die uv-Koordinaten unverändert weiter:
+``` GLSL
+#version 410
+uniform mat4 transformationMatrix;
+in vec3 position;
+in vec2 uv;
+out vec2 uvFrag;
+
+void main()
+{
+    gl_Position = transformationMatrix * vec4(position, 1.0);
+    uvFrag = uv;
+};
+```
+
+Im Fragment Shader wird nun die Farbe anhand eines textureSamplers aus der Textur an der Position der uv-Koordinate abgefragt.
+``` GLSL
+#version 410
+uniform sampler2D myTextureSampler;
+in vec2 uvFrag;
+
+void main()  
+{  
+	vec3 color = texture(myTextureSampler, uvFrag);
+    gl_FragColor = vec4(color, 1.0);
+};
+```
+
+## MipMaps
+```
+glGenerateMipmap(GL_TEXTURE_2D);
+```
