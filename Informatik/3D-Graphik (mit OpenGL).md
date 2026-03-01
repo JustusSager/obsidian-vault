@@ -268,8 +268,132 @@ $$P_{cp} = \begin{pmatrix}
 0 & 0 & 0 & 1 \\
 \end{pmatrix}$$
 # Rendering Pipeline
+![[rendering_pipeline.png]]
+In der Rendering Pipeline werden verschiedene Shader zur graphischen Verarbeitung verwendet. Zwischendrin werden noch andere Zwischenschritte durchgeführt, z.B. werden vor dem Fragment Shader automatisch die Vertexe in interpolierte Fragmente umgewandelt.
+
+## Shader
+Jeder Shader ist ein eigenes kleines Programm mit Input und Output. Diese werden in einer eigenen Sprache geschrieben, In OpenGL ist das `OpenGL Shading Language (GLSL oder glSlang)`. Ihre Syntax ist von C inspiriert. 
+Shader können zur Laufzeit kompiliert werden.
+
+## Vertex Shader
+Der Vertex Shader wird für jeden Vertex einzeln durchgeführt. Dabei werden jedoch viele Vertexe parallel abgearbeitet. 
+Ein ganz einfacher Vertex ist dabei definiert als die drei Eckpunkt-Koordinaten eines Dreiecks. Ein Vertex-Shader könnte daraufhin anhand einer Transformationsmatrix, den Vertex im Raum rotieren und verschieben. Die Farbe wird einfach durchgereicht.
+``` GLSL
+#version 410 // 
+uniform mat4 transformationMatrix;
+in vec3 position;
+in vec3 color;
+out vec3 colorFrag;
+void main()
+{
+    gl_Position = transformationMatrix * vec4(position, 1.0);
+    colorFrag = color;
+};
+```
+`gl_Position` ist eine spezielle eingebaute Variable, welche im Vertex Shader als Ausgabe für die neue Position verwendet wird. Sie ist vom Datentyp `vec4`.
+Die übergebene Farbe des Vertex `color` wird als `colorFrag` an den Fragment Shader durchgereicht.
+Über der `main()` werden die Eingangs- (`in`) und Ausgangsvariablen (`out`) definiert. Außerdem gibt es auch `uniform`-Variablen. Diese sind über alle Instanzen des Shaders gleich. Also hier z.B. jeder durchlauf des Vertex Shaders für einen Vertex arbeitet mit den selben Werten in `transformationMatrix`, kann aber eine andere `position` und `color` haben.
+
+## Fragment Shader
+Ein einfacher Fragment Shader (aufbauend auf dem in [[#Vertex Shader]] definierten Shader) kann folgendermaßen aussehen:
+``` GLSL
+#version 410
+in vec3 colorFrag;
+void main()  
+{  
+    gl_FragColor = vec4(colorFrag, 1.0);  
+};
+```
+Hier bekommt der Fragment Shader vom Vertex Shader eine Farbe übergeben und gibt diese als finalen Farbwert zurück. `gl_FragColor` ist dabei eine eingebaute Variable vom Typ `vec4`, welche am Ende der `main()` den Farbwert des Fragments beinhalten muss (im [[2D-Grafik#RGB-Farbsystem|RGBA-Farbsystem]]). 
+
+**Hinweis:**
+`gl_FragColor` ist inzwischen eigentlich veraltet. Stattdessen sollte `layout(location = 0) out vec4 outColor` als Ausgabe-Variable definiert werden. Siehe dazu: https://stackoverflow.com/questions/51459596/using-gl-fragcolor-vs-out-vec4-color und https://wikis.khronos.org/opengl/Fragment_Shader#Outputs. 
 
 # Ein einfacher Shader
+Hierfür werden die in [[#Vertex Shader]] und [[#Fragment Shader]] beschriebenen Shader verwendet.
+
+## Kompilieren
+Die Shader werden mit folgendem Code zur Laufzeit kompiliert. 
+``` C++
+// Erzeugen des Vertex-Shaders --------------------------
+// Shader aus Datei laden (Andere Bib zum Lesen der Datei LadeShader.h)
+char* vertex_shader_code = readTextFileIntoString(
+	"Shaders/VertexShaderStart.glsl"
+);
+// Sicherstellen, dass die Datei erfolgreich geladen wurde!
+if (vertex_shader_code == 0) exit(EXIT_FAILURE);
+// Shader kompilieren
+vertex_shader = glCreateShader(GL_VERTEX_SHADER);
+glShaderSource(vertex_shader, 1, &vertex_shader_code, NULL);
+glCompileShader(vertex_shader);
+
+// Erzeugen des Fragment-Shaders --------------------------
+char* fragment_shader_code = readTextFileIntoString(
+	"Shaders/FragmentShaderStart.glsl"
+);
+if (fragment_shader_code == 0) exit(EXIT_FAILURE);
+fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
+glShaderSource(fragment_shader, 1, &fragment_shader_code, NULL);
+glCompileShader(fragment_shader);
+```
+
+Um Informationen über den Shader zu bekommen kann folgender Code genutzt werden: 
+``` C++
+char info[500];
+int num;
+glGetShaderInfoLog(vertex_shader, 500, &num, info);
+printf("%s", info);
+```
+Hier werden Infos zum `vertex_shader` ausgegeben, geht aber auch mit dem `fragment_shader`.
+
+Die beiden Shader (Vertex- und Fragment-Shader) miteinander zu einem vollständigen Shader verbinden:
+``` C++
+//Linken des Shader-Progamms
+complete_shader_program = glCreateProgram();
+glAttachShader(complete_shader_program, vertex_shader);
+glAttachShader(complete_shader_program, fragment_shader);
+glLinkProgram(complete_shader_program);
+```
+
+## Vertexe an den Shader übergeben und Ausführen
+
+
+## uniform-Variablen im Shader
+Um Variablen für einen Shader (als `uniform`) erreichbar zu machen, kann folgendes ausgeführt werden. 
+
+Außerhalb der Fensterschleife:
+``` C++
+// für die Variablen:
+float float_var;
+vec3 vec3_var;
+mat4x4 matrix_var;
+
+// Einen eindeutigen identifier definieren für den Speicherbereich.
+GLint float_access = glGetUniformLocation(
+	complete_shader_program, "float_in_shader"
+);
+GLint vec3_access = glGetUniformLocation(
+	complete_shader_program, "vec3_in_shader"
+);
+GLint matrix_access = glGetUniformLocation(
+	complete_shader_program, "matrix_in_shader"
+);
+```
+- `matrix_in_shader` ist dabei der Variablenname im Shader. 
+- Vorgehensweise ist für jeden Variablentyp gleich, da hier nur der Identifier definiert wird.
+
+Innerhalb der Fensterschleife:
+``` C++
+// Eine einzelne float übertragen
+glUniform1f(float_access, float_var);
+
+// Einen 3D-Vector mit floats übertragen
+glUniform3f(vec3_access, vec3_var[0], vec3_var[1], vec3_var[2]);
+
+// Die Matrix m wird in das Shader-Programm übertragen
+glUniformMatrix4fv(matrix_access, 1, GL_FALSE, (const GLfloat*) matrix_var);
+```
+Hier muss je nach Variablentyp die richtige OpenGL-Methode verwendet werden, um die Daten zu übertragen.
 
 # Licht ()
 # Texturen
