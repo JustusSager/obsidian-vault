@@ -92,3 +92,6 @@
   Ausgehend von einer Bedrohung beschreibt das Risiko die Wahrscheinlichkeit des Eintritts eines Schadensereignisses unter Berücksichtigung der Höhe des zu erwartenden Schadens.
   Analogie: Ein Frontalzusammenstoß mit 130 km/h von 2 Autos bringt einen sehr hohen Schaden. Ein Zusammenstoß mit einem Baum bei 5 km/h hingegen bringt nur einen sehr geringen Schaden. Die Wahrscheinlichkeit für das Erste ist jedoch scheinbar so gering, dass annähernd jeder bereit ist dieses Risiko in Kauf zu nehmen und dennoch Auto zu fahren. Also dennoch ein geringes Risiko.
   Um zu bewerten, ob von einer Bedrohung eine konkrete Gefährdung ausgeht, müssen zunächst die zu schützenden Güter bewertet, das Schadenspotenzial bestimmt und die Eintrittswahrscheinlichkeit abgeschätzt werden.
+
+### Personenbezogene Daten
+repräsentieren die Informationen, die sich auf natürliche Personen beziehen oder beziehbar sind und Rückschlüsse auf die Persönlichkeit erlauben. 
