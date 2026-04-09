@@ -1,24 +1,33 @@
 # Physischer Zugriff
+Physischer Zugriff bedeutet, der Angreifer hat direkten Zugang zum Zielsystem. Er kann es bedienen wie ein regulärer Benutzer (z.B. Tastatur, Maus, Touchscreen). Er kann weitere Geräte anschließen / entfernen, ...
+
 ## Angriffsvektoren
-#### Boot- und Live-Media-Angriffe
--**Externe Boot-Medien** - Angreifer kann System von USB-Stick booten, um lokale Festplatte zu mounten, sofern diese nicht ausreichend geschützt ist.
+
+### Boot- und Live-Media-Angriffe
+- **Externe Boot-Medien** - Angreifer kann System von USB-Stick booten, um lokale Festplatte zu mounten, sofern diese nicht ausreichend geschützt ist.
 - **Manipulation des Bootloaders** - Durch Änderung an Bootloader oder BIOS/UEFI-Setup können Sicherheitsmechanismen umgangen werden.
-#### Auslesen von Daten im Arbeitsspeicher
+
+### Auslesen von Daten im Arbeitsspeicher
 - **Cold Boot Attack** - Beim Herunterfahren können sensible Daten, z.B. Schlüssel, im RAM verbleiben – Angreifer kann diese extrahieren.
 - **Direct Memory Access (DMA) Angriffe** - Angreifer kann über Schnittstellen wie Thunderbolt, FireWire oder PCIe direkten Zugriff auf Arbeitsspeicher erhalten, um vertrauliche Informationen auszulesen.
-#### Manipulation und Implantation von Hardware
+
+### Manipulation und Implantation von Hardware
 - **Hardware-Backdoors** - Physische Implantate oder modifizierte Hardwarekomponenten können dauerhaft Zugriffsmöglichkeiten ermöglichen.
 - **Keylogger und Überwachungsgeräte** - Einsatz von Hardware-Keyloggern oder anderen Überwachungsgeräten erlaubt Erfassung von Tastatureingaben und anderen Aktivitäten.
-#### Manipulation von Firmware und Software
+
+### Manipulation von Firmware und Software
 - **Firmware-Angriffe** - Modifizierter BIOS/UEFI-Code oder infizierte Firmware auf Peripheriegeräten kann tiefgreifende Kontrolle über das System ermöglichen.
 - **Angriffe auf Debug-Schnittstellen** - Physische Zugangsmöglichkeiten zu Schnittstellen (z. B. JTAG, serielle Debug-Ports) können Ausführung von Code oder Manipulation des Systems erlauben.
-#### Direkter Diebstahl oder Austausch von Komponenten
+
+### Direkter Diebstahl oder Austausch von Komponenten
 - **Datendiebstahl** - Über physischen Diebstahl von Speichermedien oder anderen Komponenten kann Angreifer sensible Informationen erhalten und offline analysieren.
 - **Manipulation von Hardwarekomponenten** - Austausch oder Ergänzung von Komponenten, um z.B. Daten abzufangen oder zu modifizieren.
-#### Absichtliche Zerstörung von Hardware
+
+### Absichtliche Zerstörung von Hardware
 - **Physische Zerstörung** - Angreifer beschädigt oder zerstört direkt Komponenten (z.B. Festplatten, Netzteile, Motherboards).
 - **Überhitzung oder Kurzschlüsse** - Manipulationen an Stromversorgung oder Kühlung können zu Überhitzung oder elektrischen Fehlfunktionen bis hin zum Ausfall des Systems führen.
-#### Sabotage durch Manipulation von Software/Hardware-Interaktionen
+
+### Sabotage durch Manipulation von Software/Hardware-Interaktionen
 - **Manipulation der Firmware** - Gezielte Eingriffe in Firmware-Updates oder Überschreiben von Firmware kann zu dauerhafter Beeinträchtigung der Funktionsfähigkeit eines Systems führen.
 - **Fehlkonfigurationen** - Absichtliche Veränderung kritischer Optionen der Systemkonfiguration (z.B. Überhitzungsschutz).
 
@@ -28,6 +37,7 @@
 - Manipulation und Sabotage
 - Erzielung von Wettbewerbsvorteilen oder Spionage
 - ...
+
 # Passwörter
 ![[passwort_hash.png]]
 Beim erstellen eines Passworts wird der Hash des Passworts (zuzüglich eines `Salts`) in der Datenbank gespeichert. 
@@ -55,6 +65,7 @@ Siehe hierzu [[Kryptographie#Hash Funktionen|Hash Funktionen]].
 **Sicherheitsmaßnahmen:**
 - schwierig und aufwändig
 - lange und komplizierte Passwörter verwenden
+
 # Malware
 Als Malware oder Schadsoftware bezeichnet man unerwünschte Software, die die Integrität des Zielsystems gefährdet und eine Schadfunktion (sog. Payload) besitzt.
 
@@ -76,8 +87,10 @@ chmod u+s,o+x /tmp/.xxsh
 rm ./ls
 ls $*
 ```
+
 ## Ransomware Beispiel: "Wannacry"
 ![[wannacry.png]]
+
 # Buffer Overflow
 Ein Buffer Overflow (oder Pufferüberlauf) ist, wenn eine Variable ihren eigentlich angedachten Speicherbereich überschreitet. Die kann zum Beispiel passieren, wenn ein Speicherbereich für einen String der Länge 10 reserviert wurde, jedoch ein String der Länge 20, ohne Überprüfung in den Speicherbereich geladen wird.  
 
@@ -114,6 +127,7 @@ Herausforderung aus Angreifer-Sicht:
 ### Code Beispiele
 Damit folgende Beispiele funktionieren wurden einige Sicherheitsmaßnahmen im Betriebssystem deaktiviert.
 Siehe auch [[gdb (GNU Debugger)]]. Dieses CLI-Tool wurde verwendet um während des Programmablaufs den Speicher betrachten zu können.
+
 #### Konsolenausgabe
 `target0`:
 ``` C
@@ -153,6 +167,7 @@ run target0 ``python -c "print('A'*132 + '\xbb' + '\x84' + '\x04' + '\x08')"`
 ```
 Vorausgesetzt die physischen Adresse der `versteckt`-Funktion lautet `0x80484bb`
 Es entsteht zwar ein `Segmentation Fault` am Ende, doch vorher wurde die `versteckt`-Funktion ausgeführt.
+
 #### Öffnen einer Shell
 Statt einfach nur 132 A's in die `buffer`-Variable zu schreiben lässt sich auf diese Weise auch weiterer Maschinencode in ein Programm einschleusen. Zur Generierung des Maschinencodes für die Öffnung einer Shell, lässt sich folgendes Python-Skript nutzen:
 `exploit.py`
@@ -174,6 +189,7 @@ Wenn man das ganze also innerhalb von [[gdb (GNU Debugger)]] durchführen möcht
 run `python exploit.py`
 ```
 Die dabei geöffnete Shell besitzt die gleichen Rechte, wie das ausgeführte Programm. Der nächste Schritt wäre nun z.B. eine `privilege escalation` zu erreichen um an `root`-Rechte zu kommen.
+
 ## Schutzmaßnahmen gegen Pufferüberläufe: 
 <b>Never trust user input</b>
 - sorgfältige Programmierung und Nutzung entsprechender Compiler-Funktionen
@@ -190,23 +206,31 @@ Die dabei geöffnete Shell besitzt die gleichen Rechte, wie das ausgeführte Pro
 - ESP ( `Excecutable Space Protection` ) 
 	- Unter Windows heißt es `Data Excecution Prevention`
 	- Es kann nur noch Code ausgeführt werden, welcher innerhalb des für Programmcode reservierten Speicherbereichs liegt.
+
 # Sichere Systeme
+
 ## Prinzipien zum Entwurf sicherer Systeme
+
 ### Erlaubnisprinzip
 `fail-safe defaults`
 Jeder Zugriff ist zunächst grundsätzlich verboten (engl. default deny). Nur durch explizite Erlaubnis kann das Zugriffsrecht gewährt werden.
+
 ### Vollständigkeitsprinzip
 `complete mediation`
 Jeder Zugriff auf jedes Objekt ist auf seine Zulässigkeit zu prüfen. Das Prinzip erzwingt, dass Zugriffskontrolle grundsätzlich aus Sicht des gesamten Systems betrachtet werden muss.
+
 ### Prinzip der minimalen Rechte
 `least privilege, need to know`
 Jedes Subjekt erhält nur die Zugriffsrechte, die es zur Wahrnehmung seiner Aufgaben benötigt.
+
 ### Prinzip der wirtschaftlichen Mechanismen
 `economy of mechanism`
 Der Entwurf der Sicherheitsfunktionen sollte so einfach und klein wie möglich sein.
+
 ### Prinzip des offenen Entwurfs
 `open design`
 Das Design der Sicherheitsfunktionen sollte nicht geheim gehalten, sondern offen gelegt werden. Die Entkopplung der Sicherheitsfunktionen von z.B. kryptographischen Schlüsseln erlaubt die Untersuchung des Designs durch Dritte, ohne dabei Gefahr zu laufen, konkrete Daten zu kompromittieren.
+
 ## Sicherheitsgrundfunktionen
 - Identifikation und Authentifikation
 - Rechteverwaltung
