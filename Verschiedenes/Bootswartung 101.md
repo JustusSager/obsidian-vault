@@ -51,7 +51,10 @@ Welche Art von Lack am besten geeignet ist hängt von den Bedingungen ab.
 - Nach dem verschließen der Lackdose, diese einmal auf den Kopf drehen. Dadurch wird sie Luftdicht und der Lack hält länger.
 - Lack immer mit einem Pinsel, **nicht** mit einer Rolle auftragen, da sonst die Oberfläche schnell uneben und zu dünn bestrichen wird.
 
-# GFK und Decks Reparaturen
+## Epifanes Lackierung auffrischen
+
+
+# GFK Decks-Pflege
 
 ## Kleine Löcher mit Spachtel füllen
 Um kleine Löcher wie z.B. alte Schraubenlöcher zu füllen.
@@ -59,9 +62,26 @@ Um kleine Löcher wie z.B. alte Schraubenlöcher zu füllen.
 **Benötigtes Werkzeug:**
 - Kegelsenker Bohr-Aufsatz
 - Bohrschrauber
+- (Kunststoff-)Spachtel
 - Epoxy- oder Polyester-Spachtel
 - Aceton oder etwas anderes zum Untergrund entfetten
-- 
+- ggf. Abdeck-Klebeband
+
+**Umsetzung:**
+1. Mit dem Kegelsenker die Ränder des Lochs ansenken
+2. Mit dem Aceton das Loch gut reinigen
+3. Die Rückseite des Loches mit dem Abdeck-Klebeband zukleben
+4. Den Spachtel entsprechend der Verpackungsangabe mischen
+5. Den angemischten Spachtel mit mit einem Spachtel in das Loch quetschen
+	- Dabei darauf achten, dass der Spachtel nicht nur glatt abgezogen ist, sondern leicht übersteht, da sich Epoxy und Polyester beim fest werden leicht zusammenzieht.
+6. Entsprechend der Verpackungsangabe fest werden lassen.
+7. Weitermachen mit [[#Im Außenbereich streichen]] oder [[#Im Innenbereich streichen]].
+
+## Im Außenbereich streichen
+
+## Im Innenbereich streichen
+
+## Den Rumpf polieren
 
 # Elektro Kabel-Guide
 ## Welche Kabel können verwendet werden? 
