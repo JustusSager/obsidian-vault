@@ -62,8 +62,8 @@ Um kleine Löcher wie z.B. alte Schraubenlöcher zu füllen.
 **Benötigtes Werkzeug:**
 - Kegelsenker Bohr-Aufsatz
 - Bohrschrauber
-- (Kunststoff-)Spachtel
-- Epoxy- oder Polyester-Spachtel
+- (Kunststoff-)Spachtel (Also das Werkzeug)
+- Epoxy- oder Polyester-Spachtel (Also das Füllmaterial)
 - Aceton oder etwas anderes zum Untergrund entfetten
 - ggf. Abdeck-Klebeband
 
