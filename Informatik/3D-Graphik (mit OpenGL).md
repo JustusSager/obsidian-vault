@@ -1,4 +1,10 @@
-#Informatik #Computergraphik 
+---
+erstellt am:
+tags:
+  - Informatik
+  - Computergraphik
+Deckblatt:
+---
 Erste Entscheidung / Einschränkung ist, ob etwas so realistisch wie möglich oder mit Zeitbegrenzung gerendert werden soll. 
 Das realistische Rendern mit eines einzigen Bildes kann mehrere Tage dauern da es physikalische Prozesse möglichst ohne Kompromisse wiederspiegeln soll. Dabei spielt die Rechenzeit keine (oder nur geringe) Rolle.
 Beim Rendern mit Zeitbegrenzung soll eine Mindestzahl an Bildern pro Sekunde (FPS -> Frames per Second) gerendert werden, typischerweise min. 20 FPS. 

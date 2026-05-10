@@ -34,8 +34,6 @@ Hierbei lässt sich bis zu einem gewissen Grad gegen den Wind segeln.
 Eine technische Zeichnung der Rumpfform der Schiffes. Beinhaltet auch die geplante / berechnete Wasserlinie fürs vorhergesehene Gewicht.
 ![[lateralplan_schiff.jpg|300]]
 # Quellen
-- (Vorlesung) Segeln für Nerds: Aero- und Hydrodynamik am Schiff
-	- Von: David Mülheim
-	- Link: https://www.youtube.com/watch?v=Bb649nXsbnM&t=440s 
+- [[Segeln für Nerds Aero- und Hydrodynamik am Schiff]]
 - (Wikipedia) Stabilität (Schiffskörper)
 	- https://de.wikipedia.org/wiki/Stabilit%C3%A4t_(Schiffsk%C3%B6rper)

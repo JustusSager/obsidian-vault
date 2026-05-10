@@ -1,0 +1,15 @@
+formulas:
+  Unbenannt: ""
+views:
+  - type: cards
+    name: Literatur Karten
+    filters:
+      and:
+        - file.folder == "Literaturverzeichnis"
+    order:
+      - file.name
+      - Autor
+      - erschienen am
+    image: note.Deckblatt
+    imageAspectRatio: 1.2
+    imageFit: contain
