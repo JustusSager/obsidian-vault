@@ -11,8 +11,8 @@ Welche Art von Lack am besten geeignet ist hängt von den Bedingungen ab.
 	- Farbschaber
 	- ggf. Heißluft-Föhn
 - Anschleifen
-	- P180 Schleifpapier
-	- P400 Schleifpapier
+	- Von P80 bis P240 Schleifpapier
+	- P400 Schleifpapier oder Schleifvließ
 	- Schleifvlies für Ecken und Kanten
 - Streichen
 	- Borsten-Pinsel
@@ -27,7 +27,7 @@ Welche Art von Lack am besten geeignet ist hängt von den Bedingungen ab.
 2. Holzflächen mit P180 Körnung gut anschleifen.
 	- Ecken und Kanten mit dem Schleifvlies anschleifen
 3. Oberflächen mit Verdünner gut entfetten.
-	- Je nach Holzart ist das ja eig kaum Möglich oder? Teak ist doch zu Ölhaltig? 
+	- Je nach Holzart ist das ja eig. kaum Möglich oder? Teak ist doch zu Ölhaltig? 
 4. Alles, was nicht lackiert werden soll, abkleben
 
 **Umsetzung:**
@@ -65,6 +65,7 @@ Um kleine Löcher wie z.B. alte Schraubenlöcher zu füllen.
 - (Kunststoff-)Spachtel (Also das Werkzeug)
 - Epoxy- oder Polyester-Spachtel (Also das Füllmaterial)
 - Aceton oder etwas anderes zum Untergrund entfetten
+- Schleifpapier (irgendwas zwischen P40 und P100)
 - ggf. Abdeck-Klebeband
 
 **Umsetzung:**
@@ -75,7 +76,8 @@ Um kleine Löcher wie z.B. alte Schraubenlöcher zu füllen.
 5. Den angemischten Spachtel mit mit einem Spachtel in das Loch quetschen
 	- Dabei darauf achten, dass der Spachtel nicht nur glatt abgezogen ist, sondern leicht übersteht, da sich Epoxy und Polyester beim fest werden leicht zusammenzieht.
 6. Entsprechend der Verpackungsangabe fest werden lassen.
-7. Weitermachen mit [[#Im Außenbereich streichen]] oder [[#Im Innenbereich streichen]].
+7. Glatt schleifen.
+8. Weitermachen mit [[#Im Außenbereich streichen]] oder [[#Im Innenbereich streichen]].
 
 ## Im Außenbereich streichen
 
