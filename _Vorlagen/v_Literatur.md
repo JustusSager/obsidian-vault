@@ -4,9 +4,12 @@ erstellt am:
 Alias:
   - "Book: {{title}}"
 Autor:
-Erscheinungsjahr:
+erschienen am:
+erschienen auf:
 Deckblatt:
 PDF:
+Link:
+tags:
 ---
 # Zusammenfassung
 
