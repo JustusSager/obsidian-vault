@@ -1,4 +1,9 @@
-#TODO Scrum vervollständigen
+---
+erstellt am: 2025-04-03T00:00:00
+tags:
+  - Projektplanung
+Deckblatt: "[[Deckblatt_Scrum.svg]]"
+---
 
 # Rollen
 ## Developer
@@ -125,4 +130,4 @@ Am Ende müssen sich alle `Developer` auf eine Anzahl an `Story Points` einigen.
 Ein `Story Point` ist eine Art Aufwandseinheit für Aufgaben. Hierbei einigt man sich im Team auf eine Tätigkeit, die als Referenzwert für die Aufwandseinschätzung verwendet wird. Dadurch soll die Aufwandsschätzung zwischen den Developern vergleichbarer werden. Ein Entwickler der etwas langsamer arbeitet als ein Anderer kommt bei der Aufwandsschätzung dadurch dennoch auf den selben Aufwand.
 z.B. Als `Story Point` wird die Implementierung der [[OOP#Rule of Five|Rule of Five]] in einer Klasse angesetzt. Beim Einschätzen einer Aufgabe wird jetzt überlegt wie vielen Implementierungen der `Rule of Five` diese Aufgabe entspricht.
 # Quelle
-- https://scrumguides.org/scrum-guide.html
+- [[Scrum Guide]]
