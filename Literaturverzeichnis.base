@@ -1,15 +1,32 @@
+filters:
+  and:
+    - file.folder == "Literaturverzeichnis"
 formulas:
   Unbenannt: ""
 views:
   - type: cards
     name: Literatur Karten
-    filters:
-      and:
-        - file.folder == "Literaturverzeichnis"
     order:
       - file.name
       - Autor
       - erschienen am
+      - erschienen auf
+      - Art
     image: note.Deckblatt
     imageAspectRatio: 1.2
+    imageFit: contain
+  - type: cards
+    name: Quellen MFG5
+    filters:
+      and:
+        - file.tags.contains("MFG5")
+    order:
+      - file.name
+      - erschienen am
+      - erschienen auf
+      - Art
+    sort:
+      - property: erschienen am
+        direction: ASC
+    image: note.Deckblatt
     imageFit: contain
