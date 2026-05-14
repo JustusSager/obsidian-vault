@@ -1,11 +1,10 @@
 ---
-erstellt am:
-  - "{{date}} {{time}}"
-Alias:
-  - "Book: {{title}}"
+erstellt am: "{{date}} {{time}}"
+Originaltitel: "{{title}}"
 Autor:
 erschienen am:
 erschienen auf:
+Art:
 Deckblatt:
 PDF:
 Link:
