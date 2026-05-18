@@ -4,6 +4,7 @@ tags:
   - Projektplanung
 Deckblatt: "[[Deckblatt_Scrum.svg]]"
 ---
+[^scrumguide]
 
 # Rollen
 ## Developer
@@ -13,6 +14,7 @@ Sie sind verantwortlich für:
 - Qualitätssicherung entsprechend der [[#Definition of Done]].
 - flexibel den Tagesplan entsprechend des Sprint Goals anpassen.
 - Sich gegenseitig professionell in die Verantwortung ziehen.
+
 ## Product Owner
 Der Product Owner ist eine Person und ist verantwortlich für:
 - die Maximierung der Projektergebnisse des Scrum Teams.
@@ -21,6 +23,7 @@ Der Product Owner ist eine Person und ist verantwortlich für:
 - Sortierung/Priorisierung der Inhalte des Product Backlogs.
 - Sicherstellen, dass das Produkt Backlog transparent und verständlich für alle ist.
 Diese Arbeit kann der Product Owner selbst durchführen, oder an bestimmte Teammitglieder weitergeben. Dennoch bleibt der Product Owner in der Verantwortung.
+
 ## Scrum Master
 Der Scrum Master ist verantwortlich für die Einhaltung der Scrum Richtlinien. Dabei geht es um folgende Punkte:
 - Die Teammitglieder über die Verfahrensweisen aufklären und in deren Umsetzung unterstützen.
@@ -80,6 +83,7 @@ Ein Sprint ist das Basisevent, von dem die anderen Events teil sind. Ein Sprint 
    Gegen Ende des Sprints.
 4. Sprint Retrospective
    Als letztes Event des Sprints.
+
 ## Sprint Planning
 - Wird immer zu beginn eines neuen Sprints durchgeführt.
 - Das gesamte Scrum Team arbeitet gemeinsam an dem Plan für den kommenden Sprint.
@@ -129,5 +133,7 @@ Am Ende müssen sich alle `Developer` auf eine Anzahl an `Story Points` einigen.
 ## Story Point
 Ein `Story Point` ist eine Art Aufwandseinheit für Aufgaben. Hierbei einigt man sich im Team auf eine Tätigkeit, die als Referenzwert für die Aufwandseinschätzung verwendet wird. Dadurch soll die Aufwandsschätzung zwischen den Developern vergleichbarer werden. Ein Entwickler der etwas langsamer arbeitet als ein Anderer kommt bei der Aufwandsschätzung dadurch dennoch auf den selben Aufwand.
 z.B. Als `Story Point` wird die Implementierung der [[OOP#Rule of Five|Rule of Five]] in einer Klasse angesetzt. Beim Einschätzen einer Aufgabe wird jetzt überlegt wie vielen Implementierungen der `Rule of Five` diese Aufgabe entspricht.
-# Quelle
-- [[Scrum Guide]]
+
+# Referenzen
+
+[^scrumguide]: [[Scrum Guide]]

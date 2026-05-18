@@ -1,8 +1,17 @@
+---
+erstellt am: 2026-05-01
+tags:
+  - "#Segeln"
+Deckblatt:
+---
+
 # Holzbeschläge und Zierleisten pflegen
 Um Holzteile an und unter Deck zu pflegen, gibt es unterschiedliche Methoden und Herangehensweisen. 
 Eine der einfachsten wäre z.B. einfach nichts tun, Teakholz und andere sehr ölhaltige Hölzer sind von Natur aus sehr widerstandsfähig grauen jedoch mit der Zeit aus. 
 Eine andere Methode ist das Lackieren mit ein oder zwei-komponentigem Lack.
+
 ## Von Grund auf neu lackieren mit Epifanes
+[^yt-epifanes]
 Um alle möglichen Arten von Holz zu lackieren kann z.B. Epifanes Holzlack verwendet werden.  
 Welche Art von Lack am besten geeignet ist hängt von den Bedingungen ab.
 
@@ -53,7 +62,6 @@ Welche Art von Lack am besten geeignet ist hängt von den Bedingungen ab.
 
 ## Epifanes Lackierung auffrischen
 
-
 # GFK Decks-Pflege
 
 ## Kleine Löcher mit Spachtel füllen
@@ -86,6 +94,8 @@ Um kleine Löcher wie z.B. alte Schraubenlöcher zu füllen.
 ## Den Rumpf polieren
 
 # Elektro Kabel-Guide
+[^blauwasser-elektro]
+
 ## Welche Kabel können verwendet werden? 
 - Immer nur **flexible Leitungen**, da starre Leitungen unter Vibration und Bewegung schneller brechen.
 - Bei Kabeln mit **kleinem Querschnitt** ($\le 16 \text{mm}^2$) sollte die **Isolierung aus PVC sein**, da diese schwer entflammbar und selbstlöschend ist.
@@ -95,6 +105,7 @@ Um kleine Löcher wie z.B. alte Schraubenlöcher zu füllen.
 	- `H01N2` mit Gummiummantelung vom Typ `EM5`
 - Bei Kabeln **im Außenbereich** sollte das Kabel einen besonders UV-beständigen Mantel haben und besonders wasserresistent sein. Es empfiehlt sich **Kabel mit verzinnten Litzen**
 	- Mantel aus `PUR (Polyurethan)` 
+
 ## Farbcodes der Kabel
 ### 12V
 Es sollten auf jeden Fall nicht die Farben der 230V Wechselstrom-Kabel verwendet werden. Das schließt folgende Farben aus:
@@ -108,6 +119,7 @@ Ansonsten gibt es eigentlich keine Einschränkungen, es hat sich jedoch häufig 
 | Analoge Signale  | Gelb                 |
 | Digitale Signale | Irgendwelche anderen |
 Zusätzlich sollten alle Kabelenden beschriftet werden mit ihrem Zweck.
+
 ### 230V
 Sollte man nicht selber machen, aber falls doch:
 Die Kabelfarben sind Festgelegt:
@@ -118,9 +130,12 @@ Die Kabelfarben sind Festgelegt:
 | Neutral      | Blau      |
 | Schutzleiter | Grün-Gelb |
 Dieser Standard hat sich 1970, 1980 und 2005 geändert, daher **Vorsicht** bei alten Leitungen!
+
 ## Kabelenden
 Es können verschiedene Terminals am Ende eines Kabels 
-# Quellen
-- https://www.blauwasser.de/bootselektrik-anleitung-erneuern-planen
-- "Wie Epifanes Klarlack aufzutragen wird." von "Epifanes Yacht Paint"
+
+# Referenzen
+
+[^yt-epifanes]: "Wie Epifanes Klarlack aufzutragen wird." von "Epifanes Yacht Paint"
   https://www.youtube.com/watch?v=58oC3NA-Kt0
+[^blauwasser-elektro]: https://www.blauwasser.de/bootselektrik-anleitung-erneuern-planen
