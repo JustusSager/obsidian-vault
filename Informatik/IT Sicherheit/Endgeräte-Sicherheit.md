@@ -9,11 +9,24 @@ Physischer Zugriff bedeutet, der Angreifer hat direkten Zugang zum Zielsystem. E
 
 ### Auslesen von Daten im Arbeitsspeicher
 - **Cold Boot Attack** - Beim Herunterfahren können sensible Daten, z.B. Schlüssel, im RAM verbleiben – Angreifer kann diese extrahieren.
+	  Datenremanenz: Daten im Speicher bleiben in verschiedenartiger Stärke erhalten und lassen sich unter Umständen wiederherstellen. Eine starke Kühlung verlängert die Remanenzzeit im Speicher erheblich. 
+	  Der Speicher wird stark runtergekühlt und dem Rechner wird die Stromversorgung gekappt. Durch starten eines minimalen Betriebssystems können jetzt die Reste des Speichers ausgelesen werden
 - **Direct Memory Access (DMA) Angriffe** - Angreifer kann über Schnittstellen wie Thunderbolt, FireWire oder PCIe direkten Zugriff auf Arbeitsspeicher erhalten, um vertrauliche Informationen auszulesen.
+	  "Data at Rest": Daten sind gespeichert (HDD / SSD).
+		  Festplattenvollverschlüsselung (FDE) ist wirksam.
+	  "Data in use": Daten sind im RAM bzw. werden verarbeitet (auch Standby).
+		  FDE ist nicht wirksam.
+	  Eine Verschlüsselung der Festplatte schützt nur bei abgeschaltetem Rechner. Wenn der Festplattenschlüssel zur Verwendung im Speicher liegt, kann dieser ggf. durch DMA-Angriffe abgegriffen werden.
 
 ### Manipulation und Implantation von Hardware
 - **Hardware-Backdoors** - Physische Implantate oder modifizierte Hardwarekomponenten können dauerhaft Zugriffsmöglichkeiten ermöglichen.
 - **Keylogger und Überwachungsgeräte** - Einsatz von Hardware-Keyloggern oder anderen Überwachungsgeräten erlaubt Erfassung von Tastatureingaben und anderen Aktivitäten.
+
+**Bad-USB-Device:** 
+- gibt sich als vertrauenswürdiges Gerät aus
+- nutzt legitime Schnittstellen (HID, Netzwerk)
+	- kein Exploit notwendig, funktioniert immer
+- Z.B. Gibt sich als Tastatur aus um ein Skript auf dem Zielsystem auszuführen. 
 
 ### Manipulation von Firmware und Software
 - **Firmware-Angriffe** - Modifizierter BIOS/UEFI-Code oder infizierte Firmware auf Peripheriegeräten kann tiefgreifende Kontrolle über das System ermöglichen.
@@ -23,13 +36,21 @@ Physischer Zugriff bedeutet, der Angreifer hat direkten Zugang zum Zielsystem. E
 - **Datendiebstahl** - Über physischen Diebstahl von Speichermedien oder anderen Komponenten kann Angreifer sensible Informationen erhalten und offline analysieren.
 - **Manipulation von Hardwarekomponenten** - Austausch oder Ergänzung von Komponenten, um z.B. Daten abzufangen oder zu modifizieren.
 
+Es gibt im Bereich von embedded devices noch Problemen bzgl. IT-Sicherheit. 
+
 ### Absichtliche Zerstörung von Hardware
 - **Physische Zerstörung** - Angreifer beschädigt oder zerstört direkt Komponenten (z.B. Festplatten, Netzteile, Motherboards).
 - **Überhitzung oder Kurzschlüsse** - Manipulationen an Stromversorgung oder Kühlung können zu Überhitzung oder elektrischen Fehlfunktionen bis hin zum Ausfall des Systems führen.
 
+Es gibt USB Sticks welche durch Strom das Mainboard eines Rechners durchbrennen lassen kann. (Killer-USB)
+
 ### Sabotage durch Manipulation von Software/Hardware-Interaktionen
 - **Manipulation der Firmware** - Gezielte Eingriffe in Firmware-Updates oder Überschreiben von Firmware kann zu dauerhafter Beeinträchtigung der Funktionsfähigkeit eines Systems führen.
 - **Fehlkonfigurationen** - Absichtliche Veränderung kritischer Optionen der Systemkonfiguration (z.B. Überhitzungsschutz).
+
+Beispiele:
+- Blockieren von Lüftern
+- Netzwerkschleife zur Verlangsamung des Netzwerks
 
 ## Mögliche Absichten des Angreifers
 - Datenexfiltration
@@ -41,6 +62,9 @@ Physischer Zugriff bedeutet, der Angreifer hat direkten Zugang zum Zielsystem. E
 # Passwörter
 ![[passwort_hash.png]]
 Beim erstellen eines Passworts wird der Hash des Passworts (zuzüglich eines `Salts`) in der Datenbank gespeichert. 
+
+Ein **Salt** ist eine zufälliger Bit-String, der vor der Berechnung des Hash mit dem Passwort verknüpft wird. Dadurch werden Angriffe anhand von vorher berechneten Passwort-Hashes schwieriger. Außerdem ergeben dadurch gleiche Passwörter verschiedene Hash-Werte.
+
 Zur Überprüfung eines Passworts wird der Hash des Passworts mit dem in der Datenbank gespeicherten Hash verglichen.
 Siehe hierzu [[Kryptographie#Hash Funktionen|Hash Funktionen]].
 
@@ -61,10 +85,28 @@ Siehe hierzu [[Kryptographie#Hash Funktionen|Hash Funktionen]].
 	- z.B. durch Datenleak einer Datenbank.
 - Angreifer kann für beliebige potenzielle Passwörter den zugehörigen Hash-Wert berechnen.
 - Angreifer vergleicht Hash-Wert der Passworts mit selbst berechneten Hash-Werten.
-- Angreifer hat beliebig viele Versuche.
+- Angreifer hat beliebig viele Versuche. Nur die Rechenkapazität des Angreifers beschränkt ihn. 
 **Sicherheitsmaßnahmen:**
-- schwierig und aufwändig
-- lange und komplizierte Passwörter verwenden
+- sich deutlich schwieriger und aufwändiger
+
+**Grundsätzliche Möglichkeiten beim Passwort Cracking:**
+Annahmen: Zeichenvorrat $\Sigma$, Länge des Passworts $l$, Hash-Funktion $h()$ 
+Anzahl möglicher Passwörter: $|\Sigma|^l$ 
+
+1. Passwörter raten  -> wie Online-Angriff
+	   - limitierender Faktor ist die Zeit
+2. Wertetabelle erstellen
+	- Tabelle wird vorab berechnet 
+	- vgl. der aus dem Angriff erhaltenen Hashes mit den vorher berechneten Hashes
+	- Match -> Passwort gefunden
+	- limitierender Faktor: Speicherplatz
+3. Regenbogentabelle -> Kompromiss zwischen 1 und 2
+	- Ist eine liste mit allen möglichen Passwörtern und deren dazugehörigen Hashes. Es wird allerdings nicht nur ein Hash erstellt,, sondern der Hash des Hash des Hash (...), gespeichert wird jedoch nur der erste und letzte Wert.
+	- Wenn ein Match mit der letzten Spalte gefunden wird kann die Zeile von vorne durchgegangen werden und die Hashes gebildet werden bis zur vorletzten Spalte. Diese ist ein valides Passwort (jedoch nicht unbedingt das vom Nutzer vergebene).
+
+**Passwort-Kriese**
+1. User müssen sich heutzutage zu viele Passwörter merken, als das dies ohne Hilfsmittel möglich wäre.
+2. Mit modernen Graphikkarten steht eine kostengünstige Technologie zum Password Cracking zur Verfügung. 
 
 # Malware
 Als Malware oder Schadsoftware bezeichnet man unerwünschte Software, die die Integrität des Zielsystems gefährdet und eine Schadfunktion (sog. Payload) besitzt.
