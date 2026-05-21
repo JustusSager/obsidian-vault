@@ -93,7 +93,7 @@ Siehe hierzu [[Kryptographie#Hash Funktionen|Hash Funktionen]].
 Annahmen: Zeichenvorrat $\Sigma$, Länge des Passworts $l$, Hash-Funktion $h()$ 
 Anzahl möglicher Passwörter: $|\Sigma|^l$ 
 
-1. Passwörter raten  -> wie Online-Angriff
+1. Passwörter raten -> wie Online-Angriff
 	   - limitierender Faktor ist die Zeit
 2. Wertetabelle erstellen
 	- Tabelle wird vorab berechnet 
@@ -107,6 +107,7 @@ Anzahl möglicher Passwörter: $|\Sigma|^l$
 **Passwort-Kriese**
 1. User müssen sich heutzutage zu viele Passwörter merken, als das dies ohne Hilfsmittel möglich wäre.
 2. Mit modernen Graphikkarten steht eine kostengünstige Technologie zum Password Cracking zur Verfügung. 
+   Aber: Für Passwort Hashes können spezielle Hash-Funktionen verwendet werden z.B. Argon 2, die bewusst langsam arbeiten und speicherintensiv sind, um auch bei Offline-Angriffen die Dauer drastisch zu erhöhen.
 
 # Malware
 Als Malware oder Schadsoftware bezeichnet man unerwünschte Software, die die Integrität des Zielsystems gefährdet und eine Schadfunktion (sog. Payload) besitzt.
@@ -120,6 +121,7 @@ Als Malware oder Schadsoftware bezeichnet man unerwünschte Software, die die In
 - `Botnets`
 - `Scareware`
 - `Ransomware`
+Aber eine richtig saubere Trennung der Kategorien ist meist nicht möglich, da eine Schadsoftware häufig Aspekte mehrerer Kategorien besitzt.
 
 ## Einfacher Bash-`Tojaner`
 Angreifer platziert Skript `ls` in Linux-System, argloser Admin führt es aus.
@@ -132,6 +134,15 @@ ls $*
 
 ## Ransomware Beispiel: "Wannacry"
 ![[wannacry.png]]
+Das Opfer wird erpresst ein Lösegeld zu bezahlen, indem der Zugriff auf das System blockiert wird.
+
+**3 mögliche Erpressungen:**
+- Erhalt der Schlüssel zur Entschlüsselung
+- Drohung Daten (im Darknet) zu veröffentlichen oder an Konkurrenz zu verkaufen.
+- nach Sichtung der Daten -> Erpressung von Kunden / Geschäftspartnern, deren Daten zu veröffentlichen.
+
+**Backups als Schutzmaßnahme**
+Moderne Ransomware verschlüsselt ggf. auch mit dem Gerät verbundene Cloud Speicher, d.h. ein Backup Cloud Speicher sollte nicht dauerhaft mit dem Gerät verbunden sein, da sonst auch die Backups gefährdet sind.
 
 # Buffer Overflow
 Ein Buffer Overflow (oder Pufferüberlauf) ist, wenn eine Variable ihren eigentlich angedachten Speicherbereich überschreitet. Die kann zum Beispiel passieren, wenn ein Speicherbereich für einen String der Länge 10 reserviert wurde, jedoch ein String der Länge 20, ohne Überprüfung in den Speicherbereich geladen wird.  
@@ -140,6 +151,7 @@ Puffer = Speicherbereich
 Pufferüberlauf: Die Menge der in den Puffer zu schreibenden Daten ist größer als der Speicherbereich -> Überlauf
 
 ## Normale Abarbeitung eines Programms
+![[Aufbau_vitueller_adressraum_eines_programms.png]]
 1. Schrittweise Abarbeitung der Maschinenbefehle, nächster Befehl bei nächsthöherer Speicheradresse
 2. Hauptprogramm: Sprunganweisung in ein Unterprogramm (inkl. Parameterübergabe)
 	- Herkunftsadresse (Ort von wo das Unterprogramm im Hauptprogramm gestartet wird) muss sich gemerkt werden um an dieser Stelle später das Hauptprogramm fortzuführen
@@ -158,13 +170,14 @@ Im oben aufgeführten Programmablauf lässt sich ein Buffer Overflow missbrauche
 Sobald zu der in der `Rücksprungadresse` gespeicherten Adresse gesprungen wird, wird der eingeschleuste Code ausgeführt.
 ![[stack_aufbau.png]]
 
-Herausforderung aus Angreifer-Sicht:
-1. Er weiß nicht an welcher Stelle im Speicher sich die absolute Rücksprungadresse befindet.
-   -> Rücksprungadresse mehrfach oberhalb Exploit-Code
+**Herausforderung aus Angreifer-Sicht:**
+1. Er weiß nicht an welcher Stelle im Speicher sich die absolute Rücksprungadresse oder die überlaufende Variable befindet. 
+   -> Rücksprungadresse mehrfach oberhalb des Exploit-Codes einfügen
 2. Er kennt die absoluten Speicheradressen des Programms nicht.
-   -> "Landezone" unterhalb des Exploit Code (NOP: no operation)
-3. Zeichenkette darf keine `Null`-Bytes enthalten.
+   -> "Landezone" unterhalb des Exploit Code (`0x90` NOP: no operation) -> NOP-Sliding
+3. Der Exploit darf keine `Null`-Bytes enthalten, da es als Ende des Strings interpretiert wird.
    -> Verwendung einer geeigneten Codierung
+![[buffer_overflow_overwrites_memory.png]]
 
 ### Code Beispiele
 Damit folgende Beispiele funktionieren wurden einige Sicherheitsmaßnahmen im Betriebssystem deaktiviert.
@@ -234,20 +247,24 @@ Die dabei geöffnete Shell besitzt die gleichen Rechte, wie das ausgeführte Pro
 
 ## Schutzmaßnahmen gegen Pufferüberläufe: 
 <b>Never trust user input</b>
-- sorgfältige Programmierung und Nutzung entsprechender Compiler-Funktionen
+- sorgfältige Programmierung und Nutzung entsprechender Compiler-Funktionen zur Erkennung von Pufferüberläufen
 - Überprüfung des Programmcodes mit speziellen Werkzeugen
 - ASLR ( `Address Space Layout Randomization` )
 	- Alle Programmteile und alle eingebundenen Bibliotheken müssen ASLR aktiviert haben, sonst ist der Schutz nicht gegeben.
 	- virtuelle Adressen werden durchgemixt
+	- Auf Compiler-Ebene, muss beim kompilieren selbst aktiviert werden. 
 - `Stack Canaries` bzw. `Stack Cookies`
 	- Im Stack wird zwischen Rücksprungvariable und den eigentlichen Variablen ein zufälliger Wert gespeichert.
 	- Bevor die Rücksprungadresse aufgerufen wird wird überprüft, ob sich dieser zufällige Wert geändert hat.
+	- Auf Compiler-Ebene, muss beim kompilieren selbst aktiviert werden.
 - `Shadow Stack`
-	- Man hat einen vom Haupt-Stack getrennten, zusätzlichen Stack, der nur Rücksprungadressen speichert.  Vor dem Rücksprung vergleicht die CPU ob die normale Rücksprungadresse der `Shadow-Stack`-Adresse entspricht
+	- Man hat einen vom Haupt-Stack getrennten, zusätzlichen Stack, der nur Rücksprungadressen speichert. Vor dem Rücksprung vergleicht die CPU ob die normale Rücksprungadresse der `Shadow-Stack`-Adresse entspricht
 	- Intel CET ( `Control-Flow Enforcement Technology` ) setzt seit Windows 10 diese Taktik um.
-- ESP ( `Excecutable Space Protection` ) 
-	- Unter Windows heißt es `Data Excecution Prevention`
-	- Es kann nur noch Code ausgeführt werden, welcher innerhalb des für Programmcode reservierten Speicherbereichs liegt.
+	- Auf Betriebssystem- oder BIOS-Ebene
+- ESP ( `Excecutable Space Protection`) 
+	- Unter Windows: `Data Excecution Prevention`
+	- Es kann nur noch Code ausgeführt werden, welcher innerhalb des für Programmcode reservierten Speicherbereichs liegt. Programmcode der auf dem Stack liegt wird niemals ausgeführt.
+	- Auf Betriebssystem- oder BIOS-Ebene
 
 # Sichere Systeme
 
