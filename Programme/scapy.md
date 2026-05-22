@@ -1,4 +1,12 @@
-#Informatik #IT-Sicherheit 
+---
+erstellt am: 22.05.2026 08:58
+tags:
+  - Informatik
+  - IT-Sicherheit
+Deckblatt:
+---
+Wird zum Aufbau eigener Netzwerkpakete verwendet.
+
 ### Starten von `scapy`
 ``` bash
 sudo scapy
@@ -16,6 +24,10 @@ ans, unans = sr(<paketname>) # Paket senden und antwort erwarten
 	# ans -> erfolgreich
 	# unans -> nicht beantwortet
 ```
+
+# Netzwerkpakete aufbauen
+Netzwerkpakete werden durch das übereinander schichten von Protokoll-Headern aufgebaut. Siehe dazu [[Netzwerkprotokolle]] und [[OSI und TCP-IP Referenzmodell]].
+
 ### Echo durchführen
 ``` bash
 # Paket vorbereiten

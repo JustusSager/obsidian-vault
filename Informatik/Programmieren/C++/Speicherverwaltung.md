@@ -71,7 +71,7 @@ int main() {
 ```
 
 ## Dynamische Heapspeicherverwaltung im C++ Stil
-Siehe hierzu auch [[Informatik/Softwareentwicklung/C++/Bibliotheken#Standardcontainer|Standardcontainer]], das ist eine abstrakte Implementierung der Dynamischen Heapspeicherverwaltung.
+Siehe hierzu auch [[Informatik/Programmieren/C++/Bibliotheken#Standardcontainer|Standardcontainer]], das ist eine abstrakte Implementierung der Dynamischen Heapspeicherverwaltung.
 ``` C++
 #include <iostream>
 // #include <new> // meist sowieso da

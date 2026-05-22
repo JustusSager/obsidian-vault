@@ -36,6 +36,7 @@ Hier können E-Mails formuliert werden, die rausgeschickt werden.
 <a href="{{.URL}}">TEXT</a>
 ```
 Hiermit kann ein Link zu der in der Campaign angegebenen Landing Page eingebettet werden.
+`{{.URL}}` wird ersetzt durch die in [[#Campaigns#Konfiguration]] konfigurierte URL.
 ### Users & Groups
 Hier werden die Empfänger der Mails angegeben.
 ### Campaigns
