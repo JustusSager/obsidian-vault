@@ -13,6 +13,7 @@ PDF: "[[Schwentineflotte in Gefahr_ Bundeswehr bedroht einzigartiges Wohnprojekt
 Link: https://www.kn-online.de/lokales/kiel/schwentineflotte-in-gefahr-bundeswehr-bedroht-einzigartiges-wohnprojekt-in-kiel-UP6EGC2BIZCANJW3K5UQROYK7M.html
 tags:
   - MFG5
+  - Schwentineflotte
 ---
 # Zusammenfassung
 

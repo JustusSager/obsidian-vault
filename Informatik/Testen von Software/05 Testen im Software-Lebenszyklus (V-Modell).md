@@ -3,7 +3,7 @@ Es existieren verschiedene Vorgehensmodelle für den Softwarelebenszyklus.
 Beispiele dafür sind:
 - [[03 Fundamentaler Testprozess#^18f604|Wasserfallmodell]]
 - Allgemeines V-Modell
-- [[Software und Projektplanung/Scrum]]
+- [[Scrum]]
 - ...
 
 # V-Modell

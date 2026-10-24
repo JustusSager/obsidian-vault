@@ -1,3 +1,10 @@
+---
+erstellt am:
+  - 12.05.2026 10:51
+tags:
+  - Segeln
+Deckblatt:
+---
 # Auftrieb
 Es lässt sich in 2 verschiedene Arten von Auftrieb unterscheiden. 
 	**Statischer** und **dynamischer** Auftrieb

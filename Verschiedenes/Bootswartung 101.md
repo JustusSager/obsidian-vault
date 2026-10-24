@@ -5,6 +5,12 @@ tags:
 Deckblatt:
 ---
 
+# Regelmäßige Wartungsarbeiten
+## Zum Saisonstart
+- Holzteile die der Sonne ausgesetzt sind - Lack auffrischen
+  Siehe dazu [[#Holzbeschläge und Zierleisten pflegen#Epifanes Lackierung auffrischen]]
+- Motorraum reinigen
+
 # Holzbeschläge und Zierleisten pflegen
 Um Holzteile an und unter Deck zu pflegen, gibt es unterschiedliche Methoden und Herangehensweisen. 
 Eine der einfachsten wäre z.B. einfach nichts tun, Teakholz und andere sehr ölhaltige Hölzer sind von Natur aus sehr widerstandsfähig grauen jedoch mit der Zeit aus. 
@@ -134,8 +140,97 @@ Dieser Standard hat sich 1970, 1980 und 2005 geändert, daher **Vorsicht** bei a
 ## Kabelenden
 Es können verschiedene Terminals am Ende eines Kabels 
 
+# Leinen / Laufendes Gut
+Erstmal eine Liste von dem gesamten Laufendem Gut:
+
+| Bezeichner   | Besser im Cockpit |
+| ------------ | ----------------- |
+| Groß-Fall    | Ja                |
+| Dirk         | Ja                |
+| Fok-Fall     | Nein              |
+| Spi-Fall     | Jein              |
+| Spibaum-Fall | Nein              |
+| Refff 1      | Ja                |
+| Reff 2       | Ja                |
+| (Reff 3)     | Ja                |
+| Fok-Rollreff | Ja                |
+
+## Materialien 
+[^yt-lowcostsailor-lines]
+
+### Polypropylen
+**Eigenschaften:**
+- Sehr günstig (~ 0,80 € / m) 
+- mittlere Elastizität (~ 10 %)
+- keine hohe Traglast
+- schwimmt auf dem Wasser, absorbiert kein Wasser
+- Sehr anfällig für Sonnenschäden, kann sich innerhalb eines Jahres völlig auflösen.
+
+**Anwendungsfall:**
+besser vermeiden aber einziger valider Anwendungsfall:
+- Als Leine am Rettungsring, 
+	- weil schwimmt und kann daher schwerer in die Schiffsschraube gelangen
+	- jedoch auf jeden Fall von Sonne geschützt lagern, z.B. in einem sonnen-festen Beutel an der Reling.
+
+### Nylon
+**Eigenschaften**
+- Preis (~ 1,26 € / m)
+- Hohe Elastizität (~ 20 %)
+- Recht stabil
+- Absorbiert Wasser, was nicht gut ist, und sinkt
+
+**Anwendungsfall**
+Als Festmacher, weil sie durch die Elastizität Schläge besser abfedern.
+
+### Polyester
+**Eigenschaften**
+- Preis (~ 1,60 € / m)
+- geringe Elastizität (~ 5 %)
+- gute Traglast
+- gute Sonnen-Widerstandsfähigkeit
+- geringe Wasseraufnahme
+
+**Anwendungsfall**
+Guter Allrounder für Schoten und Fallen, weil wenig Elastizität und gute Traglast bei einem vertretbarem Preis, außerdem Sonnen- und Wasser-resistent.
+
+### Dynema
+**Eigenschaften**
+- Preis teuer
+- kaum Elastizität (< 1 %)
+- höhere Traglast als Stahlseile
+- keine Wasseraufnahme
+- Sehr leicht
+- Schlecht zu greifen
+
+**Anwendungsfall**
+Ein guter Ersatz für Stahl im Stehenden Gut und mit passendem Mantel perfekt für Fallen und Schoten, wenn das Budget ausreicht und man auf beste Performance aus ist.
+
+## Aufbau
+[^yt-lowcostsailor-lines]
+
+### 3-litzige Leine
+![[3-litzige_leine.png]]
+[^teufelberger-seilkonstruktion]
+Typisch für Leinen, die ausschließlich aus [[#Nylon]] bestehen. Klassisches altes Design das leicht in der Herstellung und Verarbeitung (siehe [[#Leinen spleißen]]) ist.
+
+### Einfach geflochtene Leine
+![[einfach_geflochtene_leine.png]]
+[^teufelberger-seilkonstruktion]
+Typisch für Leinen, die ausschließlich aus [[#Dynema]] bestehen, mehrere ineinander verflochtene Stränge.
+
+### Kern und Mantel
+![[leine_aus_kern_und_mantel.png]]
+[^teufelberger-seilkonstruktion]
+Sehr verbreitet.
+Ein innerer Kern ist von einem äußeren Mantel umhüllt. Dadurch lassen sich die Eigenschaften von 2 unterschiedlichen Materialien kombinieren, z.B. lässt sich die Bruchlast und (nicht vorhandene) Elastizität von [[#Dynema]] mit der UV-Beständigkeit und guten Griffigkeit von [[#Polyester]] kombinieren.
+Der äußere Mantel ist nur zum Schutz des inneren Kerns und um eine gute Oberfläche zum Greifen zu bieten. Der innere Kern soll die Last tragen.
+Kern und Mantel können dabei jeweils auf unterschiedliche weisen aufgebaut sein, z.B. kann der Kern auch ein [[#Einfach geflochtene Leine|Geflecht]] sein.
+
+## Leinen spleißen
 # Referenzen
 
 [^yt-epifanes]: "Wie Epifanes Klarlack aufzutragen wird." von "Epifanes Yacht Paint"
   https://www.youtube.com/watch?v=58oC3NA-Kt0
-[^blauwasser-elektro]: https://www.blauwasser.de/bootselektrik-anleitung-erneuern-planen
+[^blauwasser-elektro]: [[2026-02-06_Sönke Roever_Bootselektrik-Anleitung (12 V). Erneuern und Planen der Yachtelektrik]] 
+[^yt-lowcostsailor-lines]: [[2026-04-18_The Low Cost Sailor_EP118 - Everything You Need to Know About Lines Onboard]] 
+[^teufelberger-seilkonstruktion]: https://www.teufelberger.com/de/faserseile/services/tech-info/seilkonstruktionen 
