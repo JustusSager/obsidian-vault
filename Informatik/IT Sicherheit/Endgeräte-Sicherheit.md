@@ -22,11 +22,11 @@ Physischer Zugriff bedeutet, der Angreifer hat direkten Zugang zum Zielsystem. E
 - **Hardware-Backdoors** - Physische Implantate oder modifizierte Hardwarekomponenten können dauerhaft Zugriffsmöglichkeiten ermöglichen.
 - **Keylogger und Überwachungsgeräte** - Einsatz von Hardware-Keyloggern oder anderen Überwachungsgeräten erlaubt Erfassung von Tastatureingaben und anderen Aktivitäten.
 
-**Bad-USB-Device:** 
-- gibt sich als vertrauenswürdiges Gerät aus
-- nutzt legitime Schnittstellen (HID, Netzwerk)
-	- kein Exploit notwendig, funktioniert immer
-- Z.B. Gibt sich als Tastatur aus um ein Skript auf dem Zielsystem auszuführen. 
+- **Bad-USB-Device:** 
+	- gibt sich als vertrauenswürdiges Gerät aus
+	- nutzt legitime Schnittstellen (HID, Netzwerk)
+		- kein Exploit notwendig, funktioniert immer
+	- Z.B. Gibt sich als Tastatur aus um ein Skript auf dem Zielsystem auszuführen. 
 
 ### Manipulation von Firmware und Software
 - **Firmware-Angriffe** - Modifizierter BIOS/UEFI-Code oder infizierte Firmware auf Peripheriegeräten kann tiefgreifende Kontrolle über das System ermöglichen.

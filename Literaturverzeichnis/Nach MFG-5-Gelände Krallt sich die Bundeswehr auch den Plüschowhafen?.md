@@ -12,6 +12,7 @@ PDF: "[[Nach MFG-5-Gelände_ Krallt sich die Bundeswehr auch den Plüschowhafen_
 Link: https://www.kielerleben.de/news/nach-mfg-5-gelaende-krallt-sich-bundeswehr-plueschowhafen-10028931.html
 tags:
   - MFG5
+  - Schwentineflotte
 ---
 # Zusammenfassung
 

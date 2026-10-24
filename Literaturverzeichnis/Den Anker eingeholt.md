@@ -12,6 +12,7 @@ PDF: "[[Den Anker eingeholt_taz artikel.pdf]]"
 Link:
 tags:
   - MFG5
+  - Schwentineflotte
 ---
 # Zusammenfassung
 
