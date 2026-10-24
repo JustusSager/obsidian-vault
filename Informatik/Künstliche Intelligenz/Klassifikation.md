@@ -6,7 +6,7 @@ $$P(x) =
 \begin{cases} 1 \quad \text{falls}\ ax_1+bx_2 > c \\
 0 \quad \text{sonst}
 \end{cases}$$
-![[Pasted image 20251229125924.png]]
+![[ki_klassifikation_linear_separierbar.png]]
 Diese Idee funktioniert auch mit mehr als zwei Dimensionen / Eigenschaften. Dann wird die lineare Funktion zu einer Hyperebene.
 Sind die zwei Klassen durch eine lineare Funktion (oder eine Hyperebene) separierbar, nennt man sie **linear separabel**.
 # Support Vektor Machine 
