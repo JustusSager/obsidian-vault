@@ -1,14 +1,51 @@
 #Informatik #IT-Sicherheit 
+# Einführung in die Kryptologie
+
+Literatur:
+- Understanding Cryptography (Kryptographie verständlich) 
+  wahrscheinlich über Springer Download der FH kostenlos verfügbar
+
+![[cryptology_themen.png]]
+
+Daten werden über unterschiedliche [[Übertragungstechnik|Übertragungsmedien]] übertragen. Bei vielen davon können Dritte "am Kabel" lauschen. Um zu vermeiden das Diese den Inhalt der Übertragung mitlesen können, werden Kryptographische Algorithmen benötigt um den Inhalt vor der Übertragung zu verschlüsseln. 
+Eine Verschlüsselung soll die [[Bedrohungen und Risiken#Schutzziele|Schutzziele]] Vertraulichkeit, Integrität, Authentizität und Verbindlichkeit  sicherstellen.
+
 # symmetrische Verschlüsselung
+(auch private-key-, single-key- oder secret-key-cryptography genannt)
+
+**Problembeschreibung:**
+Alice und Bob wollen über einen öffentlichen Kanal kommunizieren. Damit Oscar (Bad Guy) nicht die Nachricht mitlesen kann, benötigen sie eine Verschlüsselung.
+
 Bei der symmetrischen Verschlüsselung wird der selbe Schlüssel zum Ver- und Entschlüsseln verwendet.
 Dabei müssen sich die Gesprächsteilnehmer auf einen gemeinsamen Schlüssel einigen. Dies hat den Nachteil, dass es einen direkten Kontakt gegeben haben muss, um diesen Schlüssel auszutauschen.
+
+![[kryptographie_symetrisch_problembeschreibung.png]]
+
+**Aufbau der symetrischen Kryptographie**
+- Eine symetrische Verschlüsselung arbeitet typischerweise mit einfachen mathematischen Operationen um eine schnelle Ver- und Entschlüsselung der Daten zu ermöglichen.
+- Ver- und Entschlüsselung sind Umkehrfunktionen voneinander.
+
+## Substitution ciphers
+**Funktionsweise**
+Idee ist jeden Buchstaben im Alphabet durch einen anderen Buchstaben zu ersetzen. Dadurch lässt sich der verschlüsselte Text nicht einfach lesen.
+![[substitution_cipher.png|200]]
+Wenn man für die 26 Buchstaben des Alphabets eine Ersetzungstabelle erstellt, entsteht ein möglicher Schlüsselraum von
+$$
+26 \cdot 25 \cdot \ ... \ \cdot 3 \cdot 2 \cdot 1 = 26! \approx 2^{88} \approx 1026 \cdot 4
+$$
+möglichen Ersetzungstabellen.
+
+**Schwachstellen**
+Diese Verschlüsselung ist jedoch anfällig für eine Analyse der Häufigkeit von Buchstaben. Nicht jeder Buchstabe kommt gleich häufig vor.
+![[letter_frequencies_in_english.png]]
 
 ## Caesar-Verschlüsselung
 - Es wird jeder Buchstabe innerhalb der Nachricht einzeln betrachtet.
 - Jeder Buchstabe wird um eine bestimmte Anzahl $k$ relativ zum Alphabet verschoben.
 - z.B. Bei dem Schlüssel $k=3$ wird der Buchstabe $A$ der Nachricht zu einem $D$ in der Nachricht.
 Für den Mathematischen Ansatz siehe [[modulare Arithmetik#Cäsar-Verschlüsselung]].
-### Python Beispiel
+
+**Python Beispiel**
 ``` python
 import random
 
@@ -72,7 +109,7 @@ Ergebnis:
 GUTGEMACHTDASISTRICHTIG
 ```
 
-### Schwachstelle
+**Schwachstelle**
 Da es bei der Caesar-Verschlüsselung nur 26 mögliche Schlüssel gibt, ist das Knacken der Verschlüsselung nicht weiter schwierig. Man kann sich einfach alle Kombinationen ausgeben lassen und schauen, bei welcher ein sinnvoller Text herauskommt.
 Mithilfe einer simplen for-Schleife lassen sich alles 26 Möglichkeiten durchspielen:
 ``` python
@@ -115,6 +152,38 @@ Brute Force:
 25 XUMCMNMOJYLAYBYCG
 Result: 19 DASISTSUPERGEHEIM
 ```
+
+## DES-Verschlüsselung
+
+![[DES_Verschluesselungsablauf.png|400]]
+Die DES Verschlüsselung durchläuft 16 Verschlüsselungsrunden. Dabei wird der 56-Bit Schlüssel $k$ in Form unterschiedlicher fest definierter Permutationen für die jeweilige Verschlüsselungsrunde $k_{1-16}$ verwendet. Zu Beginn und zum Ende wird außerdem der zu verschlüsselnde Block $x$ bitweise "durchgemischt".
+
+### Verschlüsselungsrunden
+![[DES_Verschluesselungsrunde.png|500]]
+Zu Beginn wird die initiale Permutation $IP(x)$ durchgeführt. Danach folgen die 16 Verschlüsselungsrunden. 
+Während jeder Runde wird die linke Hälfte der 64 Bits (also die linken 32 Bits) verschlüsselt. Dies geschieht indem anhand der rechten Hälfte des zu verschlüsselnden Textes $R_0$ und dem Rundenschlüssel $k_1$ mit der Funktion $f(R_0,k_1)$ eine 32 Bit Reihe generiert wird. Diese 32 Bit werden mit den 32 Bit $L_0$ XOR verknüpft.
+Am Ende werden die beiden Hälften vertauscht, sodass in der nächsten Runde $R_0$ (bzw. dann $L_1$ genannt) verschlüsselt wird.
+$$
+\begin{align}
+L_i &= R_{i-1} \\
+R_i &= L_{i-1} \oplus f(R_{i-1}, k_i)
+\end{align}
+$$
+**Hinweis:** In der letzten Runde wird zum Schluss ebenfalls wieder vertauscht, sodass die ursprüngliche rechte Seite wieder rechts und die ursprüngliche linke Seite wieder links steht.
+
+### Erste und letzte Permutation $IP(...)$
+![[DES_IP_Tabelle.png|500]]
+Bei der ersten und der letzten Permutation wird einfach anhand einer festgelegten bitweisen Vertauschungstabelle gearbeitet. Diese sind Invers zueinander. 
+
+### f-Funktion
+In der $f(R_{i-1},k_i)$-Funktion werden die für eine Verschlüsselung wichtigen Basis Sicherheitsfeatures Diffusion und #TODO umgesetzt.
+
+![[DES_f_function.png]]
+
+Die 32 Bit von $R_{i-1}$ werden mithilfe der Funktion $E(R_{i-1})$ erweitert auf 48 Bit. Dafür werden die einzelnen Bits einfach gemischt und Teilweise an bestimmte Stellen dupliziert. Dadurch wird die **Diffusion** innerhalb der Verschlüsselung erreicht.
+![[DES_E-Tabelle.png]]
+
+
 
 ## AES-Verschlüsselung
 ### Python Beispiel
