@@ -1,3 +1,5 @@
+Es gibt eine Norm für Elektrische Systeme auf kleinen Wasserfahrzeugen:
+- EN ISO 13297:2021 + A1:2022 + A11:2023
 # Was / Wie / Wo Kabel
 ## Welche Kabel können verwendet werden? 
 - Immer nur **flexible Leitungen**, da starre Leitungen unter Vibration und Bewegung schneller brechen.
@@ -33,5 +35,16 @@ Die Kabelfarben sind Festgelegt:
 Dieser Standard hat sich 1970, 1980 und 2005 geändert, daher **Vorsicht** bei alten Leitungen!
 ## Kabelenden
 Es können verschiedene Terminals am Ende eines Kabels 
+
+# Einen LiFePo4-Akku mit der Lichtmaschine laden
+**Ausgangssituation:**
+Es existiert ein Motor mit einer normalen Lichtmaschine für Blei-Säure-Akkus, welche direkt an die Starterbatterie des Motors angeschlossen ist. Außerdem existiert ein LiFePo4-Akku welcher als Verbraucherakku verwendet wird.
+**Ziel** ist es, dass die Lichtmaschine zusätzlich zur Starterbatterie auch die LiFePo4-Verbraucherbatterie auflädt. Dies soll automatisch und ausschließlich bei laufendem Motor geschehen. Die Starterbatterie darf dabei nicht entladen werden.
+
+**Problem:**
+1. Ein LiFePo4-Akku hat im Vergleich zu einer normalen Starterbatterie einen sehr geringen internen Wiederstand. Dadurch würde (bei direktem Anschluss) eine normale Lichtmaschine durchbrennen, da diese den Innenwiederstand des Akkus als Strombegrenzung benutzt.
+2. LiFePo4-Akkus und Blei-Säure-Akkus haben eine unterschiedliche Ladespannung und Kurve.
+
+
 # Quellen
 - https://www.blauwasser.de/bootselektrik-anleitung-erneuern-planen
