@@ -1,3 +1,12 @@
+---
+erstellt am:
+tags:
+  - Informatik
+  - Computergraphik
+Deckblatt: "[[bild_als_raster.png]]"
+---
+
+
 #Informatik #Computergraphik
 # Farben
 

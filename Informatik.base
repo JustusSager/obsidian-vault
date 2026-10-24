@@ -1,0 +1,8 @@
+filters:
+  and:
+    - file.inFolder("Informatik")
+views:
+  - type: cards
+    name: Alles
+    image: note.Deckblatt
+    imageFit: contain

@@ -1,0 +1,23 @@
+views:
+  - type: cards
+    name: Tabelle
+    filters:
+      and:
+        - file.inFolder("Informatik")
+    order:
+      - erstellt am
+    cardSize: 180
+    image: note.Deckblatt
+    imageFit: contain
+    imageAspectRatio: 1
+  - type: cards
+    name: Sicht
+    filters:
+      and:
+        - file.inFolder("Informatik")
+    order:
+      - file.name
+      - erstellt am
+    cardSize: 200
+    image: note.Deckblatt
+    imageFit: contain
