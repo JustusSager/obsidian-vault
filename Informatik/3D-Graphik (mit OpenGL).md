@@ -159,7 +159,7 @@ $$
 \vec{x_p}' &= \begin{pmatrix} 
 	\cos(\alpha) & 0 & -\sin(\alpha) \\
 	0 & 1 & 0 \\
-	-\sin(\alpha) & 0 &\cos(\alpha) \\
+	\sin(\alpha) & 0 &\cos(\alpha) \\
 \end{pmatrix} \cdot \vec{x_p}  \quad \text{Rotation um y-Achse} \\
 \vec{x_p}' &= \begin{pmatrix} 
 	1 & 0 & 0 \\
@@ -628,7 +628,7 @@ struct myVertexType {
 Die `vertices` benötigen jetzt zusätzlich die Information, wo auf dem Bild ihre entsprechende Farbe zu finden ist. Es reicht dabei die "Eckpunkte" anzugeben, da der Rasterizer die Koordinaten dazwischen interpoliert. Diese müssen entsprechend übergeben werden ([[#Vertexe an den Shader übergeben]])
 
 ## Bitmap laden
-Siehe dazu auch [[2D-Grafik#Bilder im Speicher]]. Hier wird eine anderes Skript genutzt um eine Bitmap-Datei als ein Bytearray in den Speicher zu laden.
+Siehe dazu auch [[2D-Grafik#Bilder im Speicher]]. OpenGL bietet keine Funktionen zum Laden von Bilddateien daher wird hier eine anderes Skript genutzt um eine Bitmap-Datei als ein Bytearray in den Speicher zu laden.
 ``` C++
 // Das Bild in den RAM laden
 int bmpWidth;
@@ -643,11 +643,21 @@ GLuint textureCube;
 glGenTextures(1, &textureCube);
 glActiveTexture(GL_TEXTURE0);
 glBindTexture(GL_TEXTURE_2D, textureCube);
-glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, bmpWidth, bmpHeight, 0, GL_BGR, GL_UNSIGNED_BYTE, image);
+glTexImage2D(
+	GL_TEXTURE_2D, // Art der Textur
+	0, 
+	GL_RGB, // Format im Sampler
+	bmpWidth, // Bildbreite
+	bmpHeight, // Bildhöhe
+	0, 
+	GL_BGR, // Format im übergebenen Datenstrom
+	GL_UNSIGNED_BYTE, 
+	image
+);
 delete[] image; // Den Speicher auf dem RAM wieder freigeben
 // glGenerateMipmap(GL_TEXTURE_2D);
 ```
-ggfs. Kann hier auch noch gesagt werden, dass [[#MipMaps]] generiert werden sollen
+ggfs. Kann hier auch noch gesagt werden, dass [[#MipMaps]] generiert werden sollen oder welche [[#Interpolation|Interpolationsvariante]] verwendet werden soll.
 
 Jetzt muss noch ein Zugriff für den Fragment Shader auf die im VRAM abgelegte Texture geschaffen werden. Dies geht über einen `uniform` Parameter.
 ``` C++
@@ -656,7 +666,7 @@ GLuint TextureID = glGetUniformLocation(complete_shader_program, "textureCubeSam
 #TODO Wieso findet der Shader die Textur obwohl es keine Verknüpfung zwischen `TextureID` und `textureCube` gibt?
 
 ## Im Shader verarbeiten
-Der Vertex Shader reicht die uv-Koordinaten unverändert weiter:
+Der Vertex Shader reicht die uv-Koordinaten der Vertices unverändert weiter:
 ``` GLSL
 #version 410
 uniform mat4 transformationMatrix;
@@ -683,8 +693,126 @@ void main()
     gl_FragColor = vec4(color, 1.0);
 };
 ```
+## Interpolation
+Jedes Fragment muss eine Farbe aus dem Bild erhalten. Dabei können jedoch 2 Probleme auftreten:
+- Wenn sich das Objekt sehr nah an der "Kamera" befindet, greifen mehrere Fragmente auf das gleiche Texel (Texel = Pixel der Textur) und das Pixel sieht quadratisch aus. Die Textur wird über-abgefragt. 
+- Wenn das Objekt zu weit entfernt ist, weiß das System nicht welches Texel es auswählen soll. Es kann zu merkwürdigen Übergängen zwischen 2 Pixeln kommen, weil das Zwischenglied der Textur fehlt.
+Somit sind 2 Filter nötig, die die Probleme lösen / klären.
+- Wenn Pixel kleiner Texel -> MAG-Filter
+- Wenn Pixel größer Texel -> MIN-Filter
+Beide können auf `nearest` oder `linear` gestellt werden.
+![[texture_nearest_linear_interpolation.png|400]]
+Bei `nearest` wird der Texel genommen welcher dem Pixel am nächsten ist. Es entstehen harte Farbübergänge.
+Bei `linear` wird eine Farbmischung der 4 überlappenden Texel genutzt um einen fließenden Übergang zu schaffen, dadurch wird die Textur jedoch auch unschärfer.
+Das Ergebnis sieht folgendermaßen aus:
+![[texture_linear_vs_nearest_filter.png|400]]
+Welche Methode verwendet werden soll kann folgendermaßen festgelegt werden:
+``` C++
+// Nachdem die Textur in den VRAM geladen wurde
+glTexParameteri(
+	GL_TEXTURE_2D, // Um was für eine Textur handelt es sich
+	GL_TEXTURE_MIN_FILTER, // Um welchen Filter gehts
+	GL_NEAREST // Was soll gemacht werden
+);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+```
 
 ## MipMaps
-```
+Um die Performance zu erhöhen und merkwürdigen Fragmenten vorzubeugen kann zusätzlich zur Textur im Originalformat auch noch die Textur in geringerer Auflösung in den Speicher geladen werden. Dadurch muss der MIN-Filter nicht mit einer Textur in viel zu hoher Auflösung arbeiten, sondern kann direkt auf die Textur mit zur Größe des Objekts passender Auflösung zugreifen.
+
+MipMaps erzeugen:
+``` C++
+// nachdem die Textur in den VRAM geladen wurde:
 glGenerateMipmap(GL_TEXTURE_2D);
 ```
+
+Wie beim Texture-Filter für die Texel und Pixel, kann auch festgelegt werden, wann er auf welche MipMap zugreifen soll. Hierfür gibt es zusätzlich zu den in [[#Interpolation]] erwähnten Varianten auch noch folgende Varianten:
+- `GL_NEAREST_MIPMAP_NEAREST`
+- `GL_LINEAR_MIPMAP_NEAREST`
+- `GL_NEAREST_MIPMAP_LINEAR`
+- `GL_LINEAR_MIPMAP_LINEAR`
+Diese können an Stelle der in [[#Interpolation]] erwähnten Parameter genutzt werden, allerdings nur für den `GL_TEXTURE_MIN_FILTER`.
+``` C++
+glTexParameteri(
+	GL_TEXTURE_2D, 
+	GL_TEXTURE_MIN_FILTER, 
+	GL_LINEAR_MIPMAP_LINEAR
+);
+```
+
+## Texture Wrapping
+Wenn die uv-Koordinate größer als 1 oder kleiner als 0 ist befindet sie sich außerhalb der Textur. In dem Fall kann angegeben werden, wie damit umgegangen werden soll. Es gibt 4 Möglichkeiten:
+- `GL_REPEAT`
+  Die Textur wird wiederholt
+- `GL_MIRRORED_REPEAT`
+  Die Textur wird gespiegelt wiederholt
+- `GL_CLAMP_TO_EDGE`
+  Der letzte Pixel der Textur wird wiederholt
+- `GL_CLAMP_TO_BORDER`
+  Es wird mit einer Nutzerdefinierten Umrandungsfarbe aufgefüllt.
+![[texture_wrapping.png]]
+Jede dieser Varianten kann für jede Achse festgelegt werden.
+- `GL_TEXTURE_WRAP_S` -> x-Achse
+- `GL_TEXTURE_WRAP_T` -> y-Achse
+- `GL_TEXTURE_WRAP_T` -> z-Achse für 3D Texturen
+Das sieht z.B. folgendermaßen aus:
+``` C++
+// Textur an der x-Achse gespiegelt wiederholen
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+```
+Bei `GL_CLAMP_TO_BORDER` sieht es etwas anders aus. Hier muss zusätzlich die Farbe übergeben werden:
+``` C++
+float borderColor[] = { 1.0f, 1.0f, 0.0f, 1.0f };
+glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
+```
+
+# Modelle speichern und Laden
+Um die Vertices von 3D-Modellen nicht "programmieren" zu müssen, lassen sich diese in dedizierter Software (z.B. Blender) graphisch erstellen und als Datei exportieren. Es gibt verschiedenste Dateiformate (z.B. `dae`, `igs`, `stl`, `fbx`, `max`, `igs`, `3ds`). Hier werden jetzt im folgenden `obj` für die 3D-Shapes genutzt und `mtl` für Materialien.
+`obj`-Dateien sind lesbare Textdateien. Darin werden die verschiedenen Komponenten mit unterschiedlichen Buchstaben eingeleitet. 
+- `v` für die Koordinaten eines Vertex
+  `v 1.000000 1.000000 -1.000000`
+- `vt` für die uv-Texturkoordinaten eines Vertex
+  `vt 0.375000 0.25000`
+- `vn` für den Normalenvektor eines Vertex
+  `vn 0.0000 1.0000 0.5000`
+- `f` für eine Fläche, bestehend aus 3 Blöcken mit je dem Vertex-Index, dem Textur-Index und dem Normalen-Index in der Datei.
+  `f 5/1/1 3/2/1 1/3/1` <- Ein Dreieck
+
+# Lighting Maps
+Jetzt werden Licht und Textur kombiniert. Die Lichtparameter die in [[#Licht (Phong-Model)]] verwendet wurden lassen sich auch in eine Textur speichern. Dafür werden die Farbkanäle in der Textur als Faktor für die Lichtparameter verwendet. Z.B.:
+- R-Kanal: Faktor für ambientes Licht
+- G-Kanal: Faktor für diffuses Licht
+- B-Kanal: Faktor für spiegelndes Licht
+Hiermit lassen sich für unterschiedliche Teile eines Modells unterschiedliche Lichtreflektionen festlegen, ein Teil reflektiert z.B. das Licht stark, während ein anderer Licht gar nicht spiegelt. 
+
+Im Fragment Shader
+``` GLSL
+#version 410  
+uniform sampler2D textureCubeSampler;
+uniform sampler2D lightSampler;
+
+in vec3 posFrag;
+in vec3 normVectFrag;
+in vec2 uvFrac;
+layout(location = 0) out vec4 outColor;
+
+vec3 cameraPos = {0, 0, 1};
+vec3 lightPos = {0, 0, 1};
+
+void main()  
+{  
+    vec3 posFrag = gl_FragCoord.xyz;
+
+    vec3 lightDir = normalize(lightPos - posFrag);
+    vec3 lightReflection = reflect(-lightDir, normVectFrag);
+    vec3 viewDir = normalize(cameraPos - posFrag);
+
+    float diffuseFactorAtPos = (max(dot(normVectFrag, lightDir), 0.0)) * texture(lightSampler, );
+    float spectralFactorAtPos = pow(max(dot(viewDir, lightReflection), 0.0), shininess) * spectralFactor;
+    
+    vec4 texel = texture(textureCubeSampler, uvFrac);
+
+    outColor = (ambientFactor + diffuseFactorAtPos * random2(uvFrac) + spectralFactorAtPos) * texel;  
+};
+```
+
